@@ -3,6 +3,7 @@ name: Render index on branch
 on:
   push:
     branches-ignore: ["main"]
+    paths: ["README.md"]
   workflow_dispatch:
 
 jobs:
