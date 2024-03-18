@@ -17,6 +17,8 @@ jobs:
           output_dir: src
           build_html: true
           build_pdf: true
+          template: src/templates/index.html
+          extend_default_theme: true
       - name: Move Files
         run: |
             cp srcREADME.html src/index.html
