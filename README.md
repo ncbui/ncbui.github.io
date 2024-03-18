@@ -31,7 +31,7 @@ Technical Stack
 --------------------
 
 * Python, React, Ruby on Rails, Jest, Pytest, Mocha
-* Infrastructure as code, Kubernetes, Istio, ArgoCD, GitOps, HELM charting, Vault, Datadog, IAM/RBAC, Snyk, Aqua, GithubActions, Linux and scripting (Bash and Python, etc.)
+* Infrastructure as code, Kubernetes, Istio, ArgoCD, GitOps, HELM charting, Vault, Datadog, IAM/RBAC, Snyk, Aqua, GithubActions, Linux, and scripting (Bash and Python, etc.)
 * Pyspark, Pandas, Hadoop, postgresDB, Azure Blob Storage, AWS (S3), Azure Databricks, Unity Catalog, Starburst, SQL
 
 Certifications

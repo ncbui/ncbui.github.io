@@ -2,6 +2,8 @@ name: Render index on branch
 
 on:
   push:
+    branches-ignore: ["main"]
+    paths: ["README.md"]
   workflow_dispatch:
 
 jobs:
@@ -29,7 +31,9 @@ jobs:
         run: |
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
+          git stash
           git pull origin ${{ github.base_ref || github.ref_name }}
+          git stash apply
           git add src/
           git commit -m "Generated update to index.html and index.pdf"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
