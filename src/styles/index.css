@@ -3,6 +3,16 @@ body {
     line-height: 1.2;
     color: #dda15e;
     background-color: #344e41;
-    margin: 1rem 2rem;
+    padding: 0;
+    margin: 0;
   }
+
+.markdown-body {
+  font-size: 14px;
+  max-width: 80%;
+  margin: 3rem;
+  padding: 2rem;
+  border: #344e41 solid 10px;
+  border-radius: 12px;
+}
   
