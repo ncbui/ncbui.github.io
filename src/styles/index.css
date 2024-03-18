@@ -9,10 +9,10 @@ body {
 
 .markdown-body {
   font-size: 14px;
-  max-width: 80%;
+  line-height: 1.2 !important;
+  max-width: 80% !important;
   margin: 3rem;
   padding: 2rem;
-  border: #344e41 solid 10px;
-  border-radius: 12px;
+  border-radius: 12px !important;
 }
   
