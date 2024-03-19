@@ -1,9 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
+import { View } from './Themed';
 import { MarkdownView } from 'react-native-markdown-view'
-import { Text, View } from './Themed';
-import { MonoText } from './StyledText';
-import Colors from '@/constants/Colors';
+
 
 const about = `
 **Cam Bui**
@@ -35,7 +34,9 @@ Experience
 **Health Policy Intern**, Health Promotion & Wellness unit, San Francisco State University. 2016 - 2017.
 
 * Conducted literature reviews and focus groups on student health and wellness needs to assist health center with program planning.
+`
 
+const techstack = `
 Technical Stack
 --------------------
 
@@ -43,7 +44,9 @@ Technical Stack
 * Infrastructure as code, Kubernetes, Istio, ArgoCD, GitOps, HELM charting, Vault, Datadog, IAM/RBAC, Snyk, Aqua, GithubActions, Linux, and scripting (Bash and Python, etc.)
 * Pyspark, Pandas, Hadoop, postgresDB, Azure Blob Storage, AWS (S3), Azure Databricks, Unity Catalog, Starburst, SQL
 
-Certifications
+`
+
+const educerts = `Certifications
 --------------------
 
 * AWS Cloud Practitioner
@@ -66,6 +69,8 @@ export default function ResumeView() {
                     <MarkdownView style={styles.getStartedText}>
                     {about}
                     {experience}
+                    {techstack}
+                    {educerts}
                     </MarkdownView>
                 </View>
             </ScrollView>
