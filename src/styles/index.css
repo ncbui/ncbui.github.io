@@ -7,12 +7,12 @@ body {
     margin: 0;
   }
 
-.markdown-body {
-  font-size: 14px;
+.mainview {
+  font-size: 14px !important;
   line-height: 1.2 !important;
   max-width: 80% !important;
-  margin: 3rem;
-  padding: 2rem;
+  margin: 3rem !important;
+  padding: 2rem !important;
   border-radius: 12px !important;
 }
   
