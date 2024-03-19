@@ -15,7 +15,7 @@ export default {
     textSecondary: '#4c243b',
     background: '#450920',
     tint: tintColorDark,
-    tabIconDefault: '#b84a62',
+    tabIconDefault: '#54457f',
     tabIconSelected: tintColorDark,
   },
 };
