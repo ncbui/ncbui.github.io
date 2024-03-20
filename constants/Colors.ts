@@ -8,14 +8,20 @@ export default {
     tint: tintColorLight,
     tabIconDefault: '#89023e',
     tabIconSelected: tintColorLight,
+    tabBarStyle: {
+      backgroundColor: 'rgba(69,6,32,.5)',
+    },
   },
   dark: {
-    // Isabelline
+    // Maroon Isabelline
     text: '#f5a6e6',
     textSecondary: '#4c243b',
     background: '#450920',
     tint: tintColorDark,
-    tabIconDefault: '#54457f',
+    tabIconDefault: '#B84A62',
     tabIconSelected: tintColorDark,
+    tabBarStyle: {
+      backgroundColor: 'rgba(69,6,32,.5)',
+    },
   },
 };

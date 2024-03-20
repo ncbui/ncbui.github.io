@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { Text, View } from '@/components/Themed';
 import ResumeView from '@/components/ResumeView';
+import React from 'react';
 
 export default function TabOneScreen() {
   return (

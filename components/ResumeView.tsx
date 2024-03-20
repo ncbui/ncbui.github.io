@@ -8,10 +8,11 @@ const about = `
 **Cam Bui**
 ============
 
-Full stack software dev, devOps, dataOps. Looking for fully remote roles.`
+[linkedin: cambui/](https://www.linkedin.com/in/cambui/) | [gh: ncbui](https://github.com/ncbui) | Full stack software dev, devOps, dataOps | Looking for fully remote roles
+
+`
+
 const experience = `
-
-
 Experience
 ----------
 
@@ -59,12 +60,13 @@ Education
 * Bui, N. C. T., Ghafur, R. D., Yankulova, J. K., & Morsella, E. (2023). Stimulus-elicited involuntary insights and syntactic processing. Psychology of Consciousness: Theory, Research, and Practice, 10(2), 115–133. https://doi.org/10.1037/cns0000208
 
 **BSc, Kinesiology: Neuromuscular Science**; San Francisco State University (San Francisco, CA), 2016.
+
 `;
 
 export default function ResumeView() {
     return (
          <SafeAreaView style={styles.container}>
-            <ScrollView contentContainerStyle={styles.resumeContainer}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
                 <View style={styles.resumeContainer}>
                     <MarkdownView style={styles.getStartedText}>
                     {about}
@@ -82,20 +84,23 @@ export default function ResumeView() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: StatusBar.currentHeight,
+        padding: StatusBar.currentHeight,
       },
-      scrollView: {
-        backgroundColor: 'pink',
-        marginHorizontal: 20,
+    scrollView: {
+        marginHorizontal: 200,
+        marginVertical: 20,
+        marginBottom:50,
       },
     resumeContainer: {
       alignItems: 'center',
-      marginHorizontal: 100,
+      paddingHorizontal: 50,
+      paddingBottom:50,
+      borderRadius: 20,
       backgroundColor: '#ffd9da',
     },
     getStartedText: {
-      fontSize: 14,
-      lineHeight: 14,
+      fontSize: 16,
+      lineHeight: 10,
       textAlign: 'right',
     },
   });  

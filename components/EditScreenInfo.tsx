@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 17,
-    lineHeight: 24,
+    lineHeight: 10,
     textAlign: 'center',
   },
   helpContainer: {
