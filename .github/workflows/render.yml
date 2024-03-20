@@ -1,4 +1,4 @@
-name: Render index on branch
+name: Render resume on branch
 
 on:
   push:
@@ -12,19 +12,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Render HTML
+      - name: Render PDF
         uses: baileyjm02/markdown-to-pdf@v1.2.0
         with:
           input_path: ./README.md
-          output_dir: src
-          build_html: true
+          output_dir: assets
+          build_html: false
           build_pdf: true
-          template: src/templates/index.html
           extend_default_theme: true
       - name: Move Files
         run: |
-            cp srcREADME.html src/index.html
-            cp srcREADME.pdf src/index.pdf
+            cp assetsREADME.pdf assets/pdf/resume.pdf
       - name: Commit Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,7 +32,7 @@ jobs:
           git stash
           git pull origin ${{ github.base_ref || github.ref_name }}
           git stash apply
-          git add src/
-          git commit -m "Generated update to index.html and index.pdf"
+          git add assets/
+          git commit -m "Generated update to index.pdf"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin HEAD:${{ github.base_ref || github.ref_name }}
