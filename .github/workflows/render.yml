@@ -1,4 +1,4 @@
-name: Render index on branch
+name: Render resume on branch
 
 on:
   push:
@@ -16,13 +16,13 @@ jobs:
         uses: baileyjm02/markdown-to-pdf@v1.2.0
         with:
           input_path: ./README.md
-          output_dir: src
+          output_dir: assets
           build_html: false
           build_pdf: true
           extend_default_theme: true
       - name: Move Files
         run: |
-            cp srcREADME.pdf assets/pdf/resume.pdf
+            cp assetsREADME.pdf assets/pdf/resume.pdf
       - name: Commit Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
