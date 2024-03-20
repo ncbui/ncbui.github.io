@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="src/styles/index.css" />
-		<title>Cam Bui</title>
-	</head>
-	<body>
-		<main>
-			<div class="mainview">	
-				<h1 id="cam-bui" tabindex="-1"><a class="anchor" href="#cam-bui" aria-hidden="true"><span class="octicon octicon-link"></span></a> <strong>Cam Bui</strong></h1>
+import React from 'react';
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
+import { View } from './Themed';
+import { MarkdownView } from 'react-native-markdown-view'
+
+
+export default function ResumeView() {
+    return (
+         <SafeAreaView style={styles.container}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                <View style={styles.resumeContainer}>
+                    <MarkdownView style={styles.getStartedText}>
+						<h1 id="cam-bui" tabindex="-1"><a class="anchor" href="#cam-bui" aria-hidden="true"><span class="octicon octicon-link"></span></a> <strong>Cam Bui</strong></h1>
 <p><a href="https://www.linkedin.com/in/cambui/">linkedin: cambui/</a>    |   <a href="https://github.com/ncbui">gh: ncbui</a>   | Full stack software dev, devOps, dataOps  |   Looking for fully remote roles</p>
 <h2 id="experience" tabindex="-1"><a class="anchor" href="#experience" aria-hidden="true"><span class="octicon octicon-link"></span></a> Experience</h2>
 <p><strong>Consultant Software Developer</strong>, Thoughtworks, Inc., United States. 2021 - 2024.</p>
@@ -48,7 +50,35 @@
 </ul>
 <p><strong>BSc, Kinesiology: Neuromuscular Science</strong>; San Francisco State University (San Francisco, CA), 2016.</p>
 
-			</div>
-		</main>
-	</body>
-</html>
+                    </MarkdownView>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+    );
+  }
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: StatusBar.currentHeight,
+      },
+    scrollView: {
+        marginHorizontal: 200,
+        marginVertical: 20,
+        marginBottom:50,
+      },
+    resumeContainer: {
+      alignItems: 'center',
+      paddingHorizontal: 50,
+      paddingBottom:50,
+      borderRadius: 20,
+      backgroundColor: '#ffd9da',
+    },
+    getStartedText: {
+      fontSize: 16,
+      lineHeight: 10,
+      textAlign: 'right',
+    },
+  });  
+  
