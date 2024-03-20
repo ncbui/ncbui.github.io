@@ -32,7 +32,7 @@ jobs:
           git stash
           git pull origin ${{ github.base_ref || github.ref_name }}
           git stash apply
-          git add src/
-          git commit -m "Generated update to index.html and index.pdf"
+          git add assets/
+          git commit -m "Generated update to index.pdf"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin HEAD:${{ github.base_ref || github.ref_name }}
