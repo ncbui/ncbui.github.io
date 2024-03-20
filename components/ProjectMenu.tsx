@@ -18,12 +18,16 @@ export default function ProjectMenu() {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>
-                <h1>Hello world</h1>
+                <h1>portfolio pipeline</h1>
             </Text>
+            <ExternalLink
+                href='https://github.com/ncbui/ncbui.github.io/tree/main/.github/workflows' >
+                  <Text style={styles.linkStyle}><h3>github workflows</h3></Text>
+            </ExternalLink>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>back to projects</Text>
             </Pressable>
           </View>
         </View>
@@ -31,16 +35,9 @@ export default function ProjectMenu() {
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Portfolio Pipeline</Text>
       </Pressable>
-      <ExternalLink
-          href='https://github.com/ncbui/ncbui.github.io' >
-        <Pressable
-            style={[styles.button, styles.buttonOpen]}
-            onPress={() => setModalVisible(true)}>
-            <Text style={styles.textStyle}>Portfolio Pipeline</Text>
-        </Pressable>
-    </ExternalLink>
+      
     </View>
   );
 };
@@ -53,10 +50,10 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    margin: 20,
+    // margin: 10,
     backgroundColor: '#ffd9da',
     borderRadius: 20,
-    padding: 35,
+    padding: 25,
     width: 600,
     alignItems: 'center',
     shadowColor: '#000',
@@ -86,6 +83,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     textAlign: 'center',
+  },
+  linkStyle: {
+    color: '#B84A62',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   modalText: {
     marginBottom: 15,
