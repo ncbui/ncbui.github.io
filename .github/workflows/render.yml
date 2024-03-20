@@ -12,18 +12,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Render HTML
+      - name: Render PDF
         uses: baileyjm02/markdown-to-pdf@v1.2.0
         with:
           input_path: ./README.md
           output_dir: src
-          build_html: true
+          build_html: false
           build_pdf: true
-          template: src/templates/ResumeView.tsx
           extend_default_theme: true
       - name: Move Files
         run: |
-            cp srcREADME.html src/index.html
             cp srcREADME.pdf assets/pdf/resume.pdf
       - name: Commit Changes
         env:
