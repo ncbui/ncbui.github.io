@@ -3,6 +3,8 @@ import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
 import { View } from './Themed';
 import { MarkdownView } from 'react-native-markdown-view'
 
+// var resume = require('@/assets/resume.json');
+
 
 const about = `
 **Cam Bui**
@@ -31,6 +33,7 @@ Experience
 **Graduate Researcher**, Action & Consciousness Lab, San Francisco State University. 2016 - 2018.
 
 * Conducted behavioral experiments about experiences of unintended and automatic syntactic processing.
+* Bui, N. C. T., Ghafur, R. D., Yankulova, J. K., & Morsella, E. (2023). Stimulus-elicited involuntary insights and syntactic processing. Psychology of Consciousness: Theory, Research, and Practice, 10(2), 115–133. https://doi.org/10.1037/cns0000208
 
 **Health Policy Intern**, Health Promotion & Wellness unit, San Francisco State University. 2016 - 2017.
 
@@ -47,19 +50,18 @@ Technical Stack
 
 `
 
-const educerts = `Certifications
---------------------
-
-* AWS Cloud Practitioner
-
-Education
+const educerts = `
+Education & Certifications
 ---------
 
 **Graduate coursework, Social, Personality, and Affective Psychology**; San Francisco State University (San Francisco, CA), 2016-2019.
 
-* Bui, N. C. T., Ghafur, R. D., Yankulova, J. K., & Morsella, E. (2023). Stimulus-elicited involuntary insights and syntactic processing. Psychology of Consciousness: Theory, Research, and Practice, 10(2), 115–133. https://doi.org/10.1037/cns0000208
-
 **BSc, Kinesiology: Neuromuscular Science**; San Francisco State University (San Francisco, CA), 2016.
+
+Certifications
+--------------------
+
+* AWS Cloud Practitioner
 
 `;
 
