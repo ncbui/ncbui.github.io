@@ -1,14 +1,15 @@
+import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-import React from 'react';
+import ProjectMenu from '@/components/ProjectMenu';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}><h1>Projects</h1></Text>
+      <ProjectMenu />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
   );
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#ECA400',
   },
   separator: {
     marginVertical: 30,

@@ -10,7 +10,7 @@ export default function ResumeView() {
             <ScrollView contentContainerStyle={styles.scrollView}>
                 <View style={styles.resumeContainer}>
                     <MarkdownView style={styles.getStartedText}>
-						{{{content}}}
+						          {{{content}}}
                     </MarkdownView>
                 </View>
             </ScrollView>

@@ -8,7 +8,7 @@ const about = `
 **Cam Bui**
 ============
 
-[linkedin: cambui/](https://www.linkedin.com/in/cambui/) | [gh: ncbui](https://github.com/ncbui) | Full stack software dev, devOps, dataOps | Looking for fully remote roles
+[linkedin: cambui](https://www.linkedin.com/in/cambui) | [gh: ncbui](https://github.com/ncbui) | Full stack software dev, devOps, dataOps | Looking for fully remote roles
 
 `
 
