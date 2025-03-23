@@ -4,7 +4,7 @@ import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from './theme';
+import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from '../template/theme';
 import { createCertData, createEduData, createWorkData } from '../template/common';
 
 const options = {
@@ -15,7 +15,8 @@ const options = {
   };
 
 const getTargetElement = () => document.getElementById('container');
-const downloadPdf = () => generatePDF(getTargetElement, options);
+const buildPdf = () => generatePDF(getTargetElement, options);
+const downloadPdf = () => window.open("./static/resume.pdf")
 
 
 export default function Resume() {
@@ -97,6 +98,7 @@ export default function Resume() {
   return (
     <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', }} >
       <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
+      <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
        <ResumeContainer id='container' component={Paper}>
         <Table sx={{ minWidth: 650 }} size="medium" aria-label="a dense table">
           <TableHead>

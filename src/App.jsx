@@ -6,7 +6,7 @@ import ErrorPage from './pages/ErrorPage';
 import NavMenu from './components/NavMenu';
 import About from './pages/About';
 import Work from './pages/Work';
-import Resume from './template/Resume';
+import Resume from './pages/Resume';
 import Art from './pages/Art';
 
 export default function App() {

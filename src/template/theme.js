@@ -337,8 +337,7 @@ export const ResumeFab = styled(Fab)(( ) => ({
     boxShadow: 'none',
   },
   '&:disabled': {
-    borderColor: theme.palette.text,
-    color: theme.palette.text,
+    display: 'none',
   },
 }))
 
