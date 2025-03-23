@@ -4,7 +4,7 @@ import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutl
 import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
 import { useTheme } from '@mui/styles';
 import * as resume from '../../resume.json'
-import { makeButtons } from '../template/common';
+import { makeButtons } from '../common/resume';
 
 export default function WorkExperience () { 
     const theme = useTheme()
