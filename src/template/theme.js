@@ -223,7 +223,7 @@ export const NavSocials=styled(ListSubheader)(( ) => ({
   display: 'flex',  
   flexDirection: 'row',
   width:'20vw',
-  '@media (max-width: 780px)' : {width:'20vw',m:0, flexDirection: 'row'}
+  '@media (max-width: 780px)' : {width:'30vw',m:0, flexDirection: 'row'}
 }));
 export const WorkRow = styled(TableRow)(( ) => ({ 
   p:0, 
