@@ -38,6 +38,6 @@ export const createMain=(work)=>{
             return(<ListItem key={`work-${i}`} sx={{padding:'.1rem', lineHeight:'50%'}}> <ResumeType level='body-sm' lineHeight={1}><KeyboardArrowRightIcon sx={{fontSize:'small'}}/>{h}</ResumeType></ListItem>)
           }) }
         </List>
-        { work.tools ? <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType> : '' }
+        { work.name.includes("Sabbatical") ? '' : <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType> }
     </Box>)
 }
