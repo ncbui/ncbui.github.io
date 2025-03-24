@@ -1,6 +1,7 @@
 import {  theme, BootstrapButton } from "../../template/theme";
 import { Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
+import FoodSources from "./Food";
 import NPC from "./NPC";
     
 const drawCanvas = ( canvas) => {
@@ -15,27 +16,33 @@ export default function Canvas() {
     const [shouldStart, setShouldStart] = useState(false)
     const [frameCounter, setFrameCounter] = useState(0)
     const [snake, setSnake] = useState(new NPC())
+    const [food, setFood] = useState(new FoodSources())
     // output graphics, re-renders when update changes
     useEffect(() => {
         const canvas = canvasRef.current
         const {width,height} = canvas
         const context = canvas.getContext('2d')
 
+        
         if (shouldStart){
+            food.refillFood(width,height,setFood)
+            console.log("shouldStart food", food)
             drawCanvas(canvas)
             snake.move(width,height)
             if (snake.outOfBounds(width,height)){
                 console.log("game over")
                 snake.draw(context)
                 setSnake(new NPC())
+                setFood(new FoodSources())
                 setShouldStart(false)
                 return () => {}}
+            food.draw(context)
             snake.draw(context)
             context.restore()
         }
         return () => {
         }
-    }, [frameCounter, snake, shouldStart])
+    }, [frameCounter, snake, shouldStart, food])
 
     // update the counter
     useLayoutEffect(() => {
@@ -51,7 +58,7 @@ export default function Canvas() {
     }, [shouldStart])
     
     return (
-        <Container sx={{marginTop: 0, p:0, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center', width:'25rem', height: '25rem'}}>
+        <Container sx={{marginTop: 0, p:0, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center', width:'30rem', height: '25rem'}}>
         <BootstrapButton id="startButton" onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}}> 
             { shouldStart? 'Stop' : 'Start'}
         </BootstrapButton>
