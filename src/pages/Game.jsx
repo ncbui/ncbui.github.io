@@ -1,4 +1,5 @@
 // import { SnakeCanvas } from "./snakeCanvas";
+import Canvas from "../components/Game/canvas";
 import { theme, BodySheets, NavTitleText, Subtitle } from "../template/theme";
 
 export default function Game () { 
@@ -16,6 +17,7 @@ export default function Game () {
         <Subtitle sx={{maxWidth:'22rem', margin: '1rem'}}>
         Use the arrow keys to guide your snake to food. Eat well. Live long and prosper.
         </Subtitle>
+        <Canvas/>
         </BodySheets>
     )
 }
