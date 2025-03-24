@@ -4,7 +4,7 @@ import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from '../template/theme';
+import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
 import { createCertData, createEduData, createWorkData } from '../common/resume';
 
 const options = {
@@ -78,9 +78,9 @@ export default function Resume() {
                 <NavTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
                   Fullstack Devops Engineer
                 </NavTitleText>
-                <NavSubtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
+                <Subtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
                   Experienced software engineer with expertise in GitOps and full-stack development. 
-                </NavSubtitle>
+                </Subtitle>
               </NavTitleText>
               </Box>
             </TableCell>

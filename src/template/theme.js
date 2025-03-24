@@ -354,3 +354,11 @@ export const ResumeButton = styled(Typography)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
 }}))
+export const Subtitle=styled(ListItem)(( ) => ({
+  color: theme.palette.text,
+  fontFamily: 'Hind, sans-serif', 
+  fontWeight: '600', 
+  marginBottom: '1rem',
+  lineHeight: 1,
+  '@media (max-width: 780px)' : {}
+}));
