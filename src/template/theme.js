@@ -1,4 +1,4 @@
-import { createTheme, Fab, TableCell, TableRow } from '@mui/material';
+import { createTheme, TableCell, TableRow } from '@mui/material';
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 
@@ -106,16 +106,19 @@ export const global = {
             },
           }
 export const BootstrapButton = styled(Button)(( ) => ({
-  backgroundColor: theme.palette.shiny,
-  color: theme.palette.dark1,
-  fontFamily: 'Hind, sans-serif',
-  fontWeight: '700',
-  fontSize: '80%',
   textTransform: 'none',
+  fontSize: '80%',
   marginRight: '.2rem',
   marginBottom: '.3rem',
-  padding: '1px 6px',
-  borderRadius: '.2rem',
+  padding: '3px 10px',
+  border: '1px solid',
+  borderRadius: '1rem',
+  backgroundColor: theme.palette.shiny,
+  borderColor: theme.palette.shiny,
+  color: theme.palette.dark1,
+  fontWeight: '700',
+  fontFamily: 'Hind',
+  lineHeight: 1,
   '&:hover': {
     backgroundColor: theme.palette.light2,
     borderColor: theme.palette.light2,
@@ -223,7 +226,7 @@ export const NavSocials=styled(ListSubheader)(( ) => ({
   display: 'flex',  
   flexDirection: 'row',
   width:'20vw',
-  '@media (max-width: 780px)' : {width:'30vw',m:0, flexDirection: 'row'}
+  '@media (max-width: 780px)' : {width:'20vw',m:0, flexDirection: 'row'}
 }));
 export const WorkRow = styled(TableRow)(( ) => ({ 
   p:0, 
@@ -238,7 +241,6 @@ export const WorkRow = styled(TableRow)(( ) => ({
     maxWidth: '90vw'
   }
 }));
-
 export const WorkDateCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
   alignItems: 'left',
@@ -261,6 +263,7 @@ export const WorkBodyCell = styled(TableCell)(( ) => ({
   borderBottom: 0, 
   '@media (max-width: 786px)': {} 
   }));
+
 export const WorkPosition = styled(Typography)(( ) => ({
   fontSize:'1rem',
   fontWeight: '800',
@@ -284,71 +287,5 @@ export const HeaderCell = styled(TableCell)(( ) => ({
   borderColor:theme.palette.bright,  
   fontWeight:'400',
   borderBottom: 0,
+
 }));
-export const ResumeContainer = styled(Container)(( ) => ({
-  color:theme.palette.dark1, 
-  backgroundColor:'white',
-}))
-export const ResumeRow = styled(TableRow)(( ) => ({ 
-  border: '1px solid blue',
-  whiteSpace: 'normal',
-  wordWrap: 'break-word',
-  '@media (max-width: 780px)' : {
-    flexDirection: 'col',
-    maxWidth: '100vw'
-  }
-}));
-export const ResumeCell = styled(TableCell)(( ) => ({ 
-  verticalAlign: 'top', 
-  alignItems: 'left',
-  borderRight: '5px dotted', 
-  borderColor: theme.palette.bright, 
-  borderTop: 0,
-  borderBottom: 0,
-  fontSize:1, 
-  fontWeight: 'bold',
-  width:'',
-  color: theme.palette.dark1,
-  '@media (max-width: 780px)' : {
-  }
-  }));
-
-export const ResumeFab = styled(Fab)(( ) => ({
-  marginLeft: '1rem',
-  backgroundColor: theme.palette.shiny,
-  borderColor: theme.palette.shiny,
-  color: theme.palette.dark1,
-  fontWeight: '700',
-  fontFamily: 'Hind',
-  lineHeight: 1,
-  '&:hover': {
-    backgroundColor: theme.palette.light2,
-    borderColor: theme.palette.light2,
-  },
-  '&:active': {
-    boxShadow: 'none',
-  },
-  '&:disabled': {
-    display: 'none'
-  },
-}))
-
-export const ResumeType = styled(Typography)(( ) => ({
-  fontFamily: 'Hind, sans-serif',
-  color: theme.palette.dark1,
-}))
-
-export const ResumeButton = styled(Typography)(( ) => ({
-  fontFamily: 'Hind, sans-serif',
-  fontWeight: 'bold',
-  textTransform: 'none',
-  fontSize: '80%',
-  marginRight: '.2rem',
-  marginBottom: '.5rem',
-  padding: '1px 5px',
-  border: '1px solid',
-  borderRadius: '.3rem',
-  '&:disabled': {
-    borderColor: theme.palette.text,
-    color: theme.palette.text,
-}}))

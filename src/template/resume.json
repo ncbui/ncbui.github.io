@@ -5,8 +5,8 @@
     "image": "",
     "email": "bui.cam@proton.me",
     "phone": "",
-    "url": "https://ncbui.github.io/",
-    "summary": "Experienced software engineer with expertise in GitOps, cloud platforms, and full-stack development. Let's talk about clearing developer friction to make room for communication and collaboration.",
+    "url": "ncbui.github.com",
+    "summary": "Experienced software engineer with expertise in DevOps, cloud platforms, and full-stack development. Let's talk about clearing developer friction to make room for communication and collaboration.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -19,7 +19,7 @@
       "username": "ncbui",
       "url": "https://github.com/ncbui"},
       {"network": "linkedin",
-      "username": "cambui",
+      "username": "ncbui",
       "url": "https://www.linkedin.com/in/cambui/"}
       ]},
     "work": [
@@ -30,7 +30,7 @@
         "startDate": "2024",
         "endDate": "2025",
         "summary": "",
-        "tools": [ "clay", "canvas", "paint", "sculpture", "qigong"],
+        "tools": [ "clay", "canvas", "oil paint", "acrylic paint", "sculpture", "qigong"],
         "highlights": [
         ]},
       {
@@ -40,11 +40,14 @@
         "startDate": "2021",
         "endDate": "2024",
         "summary": "Build and maintain data pipelines and platforms, across frontend, backend, and cloud infrastructure. Worked closely with cross-functional teams to enable scientists, healthcare providers, operations specialists, and more to build tools to understand their data.",
-        "tools": ["Python", "ReactJS", "Kubernetes", "ArgoCD", "PySpark",  "PostgreSQL", "Snyk", "Aqua"],
+        "tools": ["Kubernetes", "ArgoCD", "PySpark", "React", "Python", "PostgreSQL", "Azure"],
         "highlights": [
-            "Developed automation code to configure and build robust CI/CD pipelines into test and production environments",
-            "Optimize developer starter kits to reduce time to first feature deployment for emergent teams and features",
-            "Increase deployment frequency and reduced time to deployment by standardizing exception handling and error monitoring, strategically implementing security and compliance checks, and enabling developers to deploy test resources into distributed environments using ArgoCD."
+            "Collaborated with product, UX, developer, and stakeholder teams to design, deploy, and maintain distributed data pipelines with Javascript, React, Python, PostgreSQL, AWS, Azure stacks to add new capabilities to existing platforms. ",
+            "automating security and compliance checks with automated testing as part of the CI/CD pipelines, ",
+            "configuring and maintaining Argo CD to enable GitOps-managed test resources", 
+            "and standardizing exception handling and error monitoring practices",
+            "Advocated for devops and platform engineering best practices to enable developers to self-ship safe code faster by automating security and compliance check as part of the CI/CD pipelines, configuring and maintaining Argo CD to enable GitOps-managed test resources, and standardizing exception handling and error monitoring practices.",
+            "Presented relatable software & engineering concepts at lunch'n'learn series to teams of various expertises."
         ]},
         {
         "position": "Data Entry ",
@@ -53,17 +56,17 @@
         "startDate": "2018",
         "endDate": "2020",
         "summary": "Processed patient health records and streamline data quality checks.",
-        "tools": ["EMR", "Salesforce", "Tableau"],
+        "tools": ["EMR", "Salesforce", "RedShift"],
         "highlights": ["Streamlined data quality checks by building reports that cross reference databases during launch of newly-acquired products."]
         },
         {
         "position": "Graduate Researcher",
-        "name": "Action & Consciousness Lab at SFSU",
+        "name": "Action & Consciousness Lab, San Francisco State University",
         "url": "https://faculty.sfsu.edu/~morsella/content/action-and-consciousness-laboratory",
         "startDate": "2016",
         "endDate": "2019",
         "summary": "Proposed, conducted, and analyzed behavioral experiments on automatic visual and syntactic processing.",
-        "tools": ["R", "statistical analysis"],
+        "tools": ["R"],
         "highlights": [
           "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208."]
         },
@@ -94,9 +97,9 @@
       "institution": "San Francisco State University",
       "url": "https://psychology.sfsu.edu/social-personality-and-affective-science-psychology-graduate-program",
       "area": "Social, Personality, and Affective Psychology",
-      "studyType": "Graduate coursework towards MA",
+      "studyType": "graduate coursework towards MA",
       "startDate": "2016",
-      "endDate": "2019",
+      "endDate": "2016-2019",
       "score": "",
       "courses": [""]
       },
@@ -105,7 +108,7 @@
       "url": "http://kin.sfsu.edu/undergraduate-programs#tab-content-tab-455-1",
       "area": "Kinesiology, concentration in Neuromuscular Science",
       "studyType": "BSc",
-      "startDate": "",
+      "startDate": "2013",
       "endDate": "2016",
       "score": "",
       "courses": [""]
@@ -170,23 +173,22 @@
     "name": "Painting",
     "keywords": [
       "Portraits",
-      "Oil",
-      "Acrylic"
+      "Oil painting"
     ]
   }],
   "references": [{
-    "name": "",
-    "reference": ""
+    "name": "Jane Doe",
+    "reference": "Reference…"
   }],
   "projects": [{
-    "name": "",
-    "startDate": "",
-    "endDate": "",
-    "description": "",
+    "name": "Project",
+    "startDate": "2019-01-01",
+    "endDate": "2021-01-01",
+    "description": "Description...",
     "tools": [],
     "highlights": [
-      ""
+      "Won award at AIHacks 2016"
     ],
-    "url": ""
+    "url": "https://project.com/"
   }]
 }
