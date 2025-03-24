@@ -314,7 +314,8 @@ export const ResumeCell = styled(TableCell)(( ) => ({
   }));
 
 export const ResumeFab = styled(Fab)(( ) => ({
-  marginLeft: '1rem',
+  position: 'fixed',
+  bottom: '5%',
   backgroundColor: theme.palette.shiny,
   borderColor: theme.palette.shiny,
   color: theme.palette.dark1,
