@@ -15,12 +15,12 @@
       "region": "California"
     },
     "profiles": [
-      {"network": "github",
-      "username": "ncbui",
-      "url": "https://github.com/ncbui"},
       {"network": "linkedin",
       "username": "cambui",
-      "url": "https://www.linkedin.com/in/cambui/"}
+      "url": "https://www.linkedin.com/in/cambui/"},
+      {"network": "github",
+      "username": "ncbui",
+      "url": "https://github.com/ncbui"}
       ]},
     "work": [
       {
