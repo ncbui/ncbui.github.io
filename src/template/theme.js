@@ -287,20 +287,15 @@ export const HeaderCell = styled(TableCell)(( ) => ({
 }));
 export const ResumeContainer = styled(Container)(( ) => ({
   color:theme.palette.dark1, 
-  // border:'1px solid grey',
   backgroundColor:'white',
-  // paddingBottom: '4rem',
 }))
 export const ResumeRow = styled(TableRow)(( ) => ({ 
   border: '1px solid blue',
-  // p:0, 
-  // m:0,   
-  // lineHeight: 1,
   whiteSpace: 'normal',
   wordWrap: 'break-word',
   '@media (max-width: 780px)' : {
     flexDirection: 'col',
-    maxWidth: '90vw'
+    maxWidth: '100vw'
   }
 }));
 export const ResumeCell = styled(TableCell)(( ) => ({ 
