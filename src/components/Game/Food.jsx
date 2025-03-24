@@ -8,12 +8,16 @@ import Point from "./Point";
 export default class FoodSources {
     constructor() {
         this.sources = [];
-        this.num = 4;
+        this.num = 8;
     }
     refillFood(width,height) {
         while (this.sources.length < this.num ){
             this.sources.push(Point.newRandom(width,height, 'green'))
         }
+        return this
+    }
+    resetFood(width,height) {
+        this.sources = this.sources.map(() => Point.newRandom(width,height, 'green'))
         return this
     }
     draw(ctx){

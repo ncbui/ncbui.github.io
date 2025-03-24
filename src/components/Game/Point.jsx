@@ -31,6 +31,6 @@ export default class Point {
     /** Make a point at a random x,y and return it. */
     static newRandom(width,height, color=this.color) {
         const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
-        return new Point({x: randRange(0, width), y: randRange(0, height)},color);
+        return new Point({x: randRange(10, width), y: randRange(10, height)},color);
     }
 }

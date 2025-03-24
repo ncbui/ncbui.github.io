@@ -15,7 +15,7 @@ export default function Game () {
             Built with React, Vite, HTML Canvas, and requestAnimationFrame.
             </NavTitleText>
         <Subtitle sx={{maxWidth:'22rem', margin: '1rem'}}>
-        Use the arrow keys to guide your snake to food. Eat well. Live long and prosper.
+        Start game to start anaconda wandering. Press the reset button to feed your friend food. Eat well. Live long and prosper.
         </Subtitle>
         <Canvas/>
         </BodySheets>

@@ -11,6 +11,9 @@ const drawCanvas = ( canvas) => {
     ctx.clearRect(0, 0, width, height)
 }
 
+const width='350';
+const height='300'
+
 
 export default function Canvas() { 
     const canvasRef = useRef()     // get canvas
@@ -62,8 +65,11 @@ export default function Canvas() {
         <BootstrapButton id="startButton" onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}}> 
             { shouldStart? 'Stop' : 'Start'}
         </BootstrapButton>
+        <BootstrapButton id="foodButton" onClick={() => setFood(food.resetFood(width, height))}> 
+            Reset Food
+        </BootstrapButton>
         <Sheet sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem',display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center'}}>
-        <canvas id="snakeboard" ref={canvasRef} width='350px' height='300px' style={{}}/>
+        <canvas id="snakeboard" ref={canvasRef} width={width} height={height} style={{}}/>
         </Sheet>
         </Container>
     )
