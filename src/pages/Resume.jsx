@@ -4,7 +4,7 @@ import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
+import { HeaderCell, NavName, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
 import { createCertData, createEduData, createWorkData } from '../common/resume';
 
 const options = {
