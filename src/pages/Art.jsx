@@ -18,6 +18,7 @@ export default function Art() {
             src={`${item.img}?w=248&fit=crop&auto=format`}
             alt={item.title}
             loading="lazy"
+            style={{borderRadius: '.3rem',}}
           />
           <ImageListItemBar
             title={item.title}
@@ -33,7 +34,7 @@ export default function Art() {
 const itemData = [
   {
     img: './static/images/drawing2025.png',
-    title: 'Still from EEAAO',
+    title: 'Still, EEAAO',
     media: 'Summer 2024. Pencil on paper',
     rows: 2,
     cols: 2,
@@ -41,7 +42,7 @@ const itemData = [
   },
   {
     img: './static/images/sculpture2025.jpeg',
-    title: 'Bust of live model',
+    title: 'Bust, live model',
     media: 'Fall 2024. Red clay on wooden armiture.',
     rows: 2,
     cols: 2,
@@ -49,7 +50,7 @@ const itemData = [
   },
   {
     img: './static/images/painting2025.jpg',
-    title: 'Portrait of live model',
+    title: 'Portrait, live model',
     media: 'Winter 2024. Oil on canvas.',
     rows: 2,
     cols: 2,

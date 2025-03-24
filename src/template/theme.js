@@ -320,6 +320,7 @@ export const ResumeFab = styled(Fab)(( ) => ({
   color: theme.palette.dark1,
   fontWeight: '700',
   fontFamily: 'Hind',
+  borderRadius: '.3rem',
   lineHeight: 1,
   '&:hover': {
     backgroundColor: theme.palette.light2,
