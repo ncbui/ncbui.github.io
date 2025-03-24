@@ -1,13 +1,13 @@
 import Point from "./Point";
 /** Anaconda. Central actor in game: moves, eats pellets, and grows.
  *
- * @param snake - an array of Points in the snake
- * @param direction - direction snake is currently moving in: right, left, up, down
+ * @param conda - an array of Points in the Anaconda
+ * @param direction - direction conda is currently moving in: right, left, up, down
  *
  **/
 export default class Anaconda {
     constructor() {
-        this.snake = Anaconda.defaultAnaconda(); // list of Points() in snake body
+        this.conda = Anaconda.defaultAnaconda(); // list of Points() in conda body
         this.direction = "down"; // direction of travel
       }
 
@@ -23,19 +23,19 @@ export default class Anaconda {
     }
       
     head() {
-    return this.snake[0];
+    return this.conda[0];
     }
 
     draw(ctx){
-        this.snake.forEach((p) =>{
+        this.conda.forEach((p) =>{
             p.draw(ctx)})
     }
 
     move(){
         let newHead;
         newHead = this._calculateNewHead()
-        this.snake.unshift(newHead);
-        this.snake.pop();
+        this.conda.unshift(newHead);
+        this.conda.pop();
     }
 
     outOfBounds(width, height){

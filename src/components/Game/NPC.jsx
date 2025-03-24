@@ -4,7 +4,7 @@ import Point from "./Point";
 export default class NPC extends Anaconda {
     constructor(props){
         super(props)
-        this.snake = NPC.defaultNPC();
+        this.conda = NPC.defaultNPC();
         this.direction = "right";
     }
 
@@ -26,8 +26,8 @@ export default class NPC extends Anaconda {
             this.changeRandomDir()
             newHead = this._calculateNewHead()
         }
-        this.snake.unshift(newHead);
-        this.snake.pop();
+        this.conda.unshift(newHead);
+        this.conda.pop();
     }
 
   changeRandomDir(dir = this.direction) {
