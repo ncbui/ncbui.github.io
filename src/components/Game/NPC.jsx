@@ -20,7 +20,7 @@ export default class NPC extends Anaconda {
     move(food, setFood, width, height){
         let newHead;
         newHead = this._calculateNewHead()
-        while (newHead.isOutOfBound(width, height) || this.eatsSelf(newHead)){ 
+        while (newHead.isOutOfBound(width, height) || this.contains(newHead)){ 
             this.changeRandomDir()
             newHead = this._calculateNewHead()
         }
@@ -42,8 +42,5 @@ export default class NPC extends Anaconda {
     let pellet = food.sources.filter(source => source.x === newHead.x && source.y === newHead.y)
     return pellet
   }
-  /** Returns true if newHead matches with conda parts */
-  eatsSelf(newHead){
-    return this.conda.some(me => newHead.x === me.x && newHead.y === me.y);
-  }
+  
 }

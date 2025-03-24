@@ -37,11 +37,21 @@ export default class Anaconda {
         this.conda.unshift(newHead);
         this.conda.pop();
     }
+    /** Returns true if point matches with conda parts */
+    contains(point){
+        return this.conda.some(part => part.x === point.x && part.y === point.y);
+    }
+    /** Returns true if point matches with conda parts */
+    checkEatSelf(){
+        let head=this.head()
+        let body=this.conda.slice(1)
+        return body.some(part => part.x === head.x && part.y === head.y);
+    }
     checkOutOfBounds(width, height){
         return this.head().isOutOfBound(width, height)
     }
     gameOver(width,height){
-        return this.checkOutOfBounds(width, height)
+        return this.checkOutOfBounds(width, height) || this.checkEatSelf()
     }
     _calculateNewHead(currentHead = this.head()) {
     let newHead;
