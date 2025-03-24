@@ -29,8 +29,9 @@ export default class NPC extends Anaconda {
         if (willEat.length){
             food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
             setFood(food)
+        } else {
+            this.conda.pop() 
         }
-        this.conda.pop() 
     }
   changeRandomDir(dir = this.direction) {
     if (dir === "up" || dir === "down") Math.random() > .5 ? this.direction = "left" : this.direction = "right";
