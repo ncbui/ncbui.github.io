@@ -85,7 +85,7 @@ export default function Resume() {
               </Box>
             </TableCell>
             <TableCell colSpan={2} sx={{ fontSize:'1.1rem',lineHeight:1, }}>
-              <Box align='right' sx={{marginBottom:'4.7rem', marginRight:'1.2rem', '& a': { color:theme.palette.dark1 }}}>
+              <Box align='right' sx={{marginBottom:'4.3rem', marginRight:'1.2rem', '& a': { color:theme.palette.dark1 }, '@media (max-width: 786px)' : {marginBottom:'1.5rem'}}}>
                 { resume.basics.profiles.map((p) => {
                   return (<Typography key={p.network}><Link to={p.url}>{p.network}: {p.username} </Link><br/></Typography>)})
                   }
