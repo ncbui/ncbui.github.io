@@ -14,7 +14,6 @@ export default class Point {
       this.y = p.y;
       this.color = color
     }
-
     draw(ctx, color=this.color){
         ctx.fillStyle = color;
         // Set the border colour of the snake part
@@ -25,16 +24,13 @@ export default class Point {
         // Draw a border around the point
         ctx.strokeRect(this.x, this.y, 10, 10);
     }
-
     /** Return t/f if this point is outside of the game board coords. */
     isOutOfBound(width,height) {
         return (this.x <= 0 || this.x >= width || this.y <= 0 || this.y >= height);
     }
-
     /** Make a point at a random x,y and return it. */
-
     static newRandom(width,height, color=this.color) {
-        const randRange = (low, hi) => low + Math.floor(((Math.random() * (hi - low))/10))*10;
-        return new Point({x: randRange(1, width), y: randRange(1, height)},color);
+        const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
+        return new Point({x: randRange(0, width), y: randRange(0, height)},color);
     }
 }

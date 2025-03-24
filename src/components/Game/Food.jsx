@@ -10,14 +10,11 @@ export default class FoodSources {
         this.sources = [];
         this.num = 4;
     }
-
-    /** Receives array */
     refillFood(width,height) {
-        while (this.sources.length < 4 ){
-            console.log("this.sources.length < 4", this.sources.length)
+        while (this.sources.length < this.num ){
             this.sources.push(Point.newRandom(width,height, 'green'))
         }
-        return
+        return this
     }
     draw(ctx){
         this.sources.forEach((p) =>{

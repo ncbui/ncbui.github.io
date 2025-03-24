@@ -22,13 +22,11 @@ export default function Canvas() {
         const canvas = canvasRef.current
         const {width,height} = canvas
         const context = canvas.getContext('2d')
-
         
         if (shouldStart){
             food.refillFood(width,height,setFood)
-            console.log("shouldStart food", food)
             drawCanvas(canvas)
-            snake.move(width,height)
+            snake.move(food,setFood,width,height)
             if (snake.outOfBounds(width,height)){
                 console.log("game over")
                 snake.draw(context)

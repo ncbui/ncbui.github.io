@@ -7,7 +7,6 @@ export default class NPC extends Anaconda {
         this.conda = NPC.defaultNPC();
         this.direction = "right";
     }
-
     static defaultNPC() {
             let defaultPoints = [
                 { x: 60, y: 200,},
@@ -18,8 +17,7 @@ export default class NPC extends Anaconda {
             ].map((p)=>new Point(p))
             return defaultPoints
         }
-
-    move(width, height){
+    move(food, setFood, width, height){
         let newHead;
         newHead = this._calculateNewHead()
         while (newHead.isOutOfBound(width, height)){ 
@@ -27,12 +25,19 @@ export default class NPC extends Anaconda {
             newHead = this._calculateNewHead()
         }
         this.conda.unshift(newHead);
-        this.conda.pop();
+        let willEat = this.willEat(food, newHead)
+        if (willEat.length){
+            food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
+            setFood(food)
+        }
+        this.conda.pop() 
     }
-
   changeRandomDir(dir = this.direction) {
     if (dir === "up" || dir === "down") Math.random() > .5 ? this.direction = "left" : this.direction = "right";
     if (dir === "left" || dir === "right") Math.random() > .5 ? this.direction = "down" : this.direction = "up";
   }
-
+  willEat(food, newHead) {
+    let pellet = food.sources.filter(source => source.x === newHead.x && source.y === newHead.y)
+    return pellet
+  }
 }
