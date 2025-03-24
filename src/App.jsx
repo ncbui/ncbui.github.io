@@ -4,8 +4,10 @@ import { ThemeProvider } from '@mui/styles';
 import { theme, global, AppContainer } from './template/theme';
 import ErrorPage from './pages/ErrorPage';
 import NavMenu from './components/NavMenu';
-import Home from './pages/Home';
+import About from './pages/About';
 import Work from './pages/Work';
+import Resume from './pages/Resume';
+import Art from './pages/Art';
 
 export default function App() {
   return (
@@ -15,8 +17,10 @@ export default function App() {
       <AppContainer>
           <NavMenu/>  
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<About />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/art" element={<Art />} />
             <Route element={<ErrorPage />} />
           </Routes>
       </AppContainer>

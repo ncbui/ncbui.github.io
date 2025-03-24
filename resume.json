@@ -1,0 +1,192 @@
+{
+  "basics": {
+    "name": "Cam Bui",
+    "label": "Fullstack Devops Engineer",
+    "image": "",
+    "email": "bui.cam@proton.me",
+    "phone": "",
+    "url": "https://ncbui.github.io/",
+    "summary": "Experienced software engineer with expertise in GitOps, cloud platforms, and full-stack development. Let's talk about clearing developer friction to make room for communication and collaboration.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Oakland/SF Bay Area",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {"network": "github",
+      "username": "ncbui",
+      "url": "https://github.com/ncbui"},
+      {"network": "linkedin",
+      "username": "cambui",
+      "url": "https://www.linkedin.com/in/cambui/"}
+      ]},
+    "work": [
+      {
+        "name": "Family and Wellness Sabbatical",
+        "position": "",
+        "url": "",
+        "startDate": "2024",
+        "endDate": "2025",
+        "summary": "",
+        "tools": [ "clay", "canvas", "paint", "sculpture", "qigong"],
+        "highlights": [
+        ]},
+      {
+        "name": "Thoughtworks, Inc.",
+        "position": "Consultant Software Developer",
+        "url": "https://www.thoughtworks.com",
+        "startDate": "2021",
+        "endDate": "2024",
+        "summary": "Build and maintain data pipelines and platforms, across frontend, backend, and cloud infrastructure. Worked closely with cross-functional teams to enable scientists, healthcare providers, operations specialists, and more to build tools to understand their data.",
+        "tools": ["Python", "ReactJS", "Kubernetes", "ArgoCD", "PySpark",  "PostgreSQL", "Snyk", "Aqua"],
+        "highlights": [
+            "Developed automation code to configure and build robust CI/CD pipelines into test and production environments",
+            "Optimize developer starter kits to reduce time to first feature deployment for emergent teams and features",
+            "Increase deployment frequency and reduced time to deployment by standardizing exception handling and error monitoring, strategically implementing security and compliance checks, and enabling developers to deploy test resources into distributed environments using ArgoCD."
+        ]},
+        {
+        "position": "Data Entry ",
+        "name": "Invitae, Inc.",
+        "url": "https://www.invitae.com",
+        "startDate": "2018",
+        "endDate": "2020",
+        "summary": "Processed patient health records and streamline data quality checks.",
+        "tools": ["EMR", "Salesforce", "Tableau"],
+        "highlights": ["Streamlined data quality checks by building reports that cross reference databases during launch of newly-acquired products."]
+        },
+        {
+        "position": "Graduate Researcher",
+        "name": "Action & Consciousness Lab at SFSU",
+        "url": "https://faculty.sfsu.edu/~morsella/content/action-and-consciousness-laboratory",
+        "startDate": "2016",
+        "endDate": "2019",
+        "summary": "Proposed, conducted, and analyzed behavioral experiments on automatic visual and syntactic processing.",
+        "tools": ["R", "statistical analysis"],
+        "highlights": [
+          "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208."]
+        },
+        {
+        "position": "Health Policy Intern",
+        "name": "HPW, San Francisco State University",
+        "url": "https://wellness.sfsu.edu/",
+        "startDate": "2016",
+        "endDate": "2017",
+        "summary": "Intern in the inaugural cohort of the Health, Promotions, and Wellness unit at SFSU",
+        "tools": ["focus groups","literature review", "semi-structured interviews"],
+        "highlights": [
+          " Conducted focus groups for the newly-built Mashouf Wellness Center (MWC) that found that students on this commuter campus overwhelmingly needed places to rest. In 2024, MWC launched the Zen Den, a free space to nap at SFSU. "]
+        }
+      ],
+  "volunteer": [{
+    "organization": "",
+    "position": "",
+    "url": "",
+    "startDate": "",
+    "endDate": "",
+    "summary": "",
+    "tools": [],
+    "highlights": [""]
+  }],
+  "education": [
+      {
+      "institution": "San Francisco State University",
+      "url": "https://psychology.sfsu.edu/social-personality-and-affective-science-psychology-graduate-program",
+      "area": "Social, Personality, and Affective Psychology",
+      "studyType": "Graduate coursework towards MA",
+      "startDate": "2016",
+      "endDate": "2019",
+      "score": "",
+      "courses": [""]
+      },
+      {
+      "institution": "San Francisco State University",
+      "url": "http://kin.sfsu.edu/undergraduate-programs#tab-content-tab-455-1",
+      "area": "Kinesiology, concentration in Neuromuscular Science",
+      "studyType": "BSc",
+      "startDate": "",
+      "endDate": "2016",
+      "score": "",
+      "courses": [""]
+      }], 
+  "awards": [{
+    "title": "Sally Casanova Scholar",
+    "date": "2018-2019",
+    "awarder": "Sally Casanova Fellowship",
+    "summary": ""
+  }],
+  "certificates": [{
+    "name": "AWS Cloud Practitioner",
+    "date": "2022",
+    "issuer": "AWS",
+    "url": "https://certificate.com"
+  }],
+  "publications": [{
+    "name": "Publication",
+    "publisher": "Company",
+    "releaseDate": "2014-10-01",
+    "url": "https://publication.com",
+    "summary": "Description…"
+  }],
+  "skills": [{
+    "name": "Web Development",
+    "level": "Senior",
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Python",
+      "PostgresSQL",
+      "Pyspark"
+    ]
+  },
+  {
+    "name": "DevOps",
+    "level": "Senior",
+    "keywords": [
+      "Kubernetes",
+      "ArgoCD",
+      "CircleCI",
+      "Azure",
+      "AWS"
+    ]
+  },
+  {
+    "name": "Security",
+    "level": "Beginner",
+    "keywords": [
+      "Snyk",
+      "Aqua"
+    ]
+  }
+],
+  "languages": [{
+    "language": "English",
+    "fluency": "Native speaker"
+  }],
+  "interests": [{
+    "name": "Painting",
+    "keywords": [
+      "Portraits",
+      "Oil",
+      "Acrylic"
+    ]
+  }],
+  "references": [{
+    "name": "",
+    "reference": ""
+  }],
+  "projects": [{
+    "name": "",
+    "startDate": "",
+    "endDate": "",
+    "description": "",
+    "tools": [],
+    "highlights": [
+      ""
+    ],
+    "url": ""
+  }]
+}
