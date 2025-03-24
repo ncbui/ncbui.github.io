@@ -11,6 +11,7 @@ const drawCanvas = ( canvas) => {
     ctx.clearRect(0, 0, width, height)
 }
 
+
 export default function Canvas() { 
     const canvasRef = useRef()     // get canvas
     const [shouldStart, setShouldStart] = useState(false)
@@ -27,7 +28,8 @@ export default function Canvas() {
             food.refillFood(width,height,setFood)
             drawCanvas(canvas)
             snake.move(food,setFood,width,height)
-            if (snake.outOfBounds(width,height)){
+            // if gameend: out of Bounds, hit itself, hit others, game OVER
+            if (snake.gameOver(width,height)){
                 console.log("game over")
                 snake.draw(context)
                 setSnake(new NPC())

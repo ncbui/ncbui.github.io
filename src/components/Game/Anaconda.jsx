@@ -37,11 +37,12 @@ export default class Anaconda {
         this.conda.unshift(newHead);
         this.conda.pop();
     }
-
-    outOfBounds(width, height){
+    checkOutOfBounds(width, height){
         return this.head().isOutOfBound(width, height)
     }
-
+    gameOver(width,height){
+        return this.checkOutOfBounds(width, height)
+    }
     _calculateNewHead(currentHead = this.head()) {
     let newHead;
         if (this.direction == "right") {
