@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Table, TableContainer, TableBody } from '@mui/material';
+import {Table, TableContainer, TableBody} from '@mui/material';
 import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
-import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
+import { BootstrapButton, NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
 import { useTheme } from '@mui/styles';
-import * as resume from '../../resume.json'
-import { makeButtons } from '../common/resume';
+import * as resume from "../template/resume.json"
+import { Typography } from '@mui/joy';
 
 export default function WorkExperience () { 
     const theme = useTheme()
+
     const makeWorkRow=(work)=>{
       return( 
         work.map((w)=>{
@@ -31,6 +32,15 @@ export default function WorkExperience () {
           </WorkRow>
       )}))}
 
+    const makeButtons = ({tools}) =>{
+        return( 
+            <Typography>
+            {tools.map((tool)=>{
+              return (
+              <BootstrapButton key={tool+tool.indexOf()}>{tool}</BootstrapButton>)})}
+            </Typography> 
+        )}
+
     const makeEduRow = (exp) =>{
       return( exp.map((a)=>{
           return (
@@ -51,7 +61,7 @@ export default function WorkExperience () {
       return( cert.map((a)=>{
           return (
           <WorkRow key={a.name} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '10rem'}}>
+              <WorkDateCell sx={{ m:0, padding:0, width: '7rem'}}>
                 <WorkDate> {a.date} </WorkDate>
               </WorkDateCell>
               <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}} >
