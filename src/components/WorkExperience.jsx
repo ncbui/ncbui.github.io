@@ -51,7 +51,7 @@ export default function WorkExperience () {
       return( cert.map((a)=>{
           return (
           <WorkRow key={a.name} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '7rem'}}>
+              <WorkDateCell sx={{ m:0, padding:0, width: '10rem'}}>
                 <WorkDate> {a.date} </WorkDate>
               </WorkDateCell>
               <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}} >

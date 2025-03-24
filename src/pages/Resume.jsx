@@ -70,7 +70,7 @@ export default function Resume() {
         return (
         <TableRow >
             <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem' }}>
+              <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
               <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
                 <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
                   Cam Bui 
@@ -78,8 +78,8 @@ export default function Resume() {
                 <NavTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
                   Fullstack Devops Engineer
                 </NavTitleText>
-                <NavSubtitle sx={{color:theme.palette.dark1, }}>
-                  Experienced software engineer with <br/> expertise in GitOps and full-stack development. 
+                <NavSubtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
+                  Experienced software engineer with expertise in GitOps and full-stack development. 
                 </NavSubtitle>
               </NavTitleText>
               </Box>
@@ -96,11 +96,11 @@ export default function Resume() {
       }
 
   return (
-    <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', }} >
+    <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh' }} >
       <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
       <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
        <ResumeContainer component={Paper}>
-        <Table id='container' sx={{ minWidth: 650 }} size="medium" aria-label="a dense table">
+        <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
           </TableHead>
