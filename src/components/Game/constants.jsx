@@ -6,7 +6,7 @@ export const FPS = 5;
 export const gameOverText = (context) => {
     context.textAlign = 'center'
     context.fillStyle = 'white'
-    context.font = '34px serif'
+    context.font = '34px sans-serif'
     context.fillText('ouch', ((WIDTH * SCALE) / 2), ((HEIGHT * SCALE) / 2 - (2 * SCALE)))
     context.font = '18px serif'
     context.fillText(`caterpillar bit itself in its confusion`, ((WIDTH * SCALE) / 2), ((HEIGHT * SCALE) / 2 + (2 * SCALE)))

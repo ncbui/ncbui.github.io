@@ -1,5 +1,4 @@
 import Point from "./Point";
-import {WIDTH,HEIGHT,SCALE} from './constants'
 /** Food. List of food sources
  *
  * @param food - an array of Points currently growing food

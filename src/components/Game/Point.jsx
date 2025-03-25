@@ -17,11 +17,8 @@ export default class Point {
     }
     draw(ctx, color=this.color){
         ctx.fillStyle = color;
-        // Set the border colour of the snake part
         ctx.strokestyle = color;
-        // Draw a "filled" rectangle to represent the point at the coordinates
         ctx.fillRect(this.x, this.y, 10, 10);
-        // Draw a border around the point
         ctx.strokeRect(this.x, this.y, 10, 10);
     }
     /** Return t/f if this point is outside of the game board coords. */

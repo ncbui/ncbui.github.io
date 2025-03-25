@@ -3,16 +3,14 @@ import Point from "./Point";
 
 export default class NPC extends Caterpillar {
   constructor(props){
-      super(props)
-      this.caterpillar = NPC.defaultNPC();
-      this.direction = "right";
+    super(props)
+    this.caterpillar = NPC.defaultNPC();
+    this.direction = "right";
   }
   static defaultNPC() {
-          let defaultPoints = [
-              { x: 60, y: 200,}
-          ].map((p)=>new Point(p))
-          return defaultPoints
-      }
+    let defaultPoints = [{ x: 60, y: 200,}].map((p)=>new Point(p))
+    return defaultPoints
+    }
   move(food, setFood){
     let newHead;
     let turns=0;
@@ -37,7 +35,6 @@ export default class NPC extends Caterpillar {
     if (dir === "up" || dir === "down") Math.random() > .5 ? this.direction = "left" : this.direction = "right";
     if (dir === "left" || dir === "right") Math.random() > .5 ? this.direction = "down" : this.direction = "up";
   }
-  /**Returns true if newHead matches a source of food */
   willEat(food, newHead) {
     let pellet = food.sources.filter(source => source.x === newHead.x && source.y === newHead.y)
     return pellet
@@ -58,12 +55,7 @@ export default class NPC extends Caterpillar {
     return direction;
   }
   // plan next direction to get closer to nearestSource
-    // if snakeNPC is horizontally aligned with the pellet
-    // check to see how it should move vertically
-    // if snakeNPC is vertically aligned w pellet
-    // check to see how it should more horizontally
-    // else, check the for the smallest bit of the vector
-    // prefer to move in a way that reduces that further
+  // check for horizontal, vertical, then orthogonal alignment to close the gap
   planDirection(head, nearestSource) {
     let direction;
     let vectorToFood = head.vectorTo(nearestSource)

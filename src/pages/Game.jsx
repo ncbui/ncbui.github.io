@@ -8,12 +8,14 @@ export default function Game () {
         <NavTitleText>
             Hungry Hungry Caterpillar 
             </NavTitleText>
-            <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
-            Built with React, Vite, HTML Canvas, and requestAnimationFrame.
-            </NavTitleText>
-        <Subtitle sx={{maxWidth:'80%', margin: '1rem'}}>
-            Start game to hatch a caterpillar. This hungry hatchling is drawn towards food. Help them eat and grow safely.
-            Press the reset food button try to draw the hatchling in a new direction. Eat well. Live long and prosper.
+        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
+        Built with React, requestAnimationFrame, and HTML Canvas
+        </NavTitleText>
+        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
+        Hatch a hungry caterpillar. Eat well. Live long and prosper.
+        </NavTitleText>
+        <Subtitle sx={{width:'30rem', margin: '.5rem 1rem'}}>
+            Press `start` to hatch a caterpillar. This hatchling sometimes gets stuck. Press the reset food button try to draw the hatchling in a new direction. 
         </Subtitle>
         <Canvas/>
         </BodySheets>
