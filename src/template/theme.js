@@ -2,7 +2,7 @@ import { createTheme, Fab, TableCell, TableRow } from '@mui/material';
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 
-export const shades = {
+const shades = {
   primary: {
     100: "rgb(224, 217, 252)",
     200: "rgb(222, 139, 190)",
@@ -17,7 +17,7 @@ export const shades = {
   },
 }
 
-export const style = { 
+const style = { 
   root: {
     height: '100vh',
     overflow: 'hidden',

@@ -15,13 +15,17 @@ export default function NavMenu() {
           </NavName>
         </ListSubheader>
         <ListItem>
-          <NavTitleText level="h4"> Fullstack Devops Engineer </NavTitleText>
+          <NavTitleText level="h5"> Platform DevOps Engineer </NavTitleText>
         </ListItem>
         </List>
-        <NavSubtitle sx={{maxWidth:'16rem'}}>
-            I enable dev teams to customize GitOps best practices for their needs
-        </NavSubtitle>
         <List sx={{ '@media (max-width: 780px)' : {flexDirection: 'row', justifyContent:'start', m:0, p:0}}}>
+        <NavSocials >
+            <Typography sx={{width:'20vw', verticalAlign:'top', '@media (max-width: 780px)': {m:0, flexDirection: 'row'} }}>
+              <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
+              <Link to="https://github.com/ncbui" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
+              <Link to="/art"><PhotoSizeSelectActual sx={{fontSize:'2.5rem', marginLeft:'.2rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
+            </Typography>
+          </NavSocials>
           <List sx={{'@media (max-width: 780px)' : {flexDirection: 'row',}}}>
           <ListItem >
               <Typography level='body-lg'>
@@ -39,13 +43,6 @@ export default function NavMenu() {
             </Typography>
           </ListItem>
           </List>
-          <NavSocials >
-            <Typography sx={{width:'20vw', verticalAlign:'top', '@media (max-width: 780px)': {m:0, flexDirection: 'row'} }}>
-              <Link to="https://github.com/ncbui" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
-              <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
-              <Link to="/art"><PhotoSizeSelectActual sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'2rem'}}}/></Link>
-            </Typography>
-          </NavSocials>
         </List>
       </List>
     </ NavSheets>
