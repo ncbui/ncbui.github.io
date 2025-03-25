@@ -5,7 +5,7 @@ import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
 import { HeaderCell, NavName, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
-import { createCertData, createEduData, createWorkData } from '../common/resume';
+import { createCertData, createEduData, createSkillsData, createWorkData } from '../common/resume';
 
 const options = {
     filename: 'resume.pdf',
@@ -47,6 +47,7 @@ export default function Resume() {
       }
       if(type=='work'){
         return(details.map((w)=>{
+          if (w.name.includes('Sabbatical')) return () => {};
           const { dates, main } = createWorkData(w)
           return(
           <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
@@ -54,7 +55,18 @@ export default function Resume() {
             <TableCell colSpan={4}> {main} </TableCell>  
           </TableRow>)
         }))
-      }}
+      }
+      if(type=='skills'){
+        return(details.map((w)=>{
+          const { dates, main } = createSkillsData(w)
+          return(
+          <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
+            <TableCell colSpan={4}> {main} </TableCell>  
+          </TableRow>)
+        }))
+      }
+    }
     return ( makeRowByType() )
     }
       const makeSectionHeader = (header) => {
@@ -99,12 +111,14 @@ export default function Resume() {
     <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
        <ResumeContainer component={Paper}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
           </TableHead>
           <TableBody>
+          { makeSectionHeader('Skills & Tooling') }
+          { MakeSectionRow('skills', resume.skills) }
           { makeSectionHeader('Work') }
           { MakeSectionRow('work', resume.work) }
           { makeSectionHeader('Certificates') }
