@@ -11,13 +11,13 @@ export default function Game () {
         <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
         Built with React, requestAnimationFrame, and HTML Canvas
         </NavTitleText>
-        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
-        Hatch a hungry caterpillar. Eat well. Live long and prosper.
-        </NavTitleText>
         <Subtitle sx={{width:'30rem', margin: '.5rem 1rem'}}>
-            Press `start` to hatch a caterpillar. This hatchling sometimes gets stuck. Press the reset food button try to draw the hatchling in a new direction. 
+            Press `start` to hatch a hungry caterpillar. Press the reset food button try to draw the hatchling in a new direction. 
         </Subtitle>
         <Canvas/>
+        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', margin:'1rem', color: theme.palette.header}}>
+            Eat well. Live long and prosper.
+        </NavTitleText>
         </BodySheets>
     )
 }

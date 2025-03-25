@@ -371,8 +371,7 @@ export const GameButton=styled(Button)(( ) => ({
   fontWeight: '700',
   fontSize: '80%',
   textTransform: 'none',
-  marginRight: '.2rem',
-  marginBottom: '.3rem',
+  margin: '0 .2rem 0 0',
   padding: '1px 6px',
   borderRadius: '.2rem',
   '&:hover': {

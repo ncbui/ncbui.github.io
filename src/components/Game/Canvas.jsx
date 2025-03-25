@@ -52,8 +52,8 @@ export default function Canvas() {
     }, [shouldStart])
     
     return (
-        <Card sx={{background:'inherit', border:0, marginTop: 0, p:0, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center', width:'100%', height: '100%'}}>
-            <Box sx={{background:'inherit', display:'flex', flexDirection:'row', border: 0, padding: 0, margin: 0}}>
+        <Card sx={{border: 0, background:'inherit',  margin: '0 1rem', p:0, display:'flex', flexDirection: 'column'}}>
+            <Box sx={{border: 0, background:'inherit', display:'flex', flexDirection:'row', padding: 0, margin: 0, width:'fit-content'}}>
                 <GameButton id='startButton' onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}} > 
                     { shouldStart? 'Stop' : 'Start'}
                 </GameButton>
@@ -61,9 +61,9 @@ export default function Canvas() {
                     Reset Food
                 </GameButton>
             </Box>
-            <Card sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem', border: '3px solid', borderColor: theme.palette.text, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center'}}>
+            <Box sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem', border: '3px solid', borderColor: theme.palette.text, width:'fit-content'}}>
                 <canvas id='caterpillarboard' ref={canvasRef} width={WIDTH*SCALE} height={HEIGHT*SCALE} style={{}}/>
-            </Card>
+            </Box>
         </Card>
     )
 }
