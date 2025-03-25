@@ -15,7 +15,7 @@ export default function Game () {
             Press `start` to hatch a hungry caterpillar. Press the reset food button try to draw the hatchling in a new direction. 
         </Subtitle>
         <Canvas/>
-        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', margin:'1rem', color: theme.palette.header}}>
+        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'900', fontSize: '1rem', margin:'1rem', color: theme.palette.header}}>
             Eat well. Live long and prosper.
         </NavTitleText>
         </BodySheets>

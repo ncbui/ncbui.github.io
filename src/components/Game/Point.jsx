@@ -19,7 +19,7 @@ export default class Point {
         ctx.fillStyle = color;
         ctx.strokestyle = color;
         ctx.fillRect(this.x, this.y, 10, 10);
-        ctx.strokeRect(this.x, this.y, 10, 10);
+        ctx.strokeRect(this.x, this.y, 1, 1);
     }
     /** Return t/f if this point is outside of the game board coords. */
     isOutOfBound() {

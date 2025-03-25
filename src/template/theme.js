@@ -187,8 +187,6 @@ export const NavSheets=styled(Sheets)(( ) => ({
   '@media (max-width: 780px)' : {
   width:'100vw',
   m:0,
-  borderBottom:'4px dotted',
-  borderColor: theme.palette.bright,
   }
 }));
 export const NavSubtitle=styled(ListItem)(( ) => ({
