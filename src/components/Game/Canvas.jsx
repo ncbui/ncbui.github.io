@@ -35,9 +35,9 @@ export default function Canvas() {
             if (snake.gameOver(width,height)){
                 console.log("game over")
                 snake.draw(context)
+                setShouldStart(false)
                 setSnake(new NPC())
                 setFood(new FoodSources())
-                setShouldStart(false)
                 return () => {}}
             food.draw(context)
             snake.draw(context)

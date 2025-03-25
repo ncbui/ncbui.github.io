@@ -33,4 +33,23 @@ export default class Point {
         const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
         return new Point({x: randRange(10, width), y: randRange(10, height)},color);
     }
+      /** Return Manhattan distance to another point*/
+
+    distanceFrom(pt) {
+        const dx = Math.abs(this.x - pt.x);
+        const dy = Math.abs(this.y - pt.y);
+
+        const D = 1; // cost for moving from one space to next;  using simple case
+
+        return parseFloat(D * (dx + dy));
+    }
+
+    /** Return object containing a vector to another point */
+
+    vectorTo(pt) {
+        return {
+        x: (this.x - pt.x),
+        y: (this.y - pt.y),
+        }
+    }
 }
