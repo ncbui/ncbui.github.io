@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn, PhotoSizeSelectActual } from '@mui/icons-material';
-import { NavSubtitle, NavName,  NavTitleText, NavSheets, NavSocials } from '../template/theme';
+import { NavName,  NavTitleText, NavSheets, NavSocials } from '../template/theme';
 
 
 export default function NavMenu() {
@@ -40,6 +40,11 @@ export default function NavMenu() {
           <ListItem >
             <Typography level='body-lg' >
               <Link to="/resume">  resume  </Link>
+            </Typography>
+          </ListItem>
+          <ListItem >
+            <Typography level='body-lg' >
+              <Link to="/game">  play  </Link>
             </Typography>
           </ListItem>
           </List>
