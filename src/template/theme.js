@@ -316,7 +316,6 @@ export const ResumeFab = styled(Fab)(( ) => ({
   bottom: '5%',
   backgroundColor: theme.palette.shiny,
   borderColor: theme.palette.shiny,
-  borderRadius: '.5rem',
   color: theme.palette.dark1,
   fontWeight: '700',
   fontFamily: 'Hind',

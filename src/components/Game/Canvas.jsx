@@ -1,6 +1,6 @@
 import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { theme, GameButton } from '../../template/theme';
-import { Card, Sheet } from '@mui/joy';
+import { Card } from '@mui/joy';
 import { Box } from '@mui/material';
 import FoodSources from './Food';
 import NPC from './NPC';
