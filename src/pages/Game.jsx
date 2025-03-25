@@ -12,7 +12,7 @@ export default function Game () {
         Built with React, requestAnimationFrame, and HTML Canvas
         </NavTitleText>
         <Subtitle sx={{width:'30rem', margin: '.5rem 1rem'}}>
-            Press `start` to hatch a hungry caterpillar. Press the reset food button try to draw the hatchling in a new direction. 
+            Press `Start` to hatch a hungry caterpillar. Press the reset food button try to draw the hatchling in a new direction. 
         </Subtitle>
         <Canvas/>
         <NavTitleText sx={{fontStyle: 'italic', fontWeight:'900', fontSize: '1rem', margin:'1rem', color: theme.palette.header}}>
