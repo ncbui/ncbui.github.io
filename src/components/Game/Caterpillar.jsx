@@ -1,17 +1,17 @@
 import Point from "./Point";
-/** Anaconda. Central actor in game: moves, eats pellets, and grows.
+/** Caterpillar. Central actor in game: moves, eats, and grows.
  *
- * @param conda - an array of Points in the Anaconda
- * @param direction - direction conda is currently moving in: right, left, up, down
+ * @param caterpillar - an array of Points in the Caterpillar
+ * @param direction - direction caterpillar is currently moving in: right, left, up, down
  *
  **/
 export default class Caterpillar {
     constructor() {
-        this.conda = Caterpillar.defaultAnaconda(); // list of Points() in conda body
+        this.caterpillar = Caterpillar.defaultCaterpillar(); // list of Points() in caterpillar body
         this.direction = "down"; // direction of travel
       }
 
-    static defaultAnaconda() {
+    static defaultCaterpillar() {
         let defaultPoints = [
             { x: 60, y: 60,},
         ].map((p)=>new Point(p))
@@ -19,27 +19,27 @@ export default class Caterpillar {
     }
       
     head() {
-    return this.conda[0];
+    return this.caterpillar[0];
     }
 
     draw(ctx){
-        this.conda.forEach((p) =>{
+        this.caterpillar.forEach((p) =>{
             p.draw(ctx)})
     }
 
     move(){
         let newHead;
         newHead = this._calculateNewHead()
-        this.conda.unshift(newHead);
-        this.conda.pop();
+        this.caterpillar.unshift(newHead);
+        this.caterpillar.pop();
     }
-    /** Returns true if point matches with conda parts */
+    /** Returns true if point matches with caterpillar parts */
     contains(point){
-        return this.conda.some(part => part.x === point.x && part.y === point.y);
+        return this.caterpillar.some(part => part.x === point.x && part.y === point.y);
     }
-    /** Returns true if point matches with conda parts */
+    /** Returns true if point matches with caterpillar parts */
     checkEatSelf(head=this.head()){
-        let body=this.conda.slice(1)
+        let body=this.caterpillar.slice(1)
         return body.some(part => part.x === head.x && part.y === head.y);
     }
     checkOutOfBounds(width, height, head=this.head()){

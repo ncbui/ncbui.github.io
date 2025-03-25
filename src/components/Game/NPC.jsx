@@ -4,7 +4,7 @@ import Point from "./Point";
 export default class NPC extends Caterpillar {
   constructor(props){
       super(props)
-      this.conda = NPC.defaultNPC();
+      this.caterpillar = NPC.defaultNPC();
       this.direction = "right";
   }
   static defaultNPC() {
@@ -24,13 +24,13 @@ export default class NPC extends Caterpillar {
         newHead = this._calculateNewHead()
         turns++;
     }
-    this.conda.unshift(newHead);
+    this.caterpillar.unshift(newHead);
     let willEat = this.willEat(food, newHead)
     if (willEat.length){
         food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
         setFood(food)
     } else {
-        this.conda.pop() 
+        this.caterpillar.pop() 
     }
   }
   changeRandomDir(dir = this.direction) {
