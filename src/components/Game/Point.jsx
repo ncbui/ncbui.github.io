@@ -1,3 +1,4 @@
+import {WIDTH,HEIGHT,SCALE} from './constants'
 /** Point: a single element on the game board.
  *
  * This is used to draw a circle on the game board at x,y. It is used by both
@@ -24,13 +25,13 @@ export default class Point {
         ctx.strokeRect(this.x, this.y, 10, 10);
     }
     /** Return t/f if this point is outside of the game board coords. */
-    isOutOfBound(width,height) {
-        return (this.x <= 0 || this.x >= width || this.y <= 0 || this.y >= height);
+    isOutOfBound() {
+        return (this.x <= 0 || this.x >= WIDTH*SCALE || this.y <= 0 || this.y >= HEIGHT*SCALE);
     }
     /** Make a point at a random x,y and return it. */
-    static newRandom(width,height, color=this.color) {
+    static newRandom(color=this.color) {
         const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
-        return new Point({x: randRange(10, width), y: randRange(10, height)},color);
+        return new Point({x: randRange(0, WIDTH*SCALE-10), y: randRange(0, HEIGHT*SCALE-10)},color);
     }
       /** Return Manhattan distance to another point*/
 

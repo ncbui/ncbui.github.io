@@ -42,11 +42,11 @@ export default class Caterpillar {
         let body=this.caterpillar.slice(1)
         return body.some(part => part.x === head.x && part.y === head.y);
     }
-    checkOutOfBounds(width, height, head=this.head()){
-        return head.isOutOfBound(width, height)
+    checkOutOfBounds(head=this.head()){
+        return head.isOutOfBound()
     }
-    gameOver(width,height, newHead){
-        return this.checkOutOfBounds(width, height, newHead) || this.checkEatSelf(newHead)
+    gameOver(newHead){
+        return this.checkOutOfBounds(newHead) || this.checkEatSelf(newHead)
     }
     _calculateNewHead(currentHead = this.head()) {
     let newHead;

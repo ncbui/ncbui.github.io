@@ -18,7 +18,7 @@ export default class NPC extends Caterpillar {
     let turns=0;
     this.direction=this.findFood(food);
     newHead = this._calculateNewHead()
-    while (this.gameOver(width,height,newHead)){ 
+    while (this.gameOver(newHead)){ 
       if (turns > 3) break;
         this.changeRandomDir()
         newHead = this._calculateNewHead()

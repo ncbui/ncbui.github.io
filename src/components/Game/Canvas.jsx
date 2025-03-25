@@ -12,9 +12,7 @@ const drawCanvas = ( canvas) => {
     ctx.clearRect(0, 0, width, height)
 }
 
-const width='350';
-const height='300'
-const WIDTH = 30;
+const WIDTH = 25;
 const HEIGHT = 20;
 const SCALE = 15;
 const FPS = 5;
@@ -37,7 +35,7 @@ export default function Canvas() {
             food.refillFood(width,height,setFood)
             food.draw(context)
             // if gameend: out of Bounds, hit itself, hit others, game OVER
-            if (snake.gameOver(width,height)){
+            if (snake.gameOver()){
                 snake.draw(context)
                 context.textAlign = 'center'
                 context.fillStyle = 'white'
@@ -80,7 +78,7 @@ export default function Canvas() {
                 <GameButton id='startButton' onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}} > 
                     { shouldStart? 'Stop' : 'Start'}
                 </GameButton>
-                <GameButton id='foodButton' onClick={() => setFood(food.resetFood(width, height))} sx={{width:'fit-content', m:'1rem'}} > 
+                <GameButton id='foodButton' onClick={() => setFood(food.resetFood())} sx={{width:'fit-content', m:'1rem'}} > 
                     Reset Food
                 </GameButton>
             </Box>

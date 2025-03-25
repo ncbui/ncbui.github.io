@@ -1,4 +1,5 @@
 import Point from "./Point";
+import {WIDTH,HEIGHT,SCALE} from './constants'
 /** Food. List of food sources
  *
  * @param food - an array of Points currently growing food
@@ -10,14 +11,14 @@ export default class FoodSources {
         this.sources = [];
         this.num = 8;
     }
-    refillFood(width,height) {
+    refillFood( ) {
         while (this.sources.length < this.num ){
-            this.sources.push(Point.newRandom(width,height, 'green'))
+            this.sources.push(Point.newRandom(WIDTH*SCALE,HEIGHT*SCALE, 'green'))
         }
         return this
     }
-    resetFood(width,height) {
-        this.sources = this.sources.map(() => Point.newRandom(width,height, 'green'))
+    resetFood() {
+        this.sources = this.sources.map(() => Point.newRandom(WIDTH*SCALE,HEIGHT*SCALE, 'green'))
         return this
     }
     draw(ctx){
