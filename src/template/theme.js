@@ -362,3 +362,27 @@ export const Subtitle=styled(ListItem)(( ) => ({
   lineHeight: 1,
   '@media (max-width: 780px)' : {}
 }));
+
+export const GameButton=styled(Button)(( ) => ({
+  backgroundColor: theme.palette.shiny,
+  color: theme.palette.dark1,
+  fontFamily: 'Hind, sans-serif',
+  fontWeight: '700',
+  fontSize: '80%',
+  textTransform: 'none',
+  marginRight: '.2rem',
+  marginBottom: '.3rem',
+  padding: '1px 6px',
+  borderRadius: '.2rem',
+  '&:hover': {
+    backgroundColor: theme.palette.light2,
+    borderColor: theme.palette.light2,
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+  },
+}))

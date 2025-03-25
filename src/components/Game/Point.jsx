@@ -45,7 +45,6 @@ export default class Point {
     }
 
     /** Return object containing a vector to another point */
-
     vectorTo(pt) {
         return {
         x: (this.x - pt.x),
