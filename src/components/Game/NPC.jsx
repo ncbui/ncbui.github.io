@@ -1,7 +1,7 @@
-import Anaconda from "./Anaconda"
+import Caterpillar from "./Caterpillar"
 import Point from "./Point";
 
-export default class NPC extends Anaconda {
+export default class NPC extends Caterpillar {
   constructor(props){
       super(props)
       this.conda = NPC.defaultNPC();
@@ -15,21 +15,14 @@ export default class NPC extends Anaconda {
       }
   move(food, setFood, width, height){
     let newHead;
-    this.direction = this.findFood(food);
-
-    // if (toClosestFood === "left" && this.direction !== "right") {
-    //   this.direction = toClosestFood;
-    // } else if (toClosestFood === "right" && this.direction !== "left") {
-    //   this.direction = toClosestFood;
-    // } else if (toClosestFood === "down" && this.direction !== "up") {
-    //   this.direction = toClosestFood;
-    // } else if (toClosestFood === "up" && this.direction !== "down") {
-    //   this.direction = toClosestFood
-    // };
+    let turns=0;
+    this.direction=this.findFood(food);
     newHead = this._calculateNewHead()
-    if (this.gameOver(width,height,newHead)){ 
+    while (this.gameOver(width,height,newHead)){ 
+      if (turns > 3) break;
         this.changeRandomDir()
         newHead = this._calculateNewHead()
+        turns++;
     }
     this.conda.unshift(newHead);
     let willEat = this.willEat(food, newHead)
@@ -53,6 +46,7 @@ export default class NPC extends Anaconda {
   findFood(food, head = this.head()) {
     let nearestSource;
     let distanceToSource;
+    let direction;
     // iterate to find nearestSource by manhattan distance
     food.sources.forEach(source => { 
       const distance = head.distanceFrom(source);
@@ -60,8 +54,7 @@ export default class NPC extends Anaconda {
         distanceToSource = distance;
         nearestSource = source;
       }});
-    let direction = this.planDirection(head, nearestSource)
-    // compare direction 
+    direction = this.planDirection(head, nearestSource)
     direction = this.avoidSelf(direction)
     return direction;
   }
@@ -86,7 +79,6 @@ export default class NPC extends Anaconda {
     };
     return direction
   }
-  // placeholder for evaluating direction
   avoidSelf(newDirection){
     if (newDirection === "left" && this.direction !== "right") {
       return newDirection;
