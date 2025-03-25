@@ -111,7 +111,7 @@ export default function Resume() {
     <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
        <ResumeContainer component={Paper}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
