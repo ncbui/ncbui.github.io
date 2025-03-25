@@ -32,7 +32,7 @@ export default class NPC extends Anaconda {
       };
 
       newHead = this._calculateNewHead()
-      while (newHead.isOutOfBound(width, height) || this.contains(newHead)){ 
+      if (newHead.isOutOfBound(width, height) || this.contains(newHead)){ 
           this.changeRandomDir()
           newHead = this._calculateNewHead()
       }
