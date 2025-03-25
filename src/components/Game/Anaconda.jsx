@@ -13,11 +13,7 @@ export default class Anaconda {
 
       static defaultAnaconda() {
         let defaultPoints = [
-            { x: 60, y: 100,},
-            { x: 50, y: 100,},
-            { x: 40, y: 100,},
-            { x: 30, y: 100,},
-            { x: 20, y: 100,}
+            { x: 60, y: 60,},
         ].map((p)=>new Point(p))
         return defaultPoints
     }
@@ -42,16 +38,15 @@ export default class Anaconda {
         return this.conda.some(part => part.x === point.x && part.y === point.y);
     }
     /** Returns true if point matches with conda parts */
-    checkEatSelf(){
-        let head=this.head()
+    checkEatSelf(head=this.head()){
         let body=this.conda.slice(1)
         return body.some(part => part.x === head.x && part.y === head.y);
     }
     checkOutOfBounds(width, height){
         return this.head().isOutOfBound(width, height)
     }
-    gameOver(width,height){
-        return this.checkOutOfBounds(width, height) || this.checkEatSelf()
+    gameOver(width,height, newHead){
+        return this.checkOutOfBounds(width, height) || this.checkEatSelf(newHead)
     }
     _calculateNewHead(currentHead = this.head()) {
     let newHead;

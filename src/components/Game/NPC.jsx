@@ -2,49 +2,44 @@ import Anaconda from "./Anaconda"
 import Point from "./Point";
 
 export default class NPC extends Anaconda {
-    constructor(props){
-        super(props)
-        this.conda = NPC.defaultNPC();
-        this.direction = "right";
-    }
-    static defaultNPC() {
-            let defaultPoints = [
-                { x: 60, y: 200,},
-                { x: 50, y: 200,},
-                { x: 40, y: 200,},
-                { x: 30, y: 200,},
-                { x: 20, y: 200,}
-            ].map((p)=>new Point(p))
-            return defaultPoints
-        }
-    move(food, setFood, width, height){
-      let newHead;
-      const toClosestFood = this.findFood(food);
-
-      if (toClosestFood === "left" && this.direction !== "right") {
-        this.direction = toClosestFood;
-      } else if (toClosestFood === "right" && this.direction !== "left") {
-        this.direction = toClosestFood;
-      } else if (toClosestFood === "down" && this.direction !== "up") {
-        this.direction = toClosestFood;
-      } else if (toClosestFood === "up" && this.direction !== "down") {
-        this.direction = toClosestFood
-      };
-
-      newHead = this._calculateNewHead()
-      if (newHead.isOutOfBound(width, height) || this.contains(newHead)){ 
-          this.changeRandomDir()
-          newHead = this._calculateNewHead()
+  constructor(props){
+      super(props)
+      this.conda = NPC.defaultNPC();
+      this.direction = "right";
+  }
+  static defaultNPC() {
+          let defaultPoints = [
+              { x: 60, y: 200,}
+          ].map((p)=>new Point(p))
+          return defaultPoints
       }
-      this.conda.unshift(newHead);
-      let willEat = this.willEat(food, newHead)
-      if (willEat.length){
-          food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
-          setFood(food)
-      } else {
-          this.conda.pop() 
-      }
+  move(food, setFood, width, height){
+    let newHead;
+    this.direction = this.findFood(food);
+
+    // if (toClosestFood === "left" && this.direction !== "right") {
+    //   this.direction = toClosestFood;
+    // } else if (toClosestFood === "right" && this.direction !== "left") {
+    //   this.direction = toClosestFood;
+    // } else if (toClosestFood === "down" && this.direction !== "up") {
+    //   this.direction = toClosestFood;
+    // } else if (toClosestFood === "up" && this.direction !== "down") {
+    //   this.direction = toClosestFood
+    // };
+    newHead = this._calculateNewHead()
+    if (this.gameOver(width,height,newHead)){ 
+        this.changeRandomDir()
+        newHead = this._calculateNewHead()
     }
+    this.conda.unshift(newHead);
+    let willEat = this.willEat(food, newHead)
+    if (willEat.length){
+        food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
+        setFood(food)
+    } else {
+        this.conda.pop() 
+    }
+  }
   changeRandomDir(dir = this.direction) {
     if (dir === "up" || dir === "down") Math.random() > .5 ? this.direction = "left" : this.direction = "right";
     if (dir === "left" || dir === "right") Math.random() > .5 ? this.direction = "down" : this.direction = "up";
@@ -56,43 +51,53 @@ export default class NPC extends Anaconda {
   }
 
   findFood(food, head = this.head()) {
-    let nearestPellet;
-    let dToPellet;
-    console.log("food", food);
-
-    food.sources.forEach(source => {
+    let nearestSource;
+    let distanceToSource;
+    // iterate to find nearestSource by manhattan distance
+    food.sources.forEach(source => { 
       const distance = head.distanceFrom(source);
-
-      if (!nearestPellet || distance < dToPellet) {
-        dToPellet = distance;
-        nearestPellet = source;
-      }
-    });
-
-    let vector = head.vectorTo(nearestPellet);
-
-    let newDirs;
-
+      if (!nearestSource || distance < distanceToSource) {
+        distanceToSource = distance;
+        nearestSource = source;
+      }});
+    let direction = this.planDirection(head, nearestSource)
+    // compare direction 
+    direction = this.avoidSelf(direction)
+    return direction;
+  }
+  // plan next direction to get closer to nearestSource
     // if snakeNPC is horizontally aligned with the pellet
     // check to see how it should move vertically
     // if snakeNPC is vertically aligned w pellet
     // check to see how it should more horizontally
     // else, check the for the smallest bit of the vector
     // prefer to move in a way that reduces that further
-
-    if (vector.x === 0) {
-      vector.y < 0 ? newDirs = "down" : newDirs = "up";
-    } else if (vector.y === 0) {
-      vector.x < 0 ? newDirs = "right" : newDirs = "left"
-    } else if (Math.abs(vector.x) < Math.abs(vector.y)) {
-      vector.x < 0 ? newDirs = "right" : newDirs = "left"
+  planDirection(head, nearestSource) {
+    let direction;
+    let vectorToFood = head.vectorTo(nearestSource)
+    if (vectorToFood.x === 0) {
+      vectorToFood.y < 0 ? direction = "down" : direction = "up";
+    } else if (vectorToFood.y === 0) {
+      vectorToFood.x < 0 ? direction = "right" : direction = "left"
+    } else if (Math.abs(vectorToFood.x) < Math.abs(vectorToFood.y)) {
+      vectorToFood.x < 0 ? direction = "right" : direction = "left"
     } else {
-      vector.y < 0 ? newDirs = "down" : newDirs = "up";
+      vectorToFood.y < 0 ? direction = "down" : direction = "up";
     };
-
-
-
-    return newDirs;
+    return direction
   }
-  
+  // placeholder for evaluating direction
+  avoidSelf(newDirection){
+    if (newDirection === "left" && this.direction !== "right") {
+      return newDirection;
+    } else if (newDirection === "right" && this.direction !== "left") {
+      return newDirection;
+    } else if (newDirection === "down" && this.direction !== "up") {
+      return newDirection;
+    } else if (newDirection === "up" && this.direction !== "down") {
+      return newDirection
+    } else {
+      return this.direction
+    };
+  }
 }
