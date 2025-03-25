@@ -187,6 +187,8 @@ export const NavSheets=styled(Sheets)(( ) => ({
   '@media (max-width: 780px)' : {
   width:'100vw',
   m:0,
+  borderBottom:'4px dotted',
+  borderColor: theme.palette.bright,
   }
 }));
 export const NavSubtitle=styled(ListItem)(( ) => ({
@@ -352,34 +354,3 @@ export const ResumeButton = styled(Typography)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
 }}))
-export const Subtitle=styled(ListItem)(( ) => ({
-  color: theme.palette.text,
-  fontFamily: 'Hind, sans-serif', 
-  fontWeight: '600', 
-  marginBottom: '1rem',
-  lineHeight: 1,
-  '@media (max-width: 780px)' : {}
-}));
-
-export const GameButton=styled(Button)(( ) => ({
-  backgroundColor: theme.palette.shiny,
-  color: theme.palette.dark1,
-  fontFamily: 'Hind, sans-serif',
-  fontWeight: '700',
-  fontSize: '80%',
-  textTransform: 'none',
-  margin: '0 .2rem 0 0',
-  padding: '1px 6px',
-  borderRadius: '.2rem',
-  '&:hover': {
-    backgroundColor: theme.palette.light2,
-    borderColor: theme.palette.light2,
-  },
-  '&:active': {
-    boxShadow: 'none',
-  },
-  '&:disabled': {
-    borderColor: theme.palette.text,
-    color: theme.palette.text,
-  },
-}))
