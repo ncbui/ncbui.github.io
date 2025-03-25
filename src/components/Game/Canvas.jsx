@@ -16,6 +16,7 @@ const height='300'
 const WIDTH = 30;
 const HEIGHT = 24;
 const SCALE = 12;
+const FPS = 5;
 
 
 export default function Canvas() { 
@@ -61,12 +62,11 @@ export default function Canvas() {
     useLayoutEffect(() => {
         if (shouldStart) {
             let timerId
-            const fps = 5;
             const animate = () => {
                 setFrameCounter(c => c + 1)
                 setTimeout(() => {
                     requestAnimationFrame(animate);
-                }, 1000 / fps);
+                }, 1000 / FPS);
             }
             timerId = requestAnimationFrame(animate)
             return () => cancelAnimationFrame(timerId)

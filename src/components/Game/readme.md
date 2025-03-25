@@ -13,6 +13,7 @@ SnakeCanvas manages:
         - TODO: functions and objects defined inside component may also cause re-rendering
         - State update block browser from repainting screen. Can slow app. useEffect() is often prefered. 
     - Watches for changed to state.shouldStart
+    - FPS managed by wrapping `setTimeout(() => {requestAnimationFrame(animate)}, 1000 / fps)`
 - Game play and updates managed by hook useEffect().
     - synchronizes component with external system, 
         - like Canvas HTML, setInterval() and clearInterval(), windows.addEventListener()
