@@ -1,5 +1,5 @@
-import {  theme, BootstrapButton } from "../../template/theme";
-import { Container, Sheet } from "@mui/joy";
+import {  theme, GameButton } from "../../template/theme";
+import { Card, Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
 import FoodSources from "./Food";
 import NPC from "./NPC";
@@ -30,15 +30,17 @@ export default function Canvas() {
         if (shouldStart){
             food.refillFood(width,height,setFood)
             drawCanvas(canvas)
-            snake.move(food,setFood,width,height)
             // if gameend: out of Bounds, hit itself, hit others, game OVER
             if (snake.gameOver(width,height)){
                 console.log("game over")
                 snake.draw(context)
-                setShouldStart(false)
                 setSnake(new NPC())
                 setFood(new FoodSources())
-                return () => {}}
+                setFrameCounter(0)
+                setShouldStart(false)
+                return () => {}
+            }
+            snake.move(food,setFood,width,height)
             food.draw(context)
             snake.draw(context)
             context.restore()
@@ -62,15 +64,17 @@ export default function Canvas() {
     
     return (
         <Container sx={{marginTop: 0, p:0, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center', width:'30rem', height: '25rem'}}>
-        <BootstrapButton id="startButton" onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}}> 
-            { shouldStart? 'Stop' : 'Start'}
-        </BootstrapButton>
-        <BootstrapButton id="foodButton" onClick={() => setFood(food.resetFood(width, height))}> 
-            Reset Food
-        </BootstrapButton>
-        <Sheet sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem',display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center'}}>
-        <canvas id="snakeboard" ref={canvasRef} width={width} height={height} style={{}}/>
-        </Sheet>
+            <Card sx={{background:'inherit', display:'flex', flexDirection:'row', border: 0,}}>
+                <GameButton id="startButton" onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}} > 
+                    { shouldStart? 'Stop' : 'Start'}
+                </GameButton>
+                <GameButton id="foodButton" onClick={() => setFood(food.resetFood(width, height))} sx={{width:'fit-content', m:'1rem'}} > 
+                    Reset Food
+                </GameButton>
+            </Card>
+            <Sheet sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem',display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center'}}>
+            <canvas id="snakeboard" ref={canvasRef} width={width} height={height} style={{}}/>
+            </Sheet>
         </Container>
     )
 }
