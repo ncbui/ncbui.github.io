@@ -58,13 +58,15 @@ export default function Canvas() {
         }
     }, [frameCounter, snake, shouldStart, food])
 
-    // update the counter
     useLayoutEffect(() => {
         if (shouldStart) {
             let timerId
+            const fps = 5;
             const animate = () => {
                 setFrameCounter(c => c + 1)
-                timerId = requestAnimationFrame(animate)
+                setTimeout(() => {
+                    requestAnimationFrame(animate);
+                }, 1000 / fps);
             }
             timerId = requestAnimationFrame(animate)
             return () => cancelAnimationFrame(timerId)
