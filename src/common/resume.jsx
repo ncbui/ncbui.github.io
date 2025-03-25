@@ -26,11 +26,6 @@ export const createWorkData=(work)=>{
   const main = createMain(work);
   return { dates, main };
 }
-export const createSkillsData=(skills)=>{
-  const dates = skills.name;
-  const main = <ResumeType sx={{ paddingBottom:'.2rem', paddingTop: '.2rem',}}>{skills.keywords.join(", ")}</ResumeType>;
-  return { dates, main };
-}
 
 export const createMain=(work)=>{
   return (
@@ -43,6 +38,6 @@ export const createMain=(work)=>{
             return(<ListItem key={`work-${i}`} sx={{padding:'.1rem', lineHeight:'50%'}}> <ResumeType level='body-sm' lineHeight={1}><KeyboardArrowRightIcon sx={{fontSize:'small'}}/>{h}</ResumeType></ListItem>)
           }) }
         </List>
-        <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType>
+        { work.name.includes("Sabbatical") ? '' : <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType> }
     </Box>)
 }
