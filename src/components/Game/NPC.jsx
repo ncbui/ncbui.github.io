@@ -13,7 +13,7 @@ export default class NPC extends Caterpillar {
           ].map((p)=>new Point(p))
           return defaultPoints
       }
-  move(food, setFood, width, height){
+  move(food, setFood){
     let newHead;
     let turns=0;
     this.direction=this.findFood(food);
@@ -27,7 +27,7 @@ export default class NPC extends Caterpillar {
     this.caterpillar.unshift(newHead);
     let willEat = this.willEat(food, newHead)
     if (willEat.length){
-        food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom(width,height, 'green') : source)
+        food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom('green') : source)
         setFood(food)
     } else {
         this.caterpillar.pop() 
@@ -42,7 +42,6 @@ export default class NPC extends Caterpillar {
     let pellet = food.sources.filter(source => source.x === newHead.x && source.y === newHead.y)
     return pellet
   }
-
   findFood(food, head = this.head()) {
     let nearestSource;
     let distanceToSource;

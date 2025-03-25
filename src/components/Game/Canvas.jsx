@@ -32,7 +32,7 @@ export default function Canvas() {
         
         if (shouldStart){
             drawCanvas(canvas)
-            food.refillFood(width,height,setFood)
+            food.refillFood()
             food.draw(context)
             // if gameend: out of Bounds, hit itself, hit others, game OVER
             if (snake.gameOver()){
@@ -44,14 +44,13 @@ export default function Canvas() {
                 context.font = '18px serif'
                 context.fillText(`caterpillar hurt itself in its confusion`, ((WIDTH * SCALE) / 2), ((HEIGHT * SCALE) / 2 + (2 * SCALE)))
                 setSnake(new NPC())
-                // setFood(new FoodSources())
                 setFrameCounter(0)
                 setShouldStart(false)
                 return () => {}
             }
             snake.move(food,setFood,width,height)
             snake.draw(context)
-            food.refillFood(width,height,setFood)
+            food.refillFood()
             context.restore()
         }
         return () => {

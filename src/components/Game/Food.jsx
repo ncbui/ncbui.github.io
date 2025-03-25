@@ -13,12 +13,12 @@ export default class FoodSources {
     }
     refillFood( ) {
         while (this.sources.length < this.num ){
-            this.sources.push(Point.newRandom(WIDTH*SCALE,HEIGHT*SCALE, 'green'))
+            this.sources.push(Point.newRandom('green'))
         }
         return this
     }
     resetFood() {
-        this.sources = this.sources.map(() => Point.newRandom(WIDTH*SCALE,HEIGHT*SCALE, 'green'))
+        this.sources = this.sources.map(() => Point.newRandom('green'))
         return this
     }
     draw(ctx){
