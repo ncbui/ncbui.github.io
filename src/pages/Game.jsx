@@ -15,8 +15,8 @@ export default function Game () {
             Built with React, Vite, HTML Canvas, and requestAnimationFrame.
             </NavTitleText>
         <Subtitle sx={{maxWidth:'80%', margin: '1rem'}}>
-            Start game to start hatch a wandering anaconda. This hungry hatchling is drawn towards food. Help them eat and grow safely.
-            Press the reset button try to draw the hatchling in a new direction. Eat well. Live long and prosper.
+            Start game to hatch an anaconda. This hungry hatchling is drawn towards food. Help them eat and grow safely.
+            Press the reset food button try to draw the hatchling in a new direction. Eat well. Live long and prosper.
         </Subtitle>
         <Canvas/>
         </BodySheets>
