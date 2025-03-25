@@ -38,6 +38,11 @@ export default function NavMenu() {
               <Link to="/resume">  resume  </Link>
             </Typography>
           </ListItem>
+          <ListItem >
+            <Typography level='body-lg' >
+              <Link to="/game">  play  </Link>
+            </Typography>
+          </ListItem>
           </List>
           <NavSocials >
             <Typography sx={{width:'20vw', verticalAlign:'top', '@media (max-width: 780px)': {m:0, flexDirection: 'row'} }}>

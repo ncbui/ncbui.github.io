@@ -8,6 +8,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Resume from './pages/Resume';
 import Art from './pages/Art';
+import Game from './pages/Game';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route exact path="/" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/game" element={<Game />} />
             <Route path="/art" element={<Art />} />
             <Route element={<ErrorPage />} />
           </Routes>
