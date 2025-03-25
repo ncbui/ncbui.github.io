@@ -5,13 +5,13 @@ import Point from "./Point";
  * @param direction - direction conda is currently moving in: right, left, up, down
  *
  **/
-export default class Anaconda {
+export default class Caterpillar {
     constructor() {
-        this.conda = Anaconda.defaultAnaconda(); // list of Points() in conda body
+        this.conda = Caterpillar.defaultAnaconda(); // list of Points() in conda body
         this.direction = "down"; // direction of travel
       }
 
-      static defaultAnaconda() {
+    static defaultAnaconda() {
         let defaultPoints = [
             { x: 60, y: 60,},
         ].map((p)=>new Point(p))
@@ -42,11 +42,11 @@ export default class Anaconda {
         let body=this.conda.slice(1)
         return body.some(part => part.x === head.x && part.y === head.y);
     }
-    checkOutOfBounds(width, height){
-        return this.head().isOutOfBound(width, height)
+    checkOutOfBounds(width, height, head=this.head()){
+        return head.isOutOfBound(width, height)
     }
     gameOver(width,height, newHead){
-        return this.checkOutOfBounds(width, height) || this.checkEatSelf(newHead)
+        return this.checkOutOfBounds(width, height, newHead) || this.checkEatSelf(newHead)
     }
     _calculateNewHead(currentHead = this.head()) {
     let newHead;

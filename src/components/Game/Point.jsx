@@ -9,7 +9,7 @@
  *
  * */
 export default class Point {
-    constructor(p, color = 'yellow') {
+    constructor(p, color = 'goldenrod') {
       this.x = p.x;
       this.y = p.y;
       this.color = color
@@ -19,7 +19,6 @@ export default class Point {
         // Set the border colour of the snake part
         ctx.strokestyle = color;
         // Draw a "filled" rectangle to represent the point at the coordinates
-        // the part is located
         ctx.fillRect(this.x, this.y, 10, 10);
         // Draw a border around the point
         ctx.strokeRect(this.x, this.y, 10, 10);
