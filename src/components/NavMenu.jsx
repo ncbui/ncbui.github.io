@@ -44,7 +44,7 @@ export default function NavMenu() {
           </ListItem>
           <ListItem >
             <Typography level='body-lg' >
-              <Link to="/game">  play  </Link>
+              <Link to="/game">  game  </Link>
             </Typography>
           </ListItem>
           </List>

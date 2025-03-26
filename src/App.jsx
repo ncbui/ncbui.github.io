@@ -20,7 +20,7 @@ export default function App() {
             <Route exact path="/" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/play" element={<Game />} />
+            <Route path="/game" element={<Game />} />
             <Route element={<ErrorPage />} />
           </Routes>
       </AppContainer>
