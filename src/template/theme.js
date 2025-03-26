@@ -203,6 +203,7 @@ export const NavName=styled(Typography)(( ) => ({
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
   fontWeight: '600',
   color: theme.palette.light,
+  textShadow:'.2rem .2rem 5px #290129',
   fontSize: '3rem',
   '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
 }));
@@ -212,6 +213,7 @@ export const NavTitleText = styled(Typography)(( ) => ({
   fontWeight: '800', 
   fontSize: '1.4rem',
   lineHeight: 1,
+  textShadow:'.2rem .2rem 5px #290129',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
   '@media (max-width: 780px)' : {fontSize: '1.1rem'}
@@ -332,6 +334,24 @@ export const ResumeFab = styled(Fab)(( ) => ({
     display: 'none'
   },
 }))
+
+export const ResumeName=styled(Typography)(( ) => ({
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
+  fontWeight: '600',
+  color: theme.palette.light,
+  fontSize: '3rem',
+  '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
+}));
+export const ResumeTitleText = styled(Typography)(( ) => ({
+  color: theme.palette.bright,
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+  fontWeight: '800', 
+  fontSize: '1.4rem',
+  lineHeight: 1,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (max-width: 780px)' : {fontSize: '1.1rem'}
+}));
 
 export const ResumeType = styled(Typography)(( ) => ({
   fontFamily: 'Hind, sans-serif',

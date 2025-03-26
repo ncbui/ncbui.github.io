@@ -4,7 +4,7 @@ import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, NavName, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
+import { HeaderCell, ResumeContainer, ResumeFab, ResumeName, ResumeRow , ResumeTitleText, ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
 import { createCertData, createEduData, createSkillsData, createWorkData } from '../common/resume';
 
 const options = {
@@ -73,7 +73,7 @@ export default function Resume() {
         return (
           <ResumeRow sx={{border: 0}}>
             <HeaderCell colSpan={5} sx={{margin:0, padding:0, border: 0,}}>
-              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </NavTitleText>
+              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </ResumeTitleText>
             </HeaderCell>
         </ResumeRow>
         )
@@ -83,17 +83,17 @@ export default function Resume() {
         <TableRow >
             <TableCell colSpan={3}>
               <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
-              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
-                <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
+              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
+                <ResumeName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
                   {resume.basics.name}
-                </NavName>
-                <NavTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
+                </ResumeName>
+                <ResumeTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
                   {resume.basics.label}
-                </NavTitleText>
+                </ResumeTitleText>
                 <Subtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
                   {resume.basics.summary}
                 </Subtitle>
-              </NavTitleText>
+              </ResumeTitleText>
               </Box>
             </TableCell>
             <TableCell colSpan={2} sx={{ fontSize:'1.1rem',lineHeight:1, }}>
@@ -111,7 +111,7 @@ export default function Resume() {
     <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
        <ResumeContainer component={Paper}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }

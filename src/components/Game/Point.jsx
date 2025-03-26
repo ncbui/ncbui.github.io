@@ -19,19 +19,18 @@ export default class Point {
         ctx.fillStyle = color;
         ctx.strokestyle = color;
         ctx.fillRect(this.x, this.y, 10, 10);
-        ctx.strokeRect(this.x, this.y, 1, 1);
+        ctx.strokeRect(this.x, this.y, 2, 1);
     }
     /** Return t/f if this point is outside of the game board coords. */
     isOutOfBound() {
         return (this.x <= 0 || this.x >= WIDTH*SCALE || this.y <= 0 || this.y >= HEIGHT*SCALE);
     }
-    /** Make a point at a random x,y and return it. */
+    /** Return new point at a random x,y. */
     static newRandom(color=this.color) {
         const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
         return new Point({x: randRange(0, WIDTH*SCALE-10), y: randRange(0, HEIGHT*SCALE-10)},color);
     }
-      /** Return Manhattan distance to another point*/
-
+    /** Return Manhattan distance to another point*/
     distanceFrom(pt) {
         const dx = Math.abs(this.x - pt.x);
         const dy = Math.abs(this.y - pt.y);
