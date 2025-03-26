@@ -487,6 +487,69 @@ export const Subtitle=styled(ListItem)(( ) => ({
   '@media (max-width: 450px)': {}
 }));
 
+export const GameTitleText=styled(Typography)(( ) => ({
+  color: theme.palette.bright,
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+  fontWeight: '800', 
+  fontSize: '1.4rem',
+  lineHeight: 1.5,
+  textShadow:'.2rem .2rem 5px #290129',
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '1.3rem',
+    lineHeight: 1,
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '1.3rem', 
+    lineHeight: 1,
+  }
+}));
+export const GameSubtitleText=styled(Typography)(( ) => ({
+  maxWidth: '30rem',
+  color: theme.palette.text,
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+  fontStyle: 'italic', 
+  fontWeight:'600',
+  fontSize: '1rem',
+  lineHeight: 1,
+  textShadow:'.2rem .2rem 5px #290129',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '1.1rem',
+    lineHeight: 1,
+    width: '98vw',
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '1rem', 
+    lineHeight: 1,
+    maxWidth: '98vw',
+  }
+}));
+
+export const GameDescription=styled(Typography)(( ) => ({
+  maxWidth: '30rem',
+  fontSize:'.8rem', 
+  fontWeight: 'bold',
+  color: theme.palette.text,
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    width: '100vw',
+    fontSize: '1.1rem',
+    lineHeight: 1,
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '1rem', 
+    lineHeight: 1,
+    maxWidth: '100vw',
+  }
+}));
+
+export const GameFooterText=styled(GameTitleText)(( ) => ({
+  fontStyle: 'italic', 
+  fontWeight:'900', 
+  fontSize: '1rem', 
+  margin:'1rem 0 0 .3rem', 
+}));
+
 export const GameButton=styled(Button)(( ) => ({
   backgroundColor: theme.palette.shiny,
   color: theme.palette.dark1,
@@ -508,4 +571,4 @@ export const GameButton=styled(Button)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
   },
-}))
+}));

@@ -1,22 +1,22 @@
 import Canvas from "../components/Game/Canvas";
-import { theme, BodySheets, NavTitleText, Subtitle } from "../template/theme";
+import { BodySheets, GameTitleText,GameSubtitleText, Subtitle, GameFooterText, GameDescription } from "../template/theme";
 
 export default function Game () { 
     return (
       <BodySheets>
-        <NavTitleText>
+        <GameTitleText>
             Hungry Hungry Caterpillar 
-            </NavTitleText>
-        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'600', fontSize: '1rem', marginLeft:'1rem', color: theme.palette.text}}>
-        Built with React, requestAnimationFrame, and HTML Canvas
-        </NavTitleText>
-        <Subtitle sx={{width:'30rem', margin: '.5rem 1rem'}}>
+        </GameTitleText>
+        <GameSubtitleText>
+            Built with requestAnimationFrame, HTML Canvas, and React
+        </GameSubtitleText>
+        <GameDescription>
             Press `Start` to hatch a hungry caterpillar. Press the reset food button try to draw the hatchling in a new direction. 
-        </Subtitle>
+        </GameDescription>
         <Canvas/>
-        <NavTitleText sx={{fontStyle: 'italic', fontWeight:'900', fontSize: '1rem', margin:'1rem', color: theme.palette.header}}>
+        <GameFooterText>
             Eat well. Live long and prosper.
-        </NavTitleText>
+        </GameFooterText>
         </BodySheets>
     )
 }
