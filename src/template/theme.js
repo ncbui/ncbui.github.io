@@ -75,7 +75,7 @@ export const global = {
             html: {
               fontSize: "100%",
               color: theme.palette.text,
-              '@media (max-width: 780px)' : {
+              '@media (min-width: 451px) and (max-width: 760px)' : {
                 fontSize: '90%',
               }
             },
@@ -137,7 +137,7 @@ export const Sheets = styled(Sheet)(( ) => ({
   m:0,
   paddingTop: '2rem', 
   paddingLeft: '1rem',
-  '@media (max-width: 780px)' : {
+  '@media (min-width: 451px) and (max-width: 760px)' : {
     padding:'1rem',
     width:'100vw',
     m:0,
@@ -151,7 +151,12 @@ export const BodySheets = styled(Sheets)(( ) => ({
   width:'65vw',
   height: '100vh',
   justifyContent: 'space-between',
-  '@media (max-width: 780px)' : {
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    padding: '1vh 1vw',
+    width:'90vw',
+    m: 0,
+  }
+  '@media (max-width: 450px)' : {
     padding: '1vh 1vw',
     width:'90vw',
     m: 0,
@@ -161,51 +166,75 @@ export const BodySheets = styled(Sheets)(( ) => ({
     m:0,
     padding:'3rem 0',
     overflow: 'auto',
-    '@media (max-width: 780px)' : {
+    '@media (min-width: 451px) and (max-width: 760px)' : {
       width:'100vw',
-    }
+    },
+    '@media (max-width: 450px)': {}
   }));
 export const AppContainer = styled(Container)(( ) => ({
   display: 'flex',
   flexDirection:'row', 
   justifyContent: 'center',
   width: '100vw',
+  minWidth: '380px',
   height: '100vh',
   overflow: 'hidden',
   m: 0,
   p: 0,
-  '@media (max-width: 780px)' : {
+  '@media (max-width: 760px)' : {
     flexDirection:'column',
     overflowX: 'hidden',
     overflowY: 'auto',
+    width: '98vw',
+    minWidth: '380px',
     m: 0,
     p: 0,
   }
 }));
 export const NavSheets=styled(Sheets)(( ) => ({
-  width:'30vw',
-  '@media (max-width: 780px)' : {
-  width:'100vw',
   m:0,
+  p:0,
+  width:'30vw',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    width:'100vw',
+    m:0,
+    p:0,
+  },
+  '@media (max-width: 450px)' : {
+    width:'100vw',
+    m:0,
+    p:0,
   }
 }));
-export const NavSubtitle=styled(ListItem)(( ) => ({
-  color: theme.palette.text,
-  fontFamily: 'Hind, sans-serif', 
-  fontWeight: '600', 
-  marginBottom: '1rem',
-  width:'inherit',
-  lineHeight: 1.1,
-  '@media (max-width: 780px)' : {
-    display:'none'}
+
+export const NavHeader=styled(List)(( ) => ({
+  display:'flex', 
+  flexDirection:'col', 
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    width:'90vw',
+    flexDirection:'row', 
+    justifyContent:'space-between',
+    alignItems:'center',
+  }, 
+  '@media (max-width: 450px)' : {
+    width:'90vw',
+    flexDirection:'row', 
+    justifyContent:'flex-start',
+    alignItems:'center',
+  }
 }));
+
 export const NavName=styled(Typography)(( ) => ({
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
   fontWeight: '600',
   color: theme.palette.light,
   textShadow:'.2rem .2rem 5px #290129',
   fontSize: '3rem',
-  '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
+  lineHeight: 1,
+  '@media (min-width: 451px) and (max-width: 760px)' : { 
+    width:'10rem', fontSize: '2rem' },
+  '@media (max-width: 450px)' : { 
+    width:'8rem', fontSize: '1.7rem' },
 }));
 export const NavTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
@@ -213,17 +242,87 @@ export const NavTitleText = styled(Typography)(( ) => ({
   fontWeight: '800', 
   fontSize: '1.4rem',
   lineHeight: 1,
+  padding: '0 .5rem 0 1rem',
   textShadow:'.2rem .2rem 5px #290129',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
-  '@media (max-width: 780px)' : {fontSize: '1.1rem'}
-}));
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '1.1rem',
+    lineHeight: 1,
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '1rem', 
+    padding: '0 .3rem 0 .3rem',
+    lineHeight: 1,
+  }
+  }));
+export const NavSubtitle=styled(ListItem)(( ) => ({
+  color: theme.palette.text,
+  fontFamily: 'Hind, sans-serif', 
+  fontWeight: '600', 
+  marginBottom: '1rem',
+  width:'inherit',
+  lineHeight: 1.1,
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    display:'none'},
+  '@media (max-width: 450px)': {}
+  }));
+export const NavContent=styled(List)(( ) => ({ 
+  display:'flex', 
+  flexDirection: 'col',
+  m:0, p:0,
+  alignItems:'bottom',
+  '@media (min-width: 451px) and (max-width: 760px)': {
+    flexDirection: 'row', 
+    justifyContent:'space-between', 
+    width: '95vw',
+    }, 
+  '@media (max-width: 450px)':{
+    flexDirection: 'row',
+    justifyContent:'start',
+    width: '95vw',
+    minWidth: '21rem',
+    }
+  }));
+export const NavLinkList=styled(List)(( ) => ({ 
+  display:'flex', 
+  flexDirection: 'col',
+  lineHeight: 1,
+  '@media (min-width: 451px) and (max-width: 760px)': {
+    flexDirection: 'row', 
+    m:0, p:0,
+    whiteSpace: 'normal',
+    wordWrap: 'break-word',
+    width: '10vw',
+    }, 
+  '@media (max-width: 450px)':{
+    width: '10vw',
+    flexDirection: 'row', 
+    whiteSpace: 'normal',
+    wordWrap: 'break-word',
+    flexWrap: 'wrap',
+    }
+  }));
+export const NavLinkListItem=styled(ListItem)(( ) => ({ 
+  lineHeight: 1,
+  display:'inline',
+  '@media (min-width: 451px) and (max-width: 760px)': {
+    }, 
+  '@media (max-width: 450px)':{
+    padding: '0 .3rem',
+    }
+  }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
   my: 3,  
   display: 'flex',  
   flexDirection: 'row',
-  width:'20vw',
-  '@media (max-width: 780px)' : {width:'30vw',m:0, flexDirection: 'row'}
+  minWidth: '10rem',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    minWidth:'20vw', margin:0, flexDirection: 'row', fontSize:'2rem'
+   },
+  '@media (max-width: 450px)' : {
+    minWidth:'8rem', margin:0, flexDirection: 'row', fontSize:'2rem'
+   }
 }));
 export const WorkRow = styled(TableRow)(( ) => ({ 
   p:0, 
@@ -233,10 +332,11 @@ export const WorkRow = styled(TableRow)(( ) => ({
   wordWrap: 'break-word',
   display: 'flex',
   flexDirection: 'row',
-  '@media (max-width: 780px)' : {
+  '@media (min-width: 451px) and (max-width: 760px)' : {
     flexDirection: 'col',
     maxWidth: '90vw'
-  }
+  },
+  '@media (max-width: 450px)': {}
 }));
 
 export const WorkDateCell = styled(TableCell)(( ) => ({ 
@@ -248,8 +348,9 @@ export const WorkDateCell = styled(TableCell)(( ) => ({
   fontSize:'85%', 
   fontWeight: 'bold',
   color: theme.palette.bright,
-  '@media (max-width: 780px)' : {
-  }
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+  },
+  '@media (max-width: 450px)': {}
 }));
 export const WorkDate = styled(Typography)(( ) => ({
   fontSize:'.8rem', 
@@ -259,7 +360,8 @@ export const WorkDate = styled(Typography)(( ) => ({
 export const WorkBodyCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
   borderBottom: 0, 
-  '@media (max-width: 786px)': {} 
+  '@media (min-width: 451px) and (max-width: 760px)': {},
+  '@media (max-width: 450px)': {} 
   }));
 export const WorkPosition = styled(Typography)(( ) => ({
   fontSize:'1rem',
@@ -290,13 +392,13 @@ export const ResumeContainer = styled(Container)(( ) => ({
   backgroundColor:'white',
 }))
 export const ResumeRow = styled(TableRow)(( ) => ({ 
-  border: '1px solid blue',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
-  '@media (max-width: 780px)' : {
+  '@media (min-width: 451px) and (max-width: 760px)' : {
     flexDirection: 'col',
     maxWidth: '100vw'
-  }
+  },
+  '@media (max-width: 450px)': {}
 }));
 export const ResumeCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
@@ -309,8 +411,9 @@ export const ResumeCell = styled(TableCell)(( ) => ({
   fontWeight: 'bold',
   width:'',
   color: theme.palette.dark1,
-  '@media (max-width: 780px)' : {
-  }
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+  },
+  '@media (max-width: 450px)': {}
   }));
 
 export const ResumeFab = styled(Fab)(( ) => ({
@@ -340,7 +443,8 @@ export const ResumeName=styled(Typography)(( ) => ({
   fontWeight: '600',
   color: theme.palette.light,
   fontSize: '3rem',
-  '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
+  '@media (min-width: 451px) and (max-width: 760px)' : { width:'28vw', fontSize: '1.7rem' },
+  '@media (max-width: 450px)': {}
 }));
 export const ResumeTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
@@ -350,7 +454,8 @@ export const ResumeTitleText = styled(Typography)(( ) => ({
   lineHeight: 1,
   whiteSpace: 'normal',
   wordWrap: 'break-word',
-  '@media (max-width: 780px)' : {fontSize: '1.1rem'}
+  '@media (min-width: 451px) and (max-width: 760px)' : {fontSize: '1.1rem'},
+  '@media (max-width: 450px)': {}
 }));
 
 export const ResumeType = styled(Typography)(( ) => ({
@@ -378,7 +483,8 @@ export const Subtitle=styled(ListItem)(( ) => ({
   fontWeight: '600', 
   marginBottom: '1rem',
   lineHeight: 1,
-  '@media (max-width: 780px)' : {}
+  '@media (min-width: 451px) and (max-width: 760px)' : {},
+  '@media (max-width: 450px)': {}
 }));
 
 export const GameButton=styled(Button)(( ) => ({
