@@ -1,4 +1,4 @@
-import Canvas from "../components/Game/canvas";
+import Canvas from "../components/Game/Canvas";
 import { theme, BodySheets, NavTitleText, Subtitle } from "../template/theme";
 
 export default function Game () { 
