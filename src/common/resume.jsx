@@ -38,6 +38,9 @@ export const createMain=(work)=>{
       <ResumeType sx={{fontWeight: 'bold', paddingTop: '.2rem',}}>
         {work.position}  <i>{work.name}</i>
       </ResumeType>
+      <ResumeType lineHeight={1}>
+        {work.summary}
+      </ResumeType>
         <List>
           { work.highlights.map((h,i)=>{
             return(<ListItem key={`work-${i}`} sx={{padding:'.1rem', lineHeight:'50%'}}> <ResumeType level='body-sm' lineHeight={1}><KeyboardArrowRightIcon sx={{fontSize:'small'}}/>{h}</ResumeType></ListItem>)

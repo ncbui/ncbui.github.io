@@ -10,7 +10,7 @@ import { createCertData, createEduData, createSkillsData, createWorkData } from 
 const options = {
     filename: 'resume.pdf',
     page: {
-      margin: 5
+      margin: 10
     }
   };
 
@@ -85,13 +85,13 @@ export default function Resume() {
               <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
               <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
                 <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
-                  Cam Bui 
+                  {resume.basics.name}
                 </NavName>
                 <NavTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
-                  Fullstack Devops Engineer
+                  {resume.basics.label}
                 </NavTitleText>
                 <Subtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
-                  Experienced software engineer with expertise in GitOps and full-stack development. 
+                  {resume.basics.summary}
                 </Subtitle>
               </NavTitleText>
               </Box>
@@ -111,7 +111,7 @@ export default function Resume() {
     <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
        <ResumeContainer component={Paper}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
