@@ -4,13 +4,14 @@ import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from '../template/theme';
-import { createCertData, createEduData, createWorkData } from '../common/resume';
+import { HeaderCell, ResumeContainer, ResumeFab, ResumeName, ResumeRow , ResumeTitleText, ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
+import { createCertData, createEduData, createSkillsData, createWorkData } from '../common/resume';
 
 const options = {
     filename: 'resume.pdf',
     page: {
-      margin: 5
+      margin: 10,
+      marginTop:5,
     }
   };
 
@@ -47,6 +48,7 @@ export default function Resume() {
       }
       if(type=='work'){
         return(details.map((w)=>{
+          if (w.name.includes('Sabbatical')) return () => {};
           const { dates, main } = createWorkData(w)
           return(
           <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
@@ -54,14 +56,25 @@ export default function Resume() {
             <TableCell colSpan={4}> {main} </TableCell>  
           </TableRow>)
         }))
-      }}
+      }
+      if(type=='skills'){
+        return(details.map((w)=>{
+          const { dates, main } = createSkillsData(w)
+          return(
+          <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
+            <TableCell colSpan={4}> {main} </TableCell>  
+          </TableRow>)
+        }))
+      }
+    }
     return ( makeRowByType() )
     }
       const makeSectionHeader = (header) => {
         return (
           <ResumeRow sx={{border: 0}}>
             <HeaderCell colSpan={5} sx={{margin:0, padding:0, border: 0,}}>
-              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </NavTitleText>
+              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </ResumeTitleText>
             </HeaderCell>
         </ResumeRow>
         )
@@ -70,18 +83,18 @@ export default function Resume() {
         return (
         <TableRow >
             <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
-              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
-                <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
-                  Cam Bui 
-                </NavName>
-                <NavTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
-                  Fullstack Devops Engineer
-                </NavTitleText>
-                <NavSubtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
-                  Experienced software engineer with expertise in GitOps and full-stack development. 
-                </NavSubtitle>
-              </NavTitleText>
+              <Box sx={{ width: '25rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
+              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
+                <ResumeName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
+                  {resume.basics.name}
+                </ResumeName>
+                <ResumeTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
+                  {resume.basics.label}
+                </ResumeTitleText>
+                <Subtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
+                  {resume.basics.summary}
+                </Subtitle>
+              </ResumeTitleText>
               </Box>
             </TableCell>
             <TableCell colSpan={2} sx={{ fontSize:'1.1rem',lineHeight:1, }}>
@@ -96,15 +109,17 @@ export default function Resume() {
       }
 
   return (
-    <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
-       <ResumeContainer component={Paper}>
+    <WorkSheets component={Paper} sx={{ height:'100vh', justifyContent: 'center' }} >
+       <ResumeContainer component={Paper} sx={{padding: '1rem 0'}}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
           </TableHead>
           <TableBody>
+          { makeSectionHeader('Skills & Tooling') }
+          { MakeSectionRow('skills', resume.skills) }
           { makeSectionHeader('Work') }
           { MakeSectionRow('work', resume.work) }
           { makeSectionHeader('Certificates') }

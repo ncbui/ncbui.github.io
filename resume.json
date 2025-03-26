@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Cam Bui",
-    "label": "Fullstack Devops Engineer",
+    "label": "Platform DevOps Engineer",
     "image": "",
     "email": "bui.cam@proton.me",
     "phone": "",
     "url": "https://ncbui.github.io/",
-    "summary": "Experienced software engineer with expertise in GitOps, cloud platforms, and full-stack development. Let's talk about clearing developer friction to make room for communication and collaboration.",
+    "summary": "Experienced software engineer with expertise in GitOps and platform development.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -26,7 +26,7 @@
       {
         "name": "Family and Wellness Sabbatical",
         "position": "",
-        "url": "",
+        "url": "/art",
         "startDate": "2024",
         "endDate": "2025",
         "summary": "",
@@ -39,12 +39,12 @@
         "url": "https://www.thoughtworks.com",
         "startDate": "2021",
         "endDate": "2024",
-        "summary": "Build and maintain data pipelines and platforms, across frontend, backend, and cloud infrastructure. Worked closely with cross-functional teams to enable scientists, healthcare providers, operations specialists, and more to build tools to understand their data.",
+        "summary": "Worked closely with cross-functional teams to build and maintain data pipelines and platforms, that enable scientists, healthcare providers, and operations specialists to explore their data.",
         "tools": ["Python", "ReactJS", "Kubernetes", "ArgoCD", "PySpark",  "PostgreSQL", "Snyk", "Aqua"],
         "highlights": [
-            "Developed automation code to configure and build robust CI/CD pipelines into test and production environments",
-            "Optimize developer starter kits to reduce time to first feature deployment for emergent teams and features",
-            "Increase deployment frequency and reduced time to deployment by standardizing exception handling and error monitoring, strategically implementing security and compliance checks, and enabling developers to deploy test resources into distributed environments using ArgoCD."
+            "Automated cloud infrastructure provisioning for distributed environments, enabling gitops configuration and reducing manual setup time by 50% for distributed environments.",
+            "Built scalable CI/CD pipelines using ArgoCD and Kubernetes and optimized developer starter kits to reduce time-to-first-deployment for emergent teams and features.",
+            "Increase deployment frequency and reduced time to resolution for errors by standardizing exception handling and error monitoring, while enforcing security and compliance checks."
         ]},
         {
         "position": "Data Entry ",
@@ -54,7 +54,7 @@
         "endDate": "2020",
         "summary": "Processed patient health records and streamline data quality checks.",
         "tools": ["EMR", "Salesforce", "Tableau"],
-        "highlights": ["Streamlined data quality checks by building reports that cross reference databases during launch of newly-acquired products."]
+        "highlights": ["Streamlined data quality checks by building reports that cross-reference databases during launch of newly-acquired products."]
         },
         {
         "position": "Graduate Researcher",
@@ -62,10 +62,9 @@
         "url": "https://faculty.sfsu.edu/~morsella/content/action-and-consciousness-laboratory",
         "startDate": "2016",
         "endDate": "2019",
-        "summary": "Proposed, conducted, and analyzed behavioral experiments on automatic visual and syntactic processing.",
+        "summary": "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208.",
         "tools": ["R", "statistical analysis"],
-        "highlights": [
-          "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208."]
+        "highlights": []
         },
         {
         "position": "Health Policy Intern",
@@ -73,7 +72,7 @@
         "url": "https://wellness.sfsu.edu/",
         "startDate": "2016",
         "endDate": "2017",
-        "summary": "Intern in the inaugural cohort of the Health, Promotions, and Wellness unit at SFSU",
+        "summary": "Intern in the inaugural cohort of the Health, Promotions, and Wellness unit at SFSU.",
         "tools": ["focus groups","literature review", "semi-structured interviews"],
         "highlights": [
           " Conducted focus groups for the newly-built Mashouf Wellness Center (MWC) that found that students on this commuter campus overwhelmingly needed places to rest. In 2024, MWC launched the Zen Den, a free space to nap at SFSU. "]
@@ -130,38 +129,33 @@
     "summary": "Description…"
   }],
   "skills": [{
-    "name": "Web Development",
+    "name": "Platform Dev",
     "level": "Senior",
     "keywords": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
       "Python",
       "PostgresSQL",
+      "JavaScript",
+      "ReactJS",
       "Pyspark"
-    ]
-  },
-  {
+    ]},
+    {
     "name": "DevOps",
     "level": "Senior",
     "keywords": [
       "Kubernetes",
+      "Infrastructure as Code (IaC)",
+      "GitOps",
       "ArgoCD",
-      "CircleCI",
-      "Azure",
       "AWS"
-    ]
-  },
-  {
+    ]},
+    {
     "name": "Security",
     "level": "Beginner",
     "keywords": [
       "Snyk",
       "Aqua"
-    ]
-  }
-],
+    ]}
+  ],
   "languages": [{
     "language": "English",
     "fluency": "Native speaker"

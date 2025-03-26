@@ -2,7 +2,7 @@ import { createTheme, Fab, TableCell, TableRow } from '@mui/material';
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 
-export const shades = {
+const shades = {
   primary: {
     100: "rgb(224, 217, 252)",
     200: "rgb(222, 139, 190)",
@@ -17,7 +17,7 @@ export const shades = {
   },
 }
 
-export const style = { 
+const style = { 
   root: {
     height: '100vh',
     overflow: 'hidden',
@@ -187,8 +187,6 @@ export const NavSheets=styled(Sheets)(( ) => ({
   '@media (max-width: 780px)' : {
   width:'100vw',
   m:0,
-  borderBottom:'4px dotted',
-  borderColor: theme.palette.bright,
   }
 }));
 export const NavSubtitle=styled(ListItem)(( ) => ({
@@ -205,6 +203,7 @@ export const NavName=styled(Typography)(( ) => ({
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
   fontWeight: '600',
   color: theme.palette.light,
+  textShadow:'.2rem .2rem 5px #290129',
   fontSize: '3rem',
   '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
 }));
@@ -214,6 +213,7 @@ export const NavTitleText = styled(Typography)(( ) => ({
   fontWeight: '800', 
   fontSize: '1.4rem',
   lineHeight: 1,
+  textShadow:'.2rem .2rem 5px #290129',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
   '@media (max-width: 780px)' : {fontSize: '1.1rem'}
@@ -335,6 +335,24 @@ export const ResumeFab = styled(Fab)(( ) => ({
   },
 }))
 
+export const ResumeName=styled(Typography)(( ) => ({
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
+  fontWeight: '600',
+  color: theme.palette.light,
+  fontSize: '3rem',
+  '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
+}));
+export const ResumeTitleText = styled(Typography)(( ) => ({
+  color: theme.palette.bright,
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+  fontWeight: '800', 
+  fontSize: '1.4rem',
+  lineHeight: 1,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (max-width: 780px)' : {fontSize: '1.1rem'}
+}));
+
 export const ResumeType = styled(Typography)(( ) => ({
   fontFamily: 'Hind, sans-serif',
   color: theme.palette.dark1,
@@ -354,3 +372,34 @@ export const ResumeButton = styled(Typography)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
 }}))
+export const Subtitle=styled(ListItem)(( ) => ({
+  color: theme.palette.text,
+  fontFamily: 'Hind, sans-serif', 
+  fontWeight: '600', 
+  marginBottom: '1rem',
+  lineHeight: 1,
+  '@media (max-width: 780px)' : {}
+}));
+
+export const GameButton=styled(Button)(( ) => ({
+  backgroundColor: theme.palette.shiny,
+  color: theme.palette.dark1,
+  fontFamily: 'Hind, sans-serif',
+  fontWeight: '700',
+  fontSize: '80%',
+  textTransform: 'none',
+  margin: '0 .2rem 0 0',
+  padding: '1px 6px',
+  borderRadius: '.2rem',
+  '&:hover': {
+    backgroundColor: theme.palette.light2,
+    borderColor: theme.palette.light2,
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+  },
+}))
