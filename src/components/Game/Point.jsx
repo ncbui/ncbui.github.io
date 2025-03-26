@@ -28,15 +28,13 @@ export default class Point {
     /** Return new point at a random x,y. */
     static newRandom(color=this.color) {
         const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
-        return new Point({x: randRange(0, WIDTH*SCALE-10), y: randRange(0, HEIGHT*SCALE-10)},color);
+        return new Point({x: randRange(10, WIDTH*SCALE-10), y: randRange(10, HEIGHT*SCALE-10)},color);
     }
     /** Return Manhattan distance to another point*/
     distanceFrom(pt) {
         const dx = Math.abs(this.x - pt.x);
         const dy = Math.abs(this.y - pt.y);
-
         const D = 1; // cost for moving from one space to next;  using simple case
-
         return parseFloat(D * (dx + dy));
     }
 
