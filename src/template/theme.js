@@ -155,7 +155,7 @@ export const BodySheets = styled(Sheets)(( ) => ({
     padding: '1vh 1vw',
     width:'90vw',
     m: 0,
-  }
+  },
   '@media (max-width: 450px)' : {
     padding: '1vh 1vw',
     width:'90vw',
