@@ -10,7 +10,8 @@ import { createCertData, createEduData, createSkillsData, createWorkData } from 
 const options = {
     filename: 'resume.pdf',
     page: {
-      margin: 10
+      margin: 10,
+      marginTop:5,
     }
   };
 
@@ -82,7 +83,7 @@ export default function Resume() {
         return (
         <TableRow >
             <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
+              <Box sx={{ width: '25rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
               <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
                 <ResumeName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
                   {resume.basics.name}
@@ -108,10 +109,10 @@ export default function Resume() {
       }
 
   return (
-    <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', justifyContent: 'center' }} >
-       <ResumeContainer component={Paper}>
+    <WorkSheets component={Paper} sx={{ height:'100vh', justifyContent: 'center' }} >
+       <ResumeContainer component={Paper} sx={{padding: '1rem 0'}}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
-        <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
+        <ResumeFab variant="extended" onClick={buildPdf}>Build</ResumeFab>
         <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
           <TableHead>
             { makeTableHead() }
