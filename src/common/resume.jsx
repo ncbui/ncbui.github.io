@@ -1,6 +1,7 @@
 import { Box, List, ListItem, Typography } from '@mui/joy';
 import { BootstrapButton, ResumeType, ResumeButton } from "../template/theme"
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { HeaderCell, ResumeContainer, ResumeCell, ResumeFab, ResumeName, ResumeRow , ResumeSubtitle, ResumeLink, ResumeTable, ResumeTitleText,  WorkSheets, ResumeDateCell } from '../template/theme';
 
 export const makeButtons = ({tools}) =>{
     return( 
@@ -55,3 +56,106 @@ export const createMain=(work)=>{
         <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType>
     </Box>)
 }
+
+export const MakeSectionRow = (type, details)=> {
+    const makeRowByType = () => {
+      if(type=='certs' || type=='cert'){
+        return(details.map((c)=>{
+          const { dates, main } = createCertData(c)
+          return(
+          <ResumeRow colSpan={3} key={`cert-${dates}`} >
+            <ResumeDateCell> 
+              <ResumeType > 
+                {dates} 
+                </ResumeType> 
+              </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>
+          </ResumeRow>)
+        }))
+      }
+      if(type=='edu'){
+        return(details.map((e,i)=>{
+          const { dates, main } = createEduData(e)
+          return(
+          <ResumeRow colSpan={3} key={`edu-${i}`}>
+            <ResumeDateCell padding="" > 
+              <ResumeType > 
+                {dates} 
+                </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>
+          </ResumeRow>)
+        }))
+      }
+      if(type=='work'){
+        return(details.map((w)=>{
+          if (w.name.includes('Sabbatical')) return () => {};
+          const { dates, main } = createWorkData(w)
+          return(
+          <ResumeRow colSpan={3} key={dates} >
+            <ResumeDateCell>
+              <ResumeType > 
+              {dates} 
+              </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>  
+          </ResumeRow>)
+        }))
+      }
+      if(type=='skills'){
+        return(details.map((w)=>{
+          const { dates, main } = createSkillsData(w)
+          return(
+          <ResumeRow colSpan={3} key={dates}>
+            <ResumeDateCell> 
+              <ResumeType > 
+                {dates} </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>  
+          </ResumeRow>)
+        }))
+      }
+    }
+    return ( makeRowByType() )
+    }
+export const makeSectionHeader = (header) => {
+        return (
+          <ResumeRow colSpan={3}>
+            <HeaderCell colSpan={2}>
+              <ResumeTitleText> {header} </ResumeTitleText>
+            </HeaderCell>
+        </ResumeRow>
+        )
+      };
+
+      export const makeTableHead = (about) => {
+        return (
+          <ResumeRow colSpan={3}>
+          <HeaderCell colSpan={3}> 
+                 <ResumeName > 
+                   {about.name}
+                 </ResumeName>
+                 <ResumeTitleText> 
+                   {about.label}
+                 </ResumeTitleText>
+                 <ResumeSubtitle>
+                   {about.summary}
+                 </ResumeSubtitle>
+               <Box align='right' >
+              { about.profiles.map((p) => {
+                   return (
+                   <ResumeTitleText key={p.network}>
+                     <ResumeLink to={p.url}>
+                     {p.network}: {p.username} 
+                     </ResumeLink>
+                     <br/>
+                   </ResumeTitleText>)})
+                   }
+                 <ResumeTitleText>
+                   <ResumeLink to={about.url}>
+                   ncbui.github.io
+                 </ResumeLink>
+               </ResumeTitleText>
+              </Box>
+          </HeaderCell>
+          </ResumeRow>
+        )
+      }
+export const downloadPdf = () => window.open("./static/resume.pdf")
