@@ -11,7 +11,7 @@ export default function Resume() {
         <ResumeTable 
           id='container'  
           aria-label="a dense table"
-          minWidth={380}
+          width={380}
           >
           <TableHead>
             { makeTableHead(resume.basics) }

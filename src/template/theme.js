@@ -2,6 +2,7 @@ import { createTheme, Fab, Table, TableCell, TableContainer, TableRow } from '@m
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
+import { TurnSlightRightOutlined } from '@mui/icons-material';
 
 const shades = {
   primary: {
@@ -386,6 +387,10 @@ export const WorkListItem = styled(ListItem)(( ) => ({
   whiteSpace: 'normal',
   wordWrap: 'break-word',
 }));
+export const LinkIcon = styled(TurnSlightRightOutlined)(( ) => ({
+  color: theme.palette.bright, fontSize:'1rem'
+}));
+
 export const HeaderCell = styled(TableCell)(( ) => ({
   horizontalAlign: 'right', 
   verticalAlign: 'top', 
