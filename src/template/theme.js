@@ -2,6 +2,7 @@ import { createTheme, Fab, Table, TableCell, TableContainer, TableRow } from '@m
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
+import { TurnSlightRightOutlined } from '@mui/icons-material';
 
 const shades = {
   primary: {
@@ -145,35 +146,44 @@ export const Sheets = styled(Sheet)(( ) => ({
   }
 }));
 export const BodySheets = styled(Sheets)(( ) => ({
-  m:0,
-  paddingTop: '4rem', 
+  margin:0,
+  paddingTop: '3rem',
   paddingLeft: '4rem',
   paddingRight: '2rem',
   width:'65vw',
   height: '100vh',
   justifyContent: 'space-between',
+  overflowY: 'auto',
   '@media (min-width: 451px) and (max-width: 760px)' : {
     padding: '1vh 1vw',
-    width:'90vw',
-    m: 0,
+    width:'94vw',
+    margin:0,
+    overflowY: 'auto',
   },
   '@media (max-width: 450px)' : {
+    width:'94vw',
     padding: '1vh 1vw',
-    width:'90vw',
-    m: 0,
+    margin:0,
+    overflowY: 'auto',
   }
   }));
   export const WorkSheets = styled(BodySheets)(( ) => ({
     m:0,
-    padding: '3rem 0',
+    padding: '2rem 0',
     overflowX: 'hidden',
     overflowY: 'auto',
     width:'60vw',
     '@media (min-width: 451px) and (max-width: 760px)' : {
-      width:'92vw',
+      width:'94vw',
+      padding: '1vh 1vw',
+      margin:0,
+      overflowY: 'auto',
     },
     '@media (max-width: 450px)': {
-      width:'92vw',
+      width:'94vw',
+      padding: '1vh 1vw',
+      margin:0,
+      overflowY: 'auto',
     }
   }));
 export const AppContainer = styled(Container)(( ) => ({
@@ -197,35 +207,41 @@ export const AppContainer = styled(Container)(( ) => ({
   }
 }));
 export const NavSheets=styled(Sheets)(( ) => ({
-  m:0,
-  p:0,
+  margin:0,
+  paddingX:0,
+  paddingBottom:0,
   width:'30vw',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    width:'100vw',
-    m:0,
-    p:0,
+    width:'94vw',
+    margin:0,
+    padding:0,
   },
   '@media (max-width: 450px)' : {
-    width:'100vw',
-    m:0,
-    p:0,
+    width:'94vw',
+    margin:0,
+    padding:0,
+    
   }
 }));
 
 export const NavHeader=styled(List)(( ) => ({
   display:'flex', 
   flexDirection:'col', 
+  // margin:0,
+  padding:0,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     width:'90vw',
     flexDirection:'row', 
     justifyContent:'space-between',
     alignItems:'center',
+    padding:0,
   }, 
   '@media (max-width: 450px)' : {
     width:'90vw',
     flexDirection:'row', 
     justifyContent:'flex-start',
     alignItems:'center',
+    paddingBottom:0,
   }
 }));
 
@@ -237,9 +253,19 @@ export const NavName=styled(Typography)(( ) => ({
   fontSize: '3rem',
   lineHeight: 1,
   '@media (min-width: 451px) and (max-width: 760px)' : { 
-    width:'10rem', fontSize: '2rem' },
+    width:'10rem', 
+    fontSize: '2rem',
+    margin: 0,
+    padding: 0,
+    lineHeight: 1,
+   },
   '@media (max-width: 450px)' : { 
-    width:'8rem', fontSize: '1.7rem' },
+    width:'8rem', 
+    fontSize: '1.7rem',
+    margin: 0,
+    padding: 0,
+    lineHeight: 1,
+  },
 }));
 export const NavTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
@@ -257,7 +283,7 @@ export const NavTitleText = styled(Typography)(( ) => ({
   },
   '@media (max-width: 450px)' : { 
     fontSize: '1rem', 
-    padding: '0 .3rem 0 .3rem',
+    padding: 0,
     lineHeight: 1,
   }
   }));
@@ -270,7 +296,9 @@ export const NavSubtitle=styled(ListItem)(( ) => ({
   lineHeight: 1.1,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     display:'none'},
-  '@media (max-width: 450px)': {}
+  '@media (max-width: 450px)': {
+    padding: 0,
+  }
   }));
 export const NavContent=styled(List)(( ) => ({ 
   display:'flex', 
@@ -280,12 +308,12 @@ export const NavContent=styled(List)(( ) => ({
   '@media (min-width: 451px) and (max-width: 760px)': {
     flexDirection: 'row', 
     justifyContent:'space-between', 
-    width: '95vw',
+    width: '98vw',
     }, 
   '@media (max-width: 450px)':{
     flexDirection: 'row',
     justifyContent:'start',
-    width: '95vw',
+    width: '98vw',
     minWidth: '21rem',
     }
   }));
@@ -293,9 +321,9 @@ export const NavLinkList=styled(List)(( ) => ({
   display:'flex', 
   flexDirection: 'col',
   lineHeight: 1,
+  // m:0, p:0,
   '@media (min-width: 451px) and (max-width: 760px)': {
     flexDirection: 'row', 
-    m:0, p:0,
     whiteSpace: 'normal',
     wordWrap: 'break-word',
     width: '10vw',
@@ -309,24 +337,25 @@ export const NavLinkList=styled(List)(( ) => ({
     }
   }));
 export const NavLinkListItem=styled(ListItem)(( ) => ({ 
-  lineHeight: 1,
+  lineHeight: .25,
   display:'inline',
   '@media (min-width: 451px) and (max-width: 760px)': {
+    padding: '0 .2rem',
     }, 
   '@media (max-width: 450px)':{
-    padding: '0 .3rem',
+    padding: '0 .1rem',
     }
   }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
-  my: 3,  
+  marginY: 3,  
   display: 'flex',  
   flexDirection: 'row',
   minWidth: '10rem',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    minWidth:'20vw', margin:0, flexDirection: 'row', fontSize:'2rem'
+    minWidth:'7rem', margin:0, marginY: 0, padding:0,flexDirection: 'row', fontSize:'2rem'
    },
   '@media (max-width: 450px)' : {
-    minWidth:'8rem', margin:0, flexDirection: 'row', fontSize:'2rem'
+    minWidth:'7rem', margin:0,  marginY: 0,  padding:0, flexDirection: 'row', fontSize:'2rem'
    }
 }));
 export const WorkRow = styled(TableRow)(( ) => ({ 
@@ -386,6 +415,10 @@ export const WorkListItem = styled(ListItem)(( ) => ({
   whiteSpace: 'normal',
   wordWrap: 'break-word',
 }));
+export const LinkIcon = styled(TurnSlightRightOutlined)(( ) => ({
+  color: theme.palette.bright, fontSize:'1rem'
+}));
+
 export const HeaderCell = styled(TableCell)(( ) => ({
   horizontalAlign: 'right', 
   verticalAlign: 'top', 
@@ -581,31 +614,30 @@ export const GameSubtitleText=styled(Typography)(( ) => ({
   lineHeight: 1,
   textShadow:'.2rem .2rem 5px #290129',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    fontSize: '1.1rem',
+    fontSize: '.8rem',
     lineHeight: 1,
-    width: '98vw',
+    width: '94vw',
   },
   '@media (max-width: 450px)' : { 
-    fontSize: '1rem', 
+    fontSize: '.8rem', 
     lineHeight: 1,
-    maxWidth: '98vw',
+    maxWidth: '94vw',
   }
 }));
 
 export const GameDescription=styled(Typography)(( ) => ({
   maxWidth: '30rem',
-  fontSize:'.8rem', 
+  fontSize:'1rem', 
   fontWeight: 'bold',
   color: theme.palette.text,
+  lineHeight: 1,
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    width: '100vw',
-    fontSize: '1.1rem',
-    lineHeight: 1,
+    width: '98vw',
+    fontSize: '.8rem',
   },
   '@media (max-width: 450px)' : { 
-    fontSize: '1rem', 
-    lineHeight: 1,
-    maxWidth: '100vw',
+    fontSize: '.8rem', 
+    maxWidth: '98vw',
   }
 }));
 
@@ -613,7 +645,7 @@ export const GameFooterText=styled(GameTitleText)(( ) => ({
   fontStyle: 'italic', 
   fontWeight:'900', 
   fontSize: '1rem', 
-  margin:'1rem 0 0 .3rem', 
+  margin:'1rem 0 0 1rem', 
 }));
 
 export const GameButton=styled(Button)(( ) => ({
@@ -623,7 +655,7 @@ export const GameButton=styled(Button)(( ) => ({
   fontWeight: '700',
   fontSize: '80%',
   textTransform: 'none',
-  margin: '0 .2rem 0 0',
+  // margin: '0 .2rem 0 0',
   padding: '1px 6px',
   borderRadius: '.2rem',
   '&:hover': {
@@ -637,4 +669,16 @@ export const GameButton=styled(Button)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
   },
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '.8rem',
+    lineHeight: 1,
+    margin: '.2rem',
+    padding: '1px 4px',
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '.8rem', 
+    lineHeight: 1,
+    margin: '.2rem',
+    padding: '1px 4px',
+  }
 }));

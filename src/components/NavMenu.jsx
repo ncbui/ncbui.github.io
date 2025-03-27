@@ -8,7 +8,7 @@ export default function NavMenu() {
     <NavSheets>
       <List>
         <NavHeader id="navHeader">
-          <ListSubheader>
+          <ListSubheader sx={{'@media (max-width: 760px)' : {margin: 0, padding: 0}}}>
             <NavName level="h1" variant ='h1'>
               <Link to="/"> Cam Bui </Link>
             </NavName>
@@ -20,7 +20,7 @@ export default function NavMenu() {
             <Typography>
               <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/></Link>
               <Link to="https://github.com/ncbui" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/></Link>
-              <Link to="/art"><PhotoSizeSelectActual sx={{fontSize:'2.4rem', marginLeft:'.2rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/></Link>
+              <Link to="/art"><PhotoSizeSelectActual sx={{fontSize:'2.4rem', marginLeft:'.2rem', marginRight:0, '@media (max-width: 760px)' : {fontSize:'2rem'}}}/></Link>
             </Typography>
           </NavSocials>
           <NavLinkList>

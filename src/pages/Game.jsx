@@ -1,5 +1,5 @@
 import Canvas from "../components/Game/Canvas";
-import { BodySheets, GameTitleText,GameSubtitleText, Subtitle, GameFooterText, GameDescription } from "../template/theme";
+import { BodySheets, GameTitleText,GameSubtitleText, GameFooterText, GameDescription } from "../template/theme";
 
 export default function Game () { 
     return (

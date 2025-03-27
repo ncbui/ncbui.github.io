@@ -1,78 +1,9 @@
-import { Link } from 'react-router-dom';
-import { Table, TableContainer, TableBody } from '@mui/material';
-import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
-import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
-import { useTheme } from '@mui/styles';
+
 import * as resume from '../../resume.json'
-import { makeButtons } from '../common/resume';
+import { Table, TableContainer, TableBody } from '@mui/material';
+import { makeWorkRow, makeEduRow, makeCertRow, makeHeader } from '../common/work';
 
 export default function WorkExperience () { 
-    const theme = useTheme()
-    const makeWorkRow=(work)=>{
-      return( 
-        work.map((w)=>{
-          return (
-          <WorkRow key={w.endDate}>
-            <WorkDateCell>
-              <WorkDate> {w.startDate} - {w.endDate}</WorkDate>
-            </WorkDateCell>
-            <WorkBodyCell>
-                <WorkPosition > 
-                <Link to={w.url} target="_blank" rel="noopener noreferrer">
-                  {w.position}  <i>{w.name}</i>
-                  {w.url ? <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'1rem'}}/> : '' }
-                </Link> 
-                </WorkPosition >
-              <WorkList sx={{ m:0 }}>
-                { w.summary ? <WorkListItem>{w.summary}</WorkListItem> : '' }
-                { w.tools ? <WorkListItem sx={{m:0}}>{makeButtons(w)}</WorkListItem> : '' }
-              </WorkList>
-            </WorkBodyCell>
-          </WorkRow>
-      )}))}
-
-    const makeEduRow = (exp) =>{
-      return( exp.map((a)=>{
-          return (
-          <WorkRow key={a.endDate} >
-              <WorkDateCell>
-                <WorkDate> {a.endDate} </WorkDate>
-              </WorkDateCell>
-              <WorkBodyCell>
-                <WorkPosition>
-                  <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.studyType}  {a.area}. {a.institution}</Link> 
-                  <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
-                </WorkPosition>
-              </WorkBodyCell>    
-          </WorkRow>
-      )}))}
-
-    const makeCertRow = (cert) =>{
-      return( cert.map((a)=>{
-          return (
-          <WorkRow key={a.name} >
-              <WorkDateCell>
-                <WorkDate> {a.date} </WorkDate>
-              </WorkDateCell>
-              <WorkBodyCell >
-                <WorkPosition >
-                  <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.name} {a.issuer}</Link> 
-                  <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
-                </WorkPosition>
-              </WorkBodyCell>    
-          </WorkRow>
-      )}))}
-
-      const makeHeader = (section) =>{
-        return(
-          <WorkRow>
-            <HeaderCell colSpan={4}>
-              <NavTitleText>{section} </NavTitleText>
-            </HeaderCell>
-          </WorkRow>
-        )
-      }
-    
     return (
       <TableContainer sx={{  width: '100%', overflowX: 'auto'}}>
         <Table aria-label="work and experience" sx={{width:'inherit'}} > 
