@@ -366,6 +366,8 @@ export const WorkDate = styled(Typography)(( ) => ({
 export const WorkBodyCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
   borderBottom: 0, 
+  margin: 0, 
+  padding: '0 1rem',
   '@media (min-width: 451px) and (max-width: 760px)': {},
   '@media (max-width: 450px)': {} 
   }));

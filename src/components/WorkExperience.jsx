@@ -12,11 +12,11 @@ export default function WorkExperience () {
       return( 
         work.map((w)=>{
           return (
-          <WorkRow key={w.endDate} sx={{width:'inherit'}}>
+          <WorkRow key={w.endDate}>
             <WorkDateCell>
               <WorkDate> {w.startDate} - {w.endDate}</WorkDate>
             </WorkDateCell>
-            <WorkBodyCell sx={{ m:0, p:'0 1rem', width: '90%'}} >
+            <WorkBodyCell>
                 <WorkPosition > 
                 <Link to={w.url} target="_blank" rel="noopener noreferrer">
                   {w.position}  <i>{w.name}</i>
@@ -38,7 +38,7 @@ export default function WorkExperience () {
               <WorkDateCell>
                 <WorkDate> {a.endDate} </WorkDate>
               </WorkDateCell>
-              <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}}>
+              <WorkBodyCell>
                 <WorkPosition>
                   <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.studyType}  {a.area}. {a.institution}</Link> 
                   <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
@@ -54,7 +54,7 @@ export default function WorkExperience () {
               <WorkDateCell>
                 <WorkDate> {a.date} </WorkDate>
               </WorkDateCell>
-              <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}} >
+              <WorkBodyCell >
                 <WorkPosition >
                   <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.name} {a.issuer}</Link> 
                   <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
