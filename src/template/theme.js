@@ -198,35 +198,39 @@ export const AppContainer = styled(Container)(( ) => ({
   }
 }));
 export const NavSheets=styled(Sheets)(( ) => ({
-  m:0,
-  p:0,
+  margin:0,
+  padding:0,
   width:'30vw',
   '@media (min-width: 451px) and (max-width: 760px)' : {
     width:'100vw',
-    m:0,
-    p:0,
+    margin:0,
+    padding:0,
   },
   '@media (max-width: 450px)' : {
     width:'100vw',
-    m:0,
-    p:0,
+    margin:0,
+    padding:0,
   }
 }));
 
 export const NavHeader=styled(List)(( ) => ({
   display:'flex', 
   flexDirection:'col', 
+  margin:0,
+  padding:0,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     width:'90vw',
     flexDirection:'row', 
     justifyContent:'space-between',
     alignItems:'center',
+    padding:0,
   }, 
   '@media (max-width: 450px)' : {
     width:'90vw',
     flexDirection:'row', 
     justifyContent:'flex-start',
     alignItems:'center',
+    paddingBottom:0,
   }
 }));
 
@@ -237,10 +241,18 @@ export const NavName=styled(Typography)(( ) => ({
   textShadow:'.2rem .2rem 5px #290129',
   fontSize: '3rem',
   lineHeight: 1,
+  margin:0,
+  padding:0,
   '@media (min-width: 451px) and (max-width: 760px)' : { 
-    width:'10rem', fontSize: '2rem' },
+    width:'10rem', 
+    fontSize: '2rem' },
   '@media (max-width: 450px)' : { 
-    width:'8rem', fontSize: '1.7rem' },
+    width:'8rem', 
+    fontSize: '1.7rem',
+    margin: 0,
+    padding: 0,
+    lineHeight: 1,
+  },
 }));
 export const NavTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
@@ -258,7 +270,7 @@ export const NavTitleText = styled(Typography)(( ) => ({
   },
   '@media (max-width: 450px)' : { 
     fontSize: '1rem', 
-    padding: '0 .3rem 0 .3rem',
+    padding: 0,
     lineHeight: 1,
   }
   }));
@@ -271,7 +283,9 @@ export const NavSubtitle=styled(ListItem)(( ) => ({
   lineHeight: 1.1,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     display:'none'},
-  '@media (max-width: 450px)': {}
+  '@media (max-width: 450px)': {
+    padding: 0,
+  }
   }));
 export const NavContent=styled(List)(( ) => ({ 
   display:'flex', 
@@ -281,12 +295,12 @@ export const NavContent=styled(List)(( ) => ({
   '@media (min-width: 451px) and (max-width: 760px)': {
     flexDirection: 'row', 
     justifyContent:'space-between', 
-    width: '95vw',
+    width: '98vw',
     }, 
   '@media (max-width: 450px)':{
     flexDirection: 'row',
     justifyContent:'start',
-    width: '95vw',
+    width: '98vw',
     minWidth: '21rem',
     }
   }));
@@ -294,9 +308,9 @@ export const NavLinkList=styled(List)(( ) => ({
   display:'flex', 
   flexDirection: 'col',
   lineHeight: 1,
+  // m:0, p:0,
   '@media (min-width: 451px) and (max-width: 760px)': {
     flexDirection: 'row', 
-    m:0, p:0,
     whiteSpace: 'normal',
     wordWrap: 'break-word',
     width: '10vw',
@@ -310,24 +324,25 @@ export const NavLinkList=styled(List)(( ) => ({
     }
   }));
 export const NavLinkListItem=styled(ListItem)(( ) => ({ 
-  lineHeight: 1,
+  lineHeight: .25,
   display:'inline',
   '@media (min-width: 451px) and (max-width: 760px)': {
+    padding: '0 .2rem',
     }, 
   '@media (max-width: 450px)':{
-    padding: '0 .3rem',
+    padding: '0 .1rem',
     }
   }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
-  my: 3,  
+  marginY: 3,  
   display: 'flex',  
   flexDirection: 'row',
   minWidth: '10rem',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    minWidth:'20vw', margin:0, flexDirection: 'row', fontSize:'2rem'
+    minWidth:'7rem', margin:0, marginY: 0, padding:0,flexDirection: 'row', fontSize:'2rem'
    },
   '@media (max-width: 450px)' : {
-    minWidth:'8rem', margin:0, flexDirection: 'row', fontSize:'2rem'
+    minWidth:'7rem', margin:0,  marginY: 0,  padding:0, flexDirection: 'row', fontSize:'2rem'
    }
 }));
 export const WorkRow = styled(TableRow)(( ) => ({ 
