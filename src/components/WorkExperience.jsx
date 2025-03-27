@@ -12,11 +12,11 @@ export default function WorkExperience () {
       return( 
         work.map((w)=>{
           return (
-          <WorkRow key={w.endDate} sx={{width:'inherit'}}>
-            <WorkDateCell sx={{m:0, padding:0, width: '7rem'}}>
+          <WorkRow key={w.endDate}>
+            <WorkDateCell>
               <WorkDate> {w.startDate} - {w.endDate}</WorkDate>
             </WorkDateCell>
-            <WorkBodyCell sx={{ m:0, p:'0 1rem', width: '90%'}} >
+            <WorkBodyCell>
                 <WorkPosition > 
                 <Link to={w.url} target="_blank" rel="noopener noreferrer">
                   {w.position}  <i>{w.name}</i>
@@ -35,10 +35,10 @@ export default function WorkExperience () {
       return( exp.map((a)=>{
           return (
           <WorkRow key={a.endDate} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '7rem'}}>
+              <WorkDateCell>
                 <WorkDate> {a.endDate} </WorkDate>
               </WorkDateCell>
-              <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}}>
+              <WorkBodyCell>
                 <WorkPosition>
                   <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.studyType}  {a.area}. {a.institution}</Link> 
                   <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
@@ -51,10 +51,10 @@ export default function WorkExperience () {
       return( cert.map((a)=>{
           return (
           <WorkRow key={a.name} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '10rem'}}>
+              <WorkDateCell>
                 <WorkDate> {a.date} </WorkDate>
               </WorkDateCell>
-              <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}} >
+              <WorkBodyCell >
                 <WorkPosition >
                   <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.name} {a.issuer}</Link> 
                   <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
@@ -66,7 +66,7 @@ export default function WorkExperience () {
       const makeHeader = (section) =>{
         return(
           <WorkRow>
-            <HeaderCell colSpan={2} sx={{m:'.5rem 0', padding:0}}>
+            <HeaderCell colSpan={4}>
               <NavTitleText>{section} </NavTitleText>
             </HeaderCell>
           </WorkRow>
