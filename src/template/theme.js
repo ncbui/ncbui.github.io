@@ -1,6 +1,7 @@
-import { createTheme, Fab, TableCell, TableRow } from '@mui/material';
+import { createTheme, Fab, Table, TableCell, TableContainer, TableRow } from '@mui/material';
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
+import { Link } from 'react-router-dom';
 
 const shades = {
   primary: {
@@ -164,12 +165,16 @@ export const BodySheets = styled(Sheets)(( ) => ({
   }));
   export const WorkSheets = styled(BodySheets)(( ) => ({
     m:0,
-    padding:'3rem 0',
-    overflow: 'auto',
+    padding: '3rem 0',
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    width:'60vw',
     '@media (min-width: 451px) and (max-width: 760px)' : {
-      width:'100vw',
+      width:'92vw',
     },
-    '@media (max-width: 450px)': {}
+    '@media (max-width: 450px)': {
+      width:'92vw',
+    }
   }));
 export const AppContainer = styled(Container)(( ) => ({
   display: 'flex',
@@ -387,30 +392,59 @@ export const HeaderCell = styled(TableCell)(( ) => ({
   fontWeight:'400',
   borderBottom: 0,
 }));
-export const ResumeContainer = styled(Container)(( ) => ({
+export const ResumeContainer = styled(TableContainer)(( ) => ({
+  backgroundColor: theme.palette.light,
+  margin: 0,
+  width:'inherit',
+  maxWidth:'800px',
+  padding: '0 1rem',
   color:theme.palette.dark1, 
-  backgroundColor:'white',
+  justifyContent: 'center',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    width:'inherit',
+  },
+  '@media (max-width: 450px)': {
+    width:'inherit',
+  }
 }))
+
+export const ResumeTable = styled(Table)(( ) => ({
+  margin: 0,
+  padding: '0 1rem',
+  width: '700px',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+  },
+  '@media (max-width: 450px)': {
+    maxWidth: 400
+  }
+}));
+export const ResumeTableHeader = styled(TableCell)(( ) => ({
+  display: 'flex',
+  flexDirection: 'row',
+}));
 export const ResumeRow = styled(TableRow)(( ) => ({ 
+  verticalAlign:'top',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    flexDirection: 'col',
-    maxWidth: '100vw'
   },
-  '@media (max-width: 450px)': {}
+  '@media (max-width: 450px)': {
+  }
 }));
 export const ResumeCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
-  alignItems: 'left',
-  borderRight: '5px dotted', 
-  borderColor: theme.palette.bright, 
-  borderTop: 0,
-  borderBottom: 0,
-  fontSize:1, 
-  fontWeight: 'bold',
-  width:'',
+  margin: 0, 
+  padding:0, 
   color: theme.palette.dark1,
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+  },
+  '@media (max-width: 450px)': {}
+  }));
+export const ResumeDateCell = styled(ResumeCell)(( ) => ({ 
+  textAlign: 'right',
+  fontWeight: 'bold',
+  paddingRight: '.3rem',
+  fontSize: '80%',
   '@media (min-width: 451px) and (max-width: 760px)' : {
   },
   '@media (max-width: 450px)': {}
@@ -441,26 +475,53 @@ export const ResumeFab = styled(Fab)(( ) => ({
 export const ResumeName=styled(Typography)(( ) => ({
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
   fontWeight: '600',
-  color: theme.palette.light,
-  fontSize: '3rem',
-  '@media (min-width: 451px) and (max-width: 760px)' : { width:'28vw', fontSize: '1.7rem' },
-  '@media (max-width: 450px)': {}
+  color: theme.palette.dark1,
+  display:'block', 
+  lineHeight:1,
+  fontSize: '2.5rem',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '1.7rem' 
+  },
+  '@media (max-width: 450px)': {
+    fontSize: '1.3rem' 
+  }
 }));
 export const ResumeTitleText = styled(Typography)(( ) => ({
-  color: theme.palette.bright,
+  color: theme.palette.dark1,
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
   fontWeight: '800', 
-  fontSize: '1.4rem',
+  fontSize: '1.2rem',
+  lineHeight: 1,
+  padding: 0,
+  margin: 0,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '1.1rem'},
+  '@media (max-width: 450px)': {
+    fontSize: '1.1rem'
+  }
+}));
+export const ResumeSubtitle = styled(Typography)(( ) => ({
+  color:theme.palette.dark1, 
   lineHeight: 1,
   whiteSpace: 'normal',
   wordWrap: 'break-word',
-  '@media (min-width: 451px) and (max-width: 760px)' : {fontSize: '1.1rem'},
-  '@media (max-width: 450px)': {}
+  width: '30rem',
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+  },
+  '@media (max-width: 450px)': {
+  }
 }));
 
 export const ResumeType = styled(Typography)(( ) => ({
   fontFamily: 'Hind, sans-serif',
   color: theme.palette.dark1,
+  lineHeight: 1.3,
+}))
+
+export const ResumeLink = styled(Link)(( ) => ({
+  color: theme.palette.dark1
 }))
 
 export const ResumeButton = styled(Typography)(( ) => ({

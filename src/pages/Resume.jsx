@@ -1,10 +1,7 @@
-import { Link } from 'react-router-dom';
 import * as resume from '../../resume.json'
 import generatePDF from 'react-to-pdf';
-import { useTheme } from '@mui/styles';
-import { Box, Table,  Typography } from '@mui/joy';
-import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
-import { HeaderCell, ResumeContainer, ResumeFab, ResumeName, ResumeRow , ResumeTitleText, ResumeType,  Subtitle,  WorkSheets } from '../template/theme';
+import { Box, Paper, TableBody, TableHead } from '@mui/material';
+import { HeaderCell, ResumeContainer, ResumeCell, ResumeFab, ResumeName, ResumeRow , ResumeSubtitle, ResumeLink, ResumeTable, ResumeTitleText, ResumeType,  WorkSheets, ResumeDateCell } from '../template/theme';
 import { createCertData, createEduData, createSkillsData, createWorkData } from '../common/resume';
 
 const options = {
@@ -21,7 +18,6 @@ const downloadPdf = () => window.open("./static/resume.pdf")
 
 
 export default function Resume() {
-  const theme = useTheme()
 
   const MakeSectionRow = (type, details)=> {
 
@@ -30,20 +26,27 @@ export default function Resume() {
         return(details.map((c)=>{
           const { dates, main } = createCertData(c)
           return(
-          <TableRow colSpan={5} key={`cert-${dates}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType> </TableCell>
-            <TableCell colSpan={4}> {main} </TableCell>
-          </TableRow>)
+          <ResumeRow colSpan={3} key={`cert-${dates}`} >
+            <ResumeDateCell> 
+              <ResumeType > 
+                {dates} 
+                </ResumeType> 
+              </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>
+          </ResumeRow>)
         }))
       }
       if(type=='edu'){
         return(details.map((e,i)=>{
           const { dates, main } = createEduData(e)
           return(
-          <TableRow colSpan={5} key={`edu-${i}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} align="right" padding="" scope="row" > <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
-            <TableCell colSpan={4}> {main} </TableCell>
-          </TableRow>)
+          <ResumeRow colSpan={3} key={`edu-${i}`}>
+            <ResumeDateCell padding="" > 
+              <ResumeType > 
+                {dates} 
+                </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>
+          </ResumeRow>)
         }))
       }
       if(type=='work'){
@@ -51,20 +54,25 @@ export default function Resume() {
           if (w.name.includes('Sabbatical')) return () => {};
           const { dates, main } = createWorkData(w)
           return(
-          <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
-            <TableCell colSpan={4}> {main} </TableCell>  
-          </TableRow>)
+          <ResumeRow colSpan={3} key={dates} >
+            <ResumeDateCell>
+              <ResumeType > 
+              {dates} 
+              </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>  
+          </ResumeRow>)
         }))
       }
       if(type=='skills'){
         return(details.map((w)=>{
           const { dates, main } = createSkillsData(w)
           return(
-          <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
-            <TableCell colSpan={4}> {main} </TableCell>  
-          </TableRow>)
+          <ResumeRow colSpan={3} key={dates}>
+            <ResumeDateCell> 
+              <ResumeType > 
+                {dates} </ResumeType>  </ResumeDateCell>
+            <ResumeCell colSpan={2}> {main} </ResumeCell>  
+          </ResumeRow>)
         }))
       }
     }
@@ -72,48 +80,56 @@ export default function Resume() {
     }
       const makeSectionHeader = (header) => {
         return (
-          <ResumeRow sx={{border: 0}}>
-            <HeaderCell colSpan={5} sx={{margin:0, padding:0, border: 0,}}>
-              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </ResumeTitleText>
+          <ResumeRow colSpan={3}>
+            <HeaderCell colSpan={2}>
+              <ResumeTitleText> {header} </ResumeTitleText>
             </HeaderCell>
         </ResumeRow>
         )
       }
       const makeTableHead = () => {
         return (
-        <TableRow >
-            <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginBottom:'1.5rem',   '@media (max-width: 780px)' : {width: 'inherit'} }}>
-              <ResumeTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
-                <ResumeName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
-                  {resume.basics.name}
-                </ResumeName>
-                <ResumeTitleText sx={{color:theme.palette.dark1, lineHeight:1, fontSize:'1.2rem'}}> 
-                  {resume.basics.label}
-                </ResumeTitleText>
-                <Subtitle sx={{width: '25rem', color:theme.palette.dark1, '@media (max-width: 980px)' : {width: '35vw'} }}>
-                  {resume.basics.summary}
-                </Subtitle>
-              </ResumeTitleText>
+          <ResumeRow colSpan={3}>
+          <HeaderCell colSpan={3}> 
+                 <ResumeName > 
+                   {resume.basics.name}
+                 </ResumeName>
+                 <ResumeTitleText> 
+                   {resume.basics.label}
+                 </ResumeTitleText>
+                 <ResumeSubtitle>
+                   {resume.basics.summary}
+                 </ResumeSubtitle>
+               <Box align='right' >
+              { resume.basics.profiles.map((p) => {
+                   return (
+                   <ResumeTitleText key={p.network}>
+                     <ResumeLink to={p.url}>
+                     {p.network}: {p.username} 
+                     </ResumeLink>
+                     <br/>
+                   </ResumeTitleText>)})
+                   }
+                 <ResumeTitleText>
+                   <ResumeLink to={resume.basics.url}>
+                   ncbui.github.io
+                 </ResumeLink>
+               </ResumeTitleText>
               </Box>
-            </TableCell>
-            <TableCell colSpan={2} sx={{ fontSize:'1.1rem',lineHeight:1, }}>
-              <Box align='right' sx={{marginBottom:'4.3rem', marginRight:'1.2rem', '& a': { color:theme.palette.dark1 }, '@media (max-width: 786px)' : {marginBottom:'1.5rem'}}}>
-                { resume.basics.profiles.map((p) => {
-                  return (<Typography key={p.network}><Link to={p.url}>{p.network}: {p.username} </Link><br/></Typography>)})
-                  }
-                <Link to={resume.basics.url}>ncbui.github.io</Link>
-              </Box>  
-            </TableCell>
-          </TableRow>)
+          </HeaderCell>
+          </ResumeRow>
+        )
       }
 
   return (
-    <WorkSheets component={Paper} sx={{ height:'100vh', justifyContent: 'center' }} >
-       <ResumeContainer component={Paper} sx={{padding: '1rem 0'}}>
+    <WorkSheets>
+       <ResumeContainer component={Paper}>
         <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
         <ResumeFab variant="extended" onClick={buildPdf} disabled>Build</ResumeFab>
-        <Table id='container' sx={{ minWidth: 450}} size="medium" aria-label="a dense table">
+        <ResumeTable 
+          id='container'  
+          aria-label="a dense table"
+          >
           <TableHead>
             { makeTableHead() }
           </TableHead>
@@ -127,7 +143,7 @@ export default function Resume() {
           { makeSectionHeader('Education') }
           { MakeSectionRow('edu', resume.education) }
       </TableBody>
-    </Table>
+    </ResumeTable>
   </ResumeContainer>
 </WorkSheets>
   );
