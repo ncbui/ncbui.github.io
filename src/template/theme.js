@@ -346,15 +346,16 @@ export const WorkRow = styled(TableRow)(( ) => ({
 
 export const WorkDateCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
-  alignItems: 'left',
+  textAlign: 'right',
   borderRight:'3px dotted', 
   borderColor:theme.palette.bright, 
   borderBottom: 0,
   fontSize:'85%', 
   fontWeight: 'bold',
+  minWidth: '10rem',
+  padding:'0 1rem',
   color: theme.palette.bright,
-  '@media (min-width: 451px) and (max-width: 760px)' : {
-  },
+  '@media (min-width: 451px) and (max-width: 760px)' : {},
   '@media (max-width: 450px)': {}
 }));
 export const WorkDate = styled(Typography)(( ) => ({
@@ -421,6 +422,8 @@ export const ResumeTable = styled(Table)(( ) => ({
 export const ResumeTableHeader = styled(TableCell)(( ) => ({
   display: 'flex',
   flexDirection: 'row',
+  paddingBottom: 0,
+  marginBottom: 0
 }));
 export const ResumeRow = styled(TableRow)(( ) => ({ 
   verticalAlign:'top',

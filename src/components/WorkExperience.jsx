@@ -13,7 +13,7 @@ export default function WorkExperience () {
         work.map((w)=>{
           return (
           <WorkRow key={w.endDate} sx={{width:'inherit'}}>
-            <WorkDateCell sx={{m:0, padding:0, width: '7rem'}}>
+            <WorkDateCell>
               <WorkDate> {w.startDate} - {w.endDate}</WorkDate>
             </WorkDateCell>
             <WorkBodyCell sx={{ m:0, p:'0 1rem', width: '90%'}} >
@@ -35,7 +35,7 @@ export default function WorkExperience () {
       return( exp.map((a)=>{
           return (
           <WorkRow key={a.endDate} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '7rem'}}>
+              <WorkDateCell>
                 <WorkDate> {a.endDate} </WorkDate>
               </WorkDateCell>
               <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}}>
@@ -51,7 +51,7 @@ export default function WorkExperience () {
       return( cert.map((a)=>{
           return (
           <WorkRow key={a.name} >
-              <WorkDateCell sx={{ m:0, padding:0, width: '10rem'}}>
+              <WorkDateCell>
                 <WorkDate> {a.date} </WorkDate>
               </WorkDateCell>
               <WorkBodyCell sx={{m:0, p:'0 1rem', width: '90%'}} >
@@ -66,7 +66,7 @@ export default function WorkExperience () {
       const makeHeader = (section) =>{
         return(
           <WorkRow>
-            <HeaderCell colSpan={2} sx={{m:'.5rem 0', padding:0}}>
+            <HeaderCell colSpan={4}>
               <NavTitleText>{section} </NavTitleText>
             </HeaderCell>
           </WorkRow>
