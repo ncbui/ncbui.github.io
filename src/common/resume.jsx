@@ -13,12 +13,12 @@ export const makeButtons = ({tools}) =>{
 
 export const createCertData=(cert)=>{
   const dates = `${cert.date}`;
-  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.2rem', paddingTop: '.2rem',}}>{cert.name}. <i>{cert.issuer}</i></ResumeType>;
+  const main = <ResumeType sx={{fontWeight: 'bold'}}>{cert.name}. <i>{cert.issuer}</i> </ResumeType>;
   return { dates, main };
 }
 export const createEduData=(edu)=>{
   const dates = edu.startDate=="" ?<ResumeType>{edu.endDate}</ResumeType>:<ResumeType>{edu.startDate} - {edu.endDate}</ResumeType>
-  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.2rem', paddingTop: '.2rem'}}>{edu.studyType}  {edu.area}<br/> <i>{edu.institution}</i></ResumeType>;
+  const main = <ResumeType sx={{fontWeight: 'bold' }}>{edu.studyType}  {edu.area}<br/> <i>{edu.institution}</i> </ResumeType>;
   return { dates, main };
 }
 export const createWorkData=(work)=>{
@@ -28,22 +28,28 @@ export const createWorkData=(work)=>{
 }
 export const createSkillsData=(skills)=>{
   const dates = skills.name;
-  const main = <ResumeType sx={{ paddingBottom:'.2rem', paddingTop: '.2rem',}}>{skills.keywords.join(", ")}</ResumeType>;
+  const main = <ResumeType >{skills.keywords.join(", ")}</ResumeType>;
   return { dates, main };
 }
 
 export const createMain=(work)=>{
   return (
     <Box>
-      <ResumeType sx={{fontWeight: 'bold', paddingTop: '.2rem',}}>
+      <ResumeType level='body-md' sx={{fontWeight: 'bold'}}>
         {work.position}  <i>{work.name}</i>
       </ResumeType>
-      <ResumeType lineHeight={1}>
+      <ResumeType level='body-md'>
         {work.summary}
       </ResumeType>
         <List>
           { work.highlights.map((h,i)=>{
-            return(<ListItem key={`work-${i}`} sx={{padding:'.1rem', lineHeight:'50%'}}> <ResumeType level='body-sm' lineHeight={1}><KeyboardArrowRightIcon sx={{fontSize:'small'}}/>{h}</ResumeType></ListItem>)
+            return(
+            <ListItem key={`work-${i}`} 
+              sx={{padding:'.1rem'}}> 
+              <ResumeType level='body-sm'>
+                <KeyboardArrowRightIcon sx={{fontSize:'small'}}/>{h}
+                </ResumeType>
+                </ListItem>)
           }) }
         </List>
         <ResumeType sx={{ paddingBottom:'.75rem'}}> Skills: {work.tools.map((tool, i)=>{return(<ResumeButton key={`rb-${i}`}>{tool}</ResumeButton>)})} </ResumeType>
