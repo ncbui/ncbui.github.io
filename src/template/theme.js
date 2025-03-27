@@ -153,15 +153,18 @@ export const BodySheets = styled(Sheets)(( ) => ({
   width:'65vw',
   height: '100vh',
   justifyContent: 'space-between',
+  overflowY: 'auto',
   '@media (min-width: 451px) and (max-width: 760px)' : {
     padding: '1vh 1vw',
-    width:'90vw',
+    width:'92vw',
     m: 0,
+    overflowY: 'auto',
   },
   '@media (max-width: 450px)' : {
     padding: '1vh 1vw',
-    width:'90vw',
+    width:'92vw',
     m: 0,
+    overflowY: 'auto',
   }
   }));
   export const WorkSheets = styled(BodySheets)(( ) => ({
