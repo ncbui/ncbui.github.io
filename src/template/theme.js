@@ -604,31 +604,30 @@ export const GameSubtitleText=styled(Typography)(( ) => ({
   lineHeight: 1,
   textShadow:'.2rem .2rem 5px #290129',
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    fontSize: '1.1rem',
+    fontSize: '.8rem',
     lineHeight: 1,
-    width: '98vw',
+    width: '92vw',
   },
   '@media (max-width: 450px)' : { 
-    fontSize: '1rem', 
+    fontSize: '.8rem', 
     lineHeight: 1,
-    maxWidth: '98vw',
+    maxWidth: '92vw',
   }
 }));
 
 export const GameDescription=styled(Typography)(( ) => ({
   maxWidth: '30rem',
-  fontSize:'.8rem', 
+  fontSize:'1rem', 
   fontWeight: 'bold',
   color: theme.palette.text,
+  lineHeight: 1,
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    width: '100vw',
-    fontSize: '1.1rem',
-    lineHeight: 1,
+    width: '98vw',
+    fontSize: '.8rem',
   },
   '@media (max-width: 450px)' : { 
-    fontSize: '1rem', 
-    lineHeight: 1,
-    maxWidth: '100vw',
+    fontSize: '.8rem', 
+    maxWidth: '98vw',
   }
 }));
 
@@ -636,7 +635,7 @@ export const GameFooterText=styled(GameTitleText)(( ) => ({
   fontStyle: 'italic', 
   fontWeight:'900', 
   fontSize: '1rem', 
-  margin:'1rem 0 0 .3rem', 
+  margin:'1rem 0 0 1rem', 
 }));
 
 export const GameButton=styled(Button)(( ) => ({
@@ -646,7 +645,7 @@ export const GameButton=styled(Button)(( ) => ({
   fontWeight: '700',
   fontSize: '80%',
   textTransform: 'none',
-  margin: '0 .2rem 0 0',
+  // margin: '0 .2rem 0 0',
   padding: '1px 6px',
   borderRadius: '.2rem',
   '&:hover': {
@@ -660,4 +659,16 @@ export const GameButton=styled(Button)(( ) => ({
     borderColor: theme.palette.text,
     color: theme.palette.text,
   },
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize: '.8rem',
+    lineHeight: 1,
+    margin: '.2rem',
+    padding: '1px 4px',
+  },
+  '@media (max-width: 450px)' : { 
+    fontSize: '.8rem', 
+    lineHeight: 1,
+    margin: '.2rem',
+    padding: '1px 4px',
+  }
 }));
