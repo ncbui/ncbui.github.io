@@ -404,8 +404,8 @@ export const NavSocialsListItem=styled(ListItem)(( ) => ({
 }));
 
 export const WorkFab = styled(Fab)(( ) => ({
-  transform: 'scale(0.6)',
-  margin: '0 -1rem',
+  transform: 'scale(0.5)',
+  marginLeft:'-2rem',
   padding: '0 .7rem',
   textTransform: 'none',
   backgroundColor: theme.palette.shiny,
@@ -414,7 +414,7 @@ export const WorkFab = styled(Fab)(( ) => ({
   fontWeight: '700',
   fontFamily: 'Hind',
   borderRadius: '.3rem',
-  fontSize: 20,
+  fontSize: 24,
   lineHeight: 1,
   '&:hover': {
     backgroundColor: theme.palette.light2,
@@ -427,10 +427,10 @@ export const WorkFab = styled(Fab)(( ) => ({
     display: 'none'
   },
   '@media (min-width: 451px) and (max-width: 760px)' : {
-    margin: '0 -1rem',
+    marginLeft:'-1.5rem',
   },
   '@media (max-width: 450px)': {
-    margin: '0 -1rem',
+    marginLeft:'-1.5rem',
   }
 }))
 export const WorkRow = styled(TableRow)(( ) => ({ 
@@ -458,7 +458,7 @@ export const WorkDateCell = styled(TableCell)(( ) => ({
   fontWeight: 'bold',
   minWidth: '9rem',
   padding:'0 1rem',
-  color: theme.palette.bright,
+  color: theme.palette.text,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     minWidth: '7rem',
   },
@@ -482,7 +482,7 @@ export const WorkBodyCell = styled(TableCell)(( ) => ({
 export const WorkPosition = styled(Typography)(( ) => ({
   fontSize:'1rem',
   fontWeight: '400',
-  color: theme.palette.light,
+  color: theme.palette.text,
   lineHeight: 1,
   '@media (min-width: 451px) and (max-width: 760px)' : {
     fontSize:'.9rem', 
@@ -499,7 +499,8 @@ export const WorkList = styled(List)(( ) => ({
   lineHeight: 1,
 }));
 export const WorkListItem = styled(ListItem)(( ) => ({
-  color:'inherit', fontFamily:'Hind',
+  color:'inherit', 
+  fontFamily:'Hind',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
   lineHeight: 1,

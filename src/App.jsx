@@ -18,7 +18,8 @@ export default function App() {
       <AppContainer>
           <NavMenu/>  
           <Routes>
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/game" element={<Game />} />
