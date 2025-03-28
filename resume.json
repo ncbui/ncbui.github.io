@@ -129,14 +129,17 @@
     "summary": "Description…"
   }],
   "skills": [{
-    "name": "Platform Dev",
+    "name": "Platform",
     "level": "Senior",
     "keywords": [
       "Python",
-      "PostgresSQL",
-      "JavaScript",
-      "ReactJS",
-      "Pyspark"
+      "React",
+      "Pyspark",
+      "Snyk",
+      "Aqua",
+      "Go (learning)",
+      "AWS",
+      "Datadog"
     ]},
     {
     "name": "DevOps",
@@ -146,14 +149,7 @@
       "Infrastructure as Code (IaC)",
       "GitOps",
       "ArgoCD",
-      "AWS"
-    ]},
-    {
-    "name": "Security",
-    "level": "Beginner",
-    "keywords": [
-      "Snyk",
-      "Aqua"
+      "PostgresSQL"
     ]}
   ],
   "languages": [{

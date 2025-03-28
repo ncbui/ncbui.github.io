@@ -1,7 +1,7 @@
 import { Box, List, ListItem, Typography } from '@mui/joy';
 import { BootstrapButton, ResumeType, ResumeButton } from "../template/theme"
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { HeaderCell, ResumeContainer, ResumeCell, ResumeFab, ResumeName, ResumeRow , ResumeSubtitle, ResumeLink, ResumeTable, ResumeTitleText,  WorkSheets, ResumeDateCell } from '../template/theme';
+import { HeaderCell, ResumeCell, ResumeName, ResumeRow , ResumeSubtitle, ResumeLink, ResumeTitleText, ResumeDateCell } from '../template/theme';
 
 export const makeButtons = ({tools}) =>{
     return( 
