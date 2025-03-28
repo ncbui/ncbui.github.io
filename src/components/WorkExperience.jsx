@@ -5,7 +5,7 @@ import { makeWorkRow, makeEduRow, makeCertRow, makeHeader } from '../common/work
 
 export default function WorkExperience () { 
     return (
-      <TableContainer sx={{  width: '100%', overflowX: 'auto'}}>
+      <TableContainer sx={{ width: '100%', overflowX: 'auto'}}>
         <Table aria-label="work and experience" sx={{width:'inherit'}} > 
           <TableBody>
             {makeHeader("Experience")}
