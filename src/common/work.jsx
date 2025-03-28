@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem, LinkIcon } from '../template/theme';
-import { makeButtons } from '../common/resume';
+import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem, LinkIcon, WorkFab } from '../template/theme';
+import { downloadPdf } from './resume';
 
 export const makeWorkRow=(work)=>{
     return( 
@@ -8,7 +8,7 @@ export const makeWorkRow=(work)=>{
         return (
         <WorkRow key={w.endDate}>
           <WorkDateCell>
-            <WorkDate> {w.startDate} - {w.endDate}</WorkDate>
+            <WorkDate> {w.startDate}-{w.endDate}</WorkDate>
           </WorkDateCell>
           <WorkBodyCell>
               <WorkPosition > 
@@ -19,7 +19,6 @@ export const makeWorkRow=(work)=>{
               </WorkPosition >
             <WorkList sx={{ m:0 }}>
               { w.summary ? <WorkListItem>{w.summary}</WorkListItem> : '' }
-              { w.tools ? <WorkListItem sx={{m:0}}>{makeButtons(w)}</WorkListItem> : '' }
             </WorkList>
           </WorkBodyCell>
         </WorkRow>
@@ -33,9 +32,8 @@ export const makeWorkRow=(work)=>{
               <WorkDate> {a.endDate} </WorkDate>
             </WorkDateCell>
             <WorkBodyCell>
-              <WorkPosition>
-                <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.studyType}  {a.area}. {a.institution}</Link> 
-                <LinkIcon/>
+              <WorkPosition sx={{fontSize:'95%'}}>
+              {a.studyType}  {a.area}. <i>{a.institution}</i>
               </WorkPosition>
             </WorkBodyCell>    
         </WorkRow>
@@ -49,20 +47,38 @@ export const makeWorkRow=(work)=>{
               <WorkDate> {a.date} </WorkDate>
             </WorkDateCell>
             <WorkBodyCell >
-              <WorkPosition >
-                <Link to={a.url} target="_blank" rel="noopener noreferrer">{a.name} {a.issuer}</Link> 
-                <LinkIcon/>
+              <WorkPosition sx={{fontSize:'95%'}} >
+              {a.name} <i>{a.issuer}</i>
               </WorkPosition>
             </WorkBodyCell>    
         </WorkRow>
     )}))}
 
+    export const makeSkillsRow = (skills) =>{
+      return( skills.map((category)=>{
+          return (
+          <WorkRow key={category.name} >
+              <WorkDateCell>
+                <WorkDate> {category.name} </WorkDate>
+              </WorkDateCell>
+              <WorkBodyCell >
+                <WorkPosition sx={{fontSize:'95%'}}>
+                  {category.keywords.join(', ')}
+                </WorkPosition>
+              </WorkBodyCell>    
+          </WorkRow>
+      )}))}
+
     export const makeHeader = (section) =>{
       return(
         <WorkRow>
           <HeaderCell colSpan={4}>
-            <NavTitleText>{section} </NavTitleText>
-          </HeaderCell>
+            {section==="Experience" ?
+            <NavTitleText>{section} <WorkFab variant="extended" onClick={downloadPdf}>Detailed PDF</WorkFab></NavTitleText> 
+            :
+            <NavTitleText>{section}</NavTitleText> 
+            }
+            </HeaderCell>
         </WorkRow>
       )
     }

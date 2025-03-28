@@ -234,6 +234,7 @@ export const NavHeader=styled(List)(( ) => ({
     flexDirection:'row', 
     justifyContent:'space-between',
     alignItems:'center',
+    marginBottom:0,
     padding:0,
   }, 
   '@media (max-width: 450px)' : {
@@ -241,6 +242,7 @@ export const NavHeader=styled(List)(( ) => ({
     flexDirection:'row', 
     justifyContent:'flex-start',
     alignItems:'center',
+    marginBottom:0,
     paddingBottom:0,
   }
 }));
@@ -280,6 +282,7 @@ export const NavTitleText = styled(Typography)(( ) => ({
   '@media (min-width: 451px) and (max-width: 760px)' : {
     fontSize: '1.1rem',
     lineHeight: 1,
+    padding: 0,
   },
   '@media (max-width: 450px)' : { 
     fontSize: '1rem', 
@@ -321,7 +324,7 @@ export const NavLinkList=styled(List)(( ) => ({
   display:'flex', 
   flexDirection: 'col',
   lineHeight: 1,
-  // m:0, p:0,
+  marginTop:'1rem',
   '@media (min-width: 451px) and (max-width: 760px)': {
     flexDirection: 'row', 
     whiteSpace: 'normal',
@@ -334,30 +337,102 @@ export const NavLinkList=styled(List)(( ) => ({
     whiteSpace: 'normal',
     wordWrap: 'break-word',
     flexWrap: 'wrap',
+    
     }
   }));
 export const NavLinkListItem=styled(ListItem)(( ) => ({ 
   lineHeight: .25,
-  display:'inline',
+  display: 'inline',
+  font: 'Tourney Variable, sans-serif',
+  color: theme.palette.light,
+  verticalAlign: 'bottom',
+  '&:hover': {
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: 'none',
+  },
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+  },
   '@media (min-width: 451px) and (max-width: 760px)': {
-    padding: '0 .2rem',
+    padding: '0 .3rem',
     }, 
   '@media (max-width: 450px)':{
-    padding: '0 .1rem',
+    padding: '0 .3rem',
     }
   }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
   marginY: 3,  
   display: 'flex',  
+  paddingLeft: '.5rem',
   flexDirection: 'row',
   minWidth: '10rem',
   '@media (min-width: 451px) and (max-width: 760px)' : {
     minWidth:'7rem', margin:0, marginY: 0, padding:0,flexDirection: 'row', fontSize:'2rem'
    },
   '@media (max-width: 450px)' : {
-    minWidth:'7rem', margin:0,  marginY: 0,  padding:0, flexDirection: 'row', fontSize:'2rem'
+    minWidth:'6rem', margin:0,  marginY: 0,  padding:0, flexDirection: 'row', fontSize:'2rem'
    }
 }));
+
+export const NavSocialsListItem=styled(ListItem)(( ) => ({
+  lineHeight: .25,
+  display:'inline',
+  verticalAlign: 'top',
+  marginX: 0,
+  padding: 0,
+  font: 'Tourney Variable, sans-serif',
+  color: theme.palette.light,
+  '&:hover': {
+    // backgroundColor: theme.palette.light2,
+    // borderColor: theme.palette.light2,
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: 'none',
+  },
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+  },
+  '@media (min-width: 451px) and (max-width: 760px)': {
+    }, 
+  '@media (max-width: 450px)':{
+    }
+}));
+
+export const WorkFab = styled(Fab)(( ) => ({
+  transform: 'scale(0.6)',
+  margin: '0 -1rem',
+  padding: '0 .7rem',
+  textTransform: 'none',
+  backgroundColor: theme.palette.shiny,
+  borderColor: theme.palette.shiny,
+  color: theme.palette.dark1,
+  fontWeight: '700',
+  fontFamily: 'Hind',
+  borderRadius: '.3rem',
+  fontSize: 20,
+  lineHeight: 1,
+  '&:hover': {
+    backgroundColor: theme.palette.light2,
+    borderColor: theme.palette.light2,
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:disabled': {
+    display: 'none'
+  },
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    margin: '0 -1rem',
+  },
+  '@media (max-width: 450px)': {
+    margin: '0 -1rem',
+  }
+}))
 export const WorkRow = styled(TableRow)(( ) => ({ 
   p:0, 
   m:0,   
@@ -381,11 +456,15 @@ export const WorkDateCell = styled(TableCell)(( ) => ({
   borderBottom: 0,
   fontSize:'85%', 
   fontWeight: 'bold',
-  minWidth: '10rem',
+  minWidth: '9rem',
   padding:'0 1rem',
   color: theme.palette.bright,
-  '@media (min-width: 451px) and (max-width: 760px)' : {},
-  '@media (max-width: 450px)': {}
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    minWidth: '7rem',
+  },
+  '@media (max-width: 450px)': {
+    minWidth: '7rem',
+  }
 }));
 export const WorkDate = styled(Typography)(( ) => ({
   fontSize:'.8rem', 
@@ -402,31 +481,40 @@ export const WorkBodyCell = styled(TableCell)(( ) => ({
   }));
 export const WorkPosition = styled(Typography)(( ) => ({
   fontSize:'1rem',
-  fontWeight: '800',
+  fontWeight: '400',
   color: theme.palette.light,
+  lineHeight: 1,
+  '@media (min-width: 451px) and (max-width: 760px)' : {
+    fontSize:'.9rem', 
+  },
+  '@media (max-width: 450px)': {
+    fontSize:'.8rem', 
+  }
 }));
 export const WorkList = styled(List)(( ) => ({
-  fontSize: '1rem', color: theme.palette.text,
+  fontSize: '.9rem', 
+  color: theme.palette.text,
   whiteSpace: 'normal',
   wordWrap: 'break-word',
+  lineHeight: 1,
 }));
 export const WorkListItem = styled(ListItem)(( ) => ({
   color:'inherit', fontFamily:'Hind',
   whiteSpace: 'normal',
   wordWrap: 'break-word',
+  lineHeight: 1,
 }));
 export const LinkIcon = styled(TurnSlightRightOutlined)(( ) => ({
   color: theme.palette.bright, fontSize:'1rem'
 }));
 
 export const HeaderCell = styled(TableCell)(( ) => ({
-  horizontalAlign: 'right', 
-  verticalAlign: 'top', 
-  p:0, 
-  m:0,  
+  padding:'.5rem 0', 
+  margin:0,  
   borderColor:theme.palette.bright,  
   fontWeight:'400',
   borderBottom: 0,
+  justifyContent: 'bottom',
 }));
 export const ResumeContainer = styled(TableContainer)(( ) => ({
   backgroundColor: theme.palette.light,
