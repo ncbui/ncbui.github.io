@@ -7,13 +7,14 @@ import {WIDTH,HEIGHT,SCALE} from './constants'
  *
  * x - x coord (0 is left)
  * y - y coord (0 is top)
- *
+ * color - color of the point; default green
+ * 
  * */
 export default class Point {
-    constructor(props) {
-      this.x = props.x;
-      this.y = props.y;
-      this.color = props.color
+    constructor({x,y,color='green'}) {
+      this.x = x;
+      this.y = y;
+      this.color = color;
     }
     draw(ctx, color=this.color){
         ctx.fillStyle = color;
