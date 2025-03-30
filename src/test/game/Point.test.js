@@ -12,4 +12,21 @@ describe('Point class', () => {
       expect(point.x).toBe(10);
       expect(point.y).toBe(20);
       expect(point.color).toBe('red');
-    });})
+    });
+    
+    it('draw() sets styles and calls canvas methods', () => {
+        const ctx = {
+          fillStyle: '',
+          strokestyle: '',
+          fillRect: vi.fn(),
+          strokeRect: vi.fn(),
+        };
+        const point = new Point({ x: 20, y: 30, color: 'orange'});
+        point.draw(ctx);
+    
+        expect(ctx.fillStyle).toBe('orange');
+        expect(ctx.strokestyle).toBe('orange');
+        expect(ctx.fillRect).toHaveBeenCalledWith(20, 30, 10, 10);
+        expect(ctx.strokeRect).toHaveBeenCalledWith(20, 30, 2, 1);
+      });
+})
