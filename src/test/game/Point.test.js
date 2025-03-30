@@ -63,11 +63,11 @@ describe('Point class', () => {
             const point = new Point({ x: 10, y: HEIGHT*SCALE });
             expect(point.isOutOfBound()).toBe(false);
         })
-        it('returns true for points off canvas',() => {
+        it('returns true for point off canvas',() => {
             const outOfBoundsPoint = new Point({ x: -WIDTH*SCALE, y: -HEIGHT*SCALE });
             expect(outOfBoundsPoint.isOutOfBound()).toBe(true);
         })
-        it('blank',() => {
+        it('returns true when point off canvas',() => {
             const outOfBoundsPointTwo = new Point({ x: -1*WIDTH, y: HEIGHT });
             expect(outOfBoundsPointTwo.isOutOfBound()).toBe(true);
         })
