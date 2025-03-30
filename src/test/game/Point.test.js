@@ -37,6 +37,15 @@ describe('Point class', () => {
         });
     })
 
+    describe('newRandom()', () => {
+        it('generates a point within canvas', () => {
+            const randomPoint = Point.newRandom('green');
+            expect(randomPoint.x).toBeGreaterThanOrEqual(10);
+            expect(randomPoint.x).toBeLessThanOrEqual(WIDTH * SCALE-10);
+            expect(randomPoint.color).toBe('green');
+          });
+        })
+
 
     it('draw() sets styles and calls canvas methods', () => {
         const ctx = {
