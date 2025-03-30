@@ -44,7 +44,16 @@ describe('Point class', () => {
             expect(randomPoint.x).toBeLessThanOrEqual(WIDTH * SCALE-10);
             expect(randomPoint.color).toBe('green');
           });
+        it('generates 100 points within canvas', () => {
+            for (let i = 0; i < 50; i++){
+                const randomPoint = Point.newRandom();
+                expect(randomPoint.x).toBeGreaterThanOrEqual(10);
+                expect(randomPoint.x).toBeLessThanOrEqual(WIDTH * SCALE-10);
+                expect(randomPoint.y).toBeGreaterThanOrEqual(10);
+                expect(randomPoint.y).toBeLessThanOrEqual(HEIGHT * SCALE-10);
+            }
         })
+    })
 
 
     it('draw() sets styles and calls canvas methods', () => {
