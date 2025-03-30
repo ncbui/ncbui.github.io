@@ -30,15 +30,28 @@ describe('Point class', () => {
         expect(ctx.strokeRect).toHaveBeenCalledWith(20, 30, 2, 1);
       });
 
-    it('isOutOfBound() detects out-of-bounds correctly', () => {
-    const inBoundsPoint = new Point({ x: 50, y: 50 });
-    const edgeOfBoundsPoint = new Point({ x: 10, y: HEIGHT });
-    const outOfBoundsPoint = new Point({ x: -5, y: -200 });
-    const outOfBoundsPointTwo = new Point({ x: -1*HEIGHT, y: HEIGHT });
-
-    expect(inBoundsPoint.isOutOfBound()).toBe(false);
-    expect(edgeOfBoundsPoint.isOutOfBound()).toBe(false);
-    expect(outOfBoundsPoint.isOutOfBound()).toBe(true);
-    expect(outOfBoundsPointTwo.isOutOfBound()).toBe(true);
+    describe('isOutOfBound()', () => {
+        it('returns false for in-bound points',() => {
+            const point = new Point({ x: 50, y: 50 });
+            expect(point.isOutOfBound()).toBe(false);
+        })
+        it('returns false for points on edge of canvas',() => {
+            const point = new Point({ x: 10, y: HEIGHT*SCALE });
+            expect(point.isOutOfBound()).toBe(false);
+        })
+        it('returns true for points off canvas',() => {
+            const outOfBoundsPoint = new Point({ x: -WIDTH*SCALE, y: -HEIGHT*SCALE });
+            expect(outOfBoundsPoint.isOutOfBound()).toBe(true);
+        })
+        it('blank',() => {
+            const outOfBoundsPointTwo = new Point({ x: -1*WIDTH, y: HEIGHT });
+            expect(outOfBoundsPointTwo.isOutOfBound()).toBe(true);
+        })
     });
+
+    it('distanceFrom() calculates Manhattan distance', () => {
+        const pointA = new Point({ x: 0, y: 0 });
+        const pointB = new Point({ x: 3, y: 4 });
+        expect(pointA.distanceFrom(pointB)).toBe(7); // |3-0| + |4-0| = 7
+      });
 })
