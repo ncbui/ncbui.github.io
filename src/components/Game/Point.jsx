@@ -10,10 +10,10 @@ import {WIDTH,HEIGHT,SCALE} from './constants'
  *
  * */
 export default class Point {
-    constructor(p, color = 'goldenrod') {
-      this.x = p.x;
-      this.y = p.y;
-      this.color = color
+    constructor(props) {
+      this.x = props.x;
+      this.y = props.y;
+      this.color = props.color
     }
     draw(ctx, color=this.color){
         ctx.fillStyle = color;

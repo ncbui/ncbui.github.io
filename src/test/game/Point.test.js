@@ -8,8 +8,8 @@ const SCALE = 1;
 describe('Point class', () => {
     // Test constructor and properties
     it('initializes with correct x, y, and color', () => {
-      const point = new Point({ x: 5, y: 10 }, 'red');
-      expect(point.x).toBe(5);
-      expect(point.y).toBe(10);
+      const point = new Point({ x: 10, y: 20, color: 'red'});
+      expect(point.x).toBe(10);
+      expect(point.y).toBe(20);
       expect(point.color).toBe('red');
     });})
