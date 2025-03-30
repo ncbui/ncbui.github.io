@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import Point from '../../components/Game/Point';
 
 const WIDTH = 100;
@@ -6,6 +6,14 @@ const HEIGHT = 100;
 const SCALE = 1;
 
 describe('Point class', () => {
+    beforeEach(() => {
+        vi.spyOn(console, 'log').mockImplementation(() => {});
+      });
+    
+    afterEach(() => {
+    console.log.mockRestore();
+    });
+
     describe('constructor()', () => {
         it('initializes with correct x, y, and color', () => {
             const point = new Point({ x: 10, y: 20, color: 'red'});
@@ -18,6 +26,14 @@ describe('Point class', () => {
             expect(()=> new Point({ x: undefined, y: 10, color: 'yellow'})).toThrow('x must be a number');
             expect(()=> new Point({ x: 10, y: 'red', color: 'yellow'})).toThrow('y must be a number');
             expect(()=> new Point({ x: 10, y: undefined, color: 'yellow'})).toThrow('y must be a number');
+        });
+        it('console.logs when color type is not string', () => {
+            new Point({ x: 10, y: 20, color: 10});
+            expect(console.log).toHaveBeenCalledWith("color set to default");
+            expect(console.log).toHaveBeenCalledTimes(1);
+            new Point({ x: 10, y: 20, color: undefined});
+            expect(console.log).toHaveBeenCalledWith("color set to default");
+            expect(console.log).toHaveBeenCalledTimes(1);
         });
     })
 
