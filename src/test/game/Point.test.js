@@ -6,13 +6,21 @@ const HEIGHT = 100;
 const SCALE = 1;
 
 describe('Point class', () => {
-    // Test constructor and properties
-    it('initializes with correct x, y, and color', () => {
-      const point = new Point({ x: 10, y: 20, color: 'red'});
-      expect(point.x).toBe(10);
-      expect(point.y).toBe(20);
-      expect(point.color).toBe('red');
-    });
+    describe('constructor()', () => {
+        it('initializes with correct x, y, and color', () => {
+            const point = new Point({ x: 10, y: 20, color: 'red'});
+            expect(point.x).toBe(10);
+            expect(point.y).toBe(20);
+            expect(point.color).toBe('red');
+          });
+        it('returns error when plot points type not number', () => {
+            expect(()=> new Point({ x: 'red', y: 10, color: 'yellow'})).toThrow('x must be a number');
+            expect(()=> new Point({ x: undefined, y: 10, color: 'yellow'})).toThrow('x must be a number');
+            expect(()=> new Point({ x: 10, y: 'red', color: 'yellow'})).toThrow('y must be a number');
+            expect(()=> new Point({ x: 10, y: undefined, color: 'yellow'})).toThrow('y must be a number');
+        });
+    })
+
 
     it('draw() sets styles and calls canvas methods', () => {
         const ctx = {

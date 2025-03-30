@@ -12,6 +12,12 @@ import {WIDTH,HEIGHT,SCALE} from './constants'
  * */
 export default class Point {
     constructor({x,y,color='green'}) {
+        if (typeof x !== 'number' || isNaN(x)) {
+            throw new Error('x must be a number');
+          }
+          if (typeof y !== 'number' || isNaN(y)) {
+            throw new Error('y must be a number');
+          }
       this.x = x;
       this.y = y;
       this.color = color;
