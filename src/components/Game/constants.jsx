@@ -13,9 +13,8 @@ export const gameOverText = (context) => {
 }
 
 export const drawCanvas = (context) => {
-    const {width, height} = context
     context.save()
-    context.clearRect(0, 0, width, height)
+    context.clearRect(0, 0, WIDTH*SCALE, HEIGHT*SCALE)
 }
 
 export const randomRangeTenths = (min, max) => {
