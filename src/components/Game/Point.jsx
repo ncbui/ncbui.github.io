@@ -13,10 +13,10 @@ import {WIDTH,HEIGHT,SCALE, randomRangeTenths} from './constants'
 export default class Point {
     constructor({x,y,color='green'}) {
         if (typeof x !== 'number' || isNaN(x)) {
-            throw new Error('x must be a number');
+            throw new Error('x must be a number', typeof x);
           }
           if (typeof y !== 'number' || isNaN(y)) {
-            throw new Error('y must be a number');
+            throw new Error('y must be a number', typeof y);
           }
       this.x = x;
       this.y = y;
@@ -33,8 +33,13 @@ export default class Point {
         return (this.x <= 0 || this.x >= WIDTH*SCALE || this.y <= 0 || this.y >= HEIGHT*SCALE);
     }
     /** Return new point at a random x,y. */
-    static newRandom(color=this.color) {
-        return new Point({x: randomRangeTenths(0, WIDTH*SCALE), y: randomRangeTenths(0, HEIGHT*SCALE),color});
+    static newRandom(color, width=WIDTH*SCALE, height=HEIGHT*SCALE) {
+        const point = new Point({
+            x: randomRangeTenths(0, width), 
+            y: randomRangeTenths(0, height),
+            color: color,
+        })
+        return point;
     }
     /** Return Manhattan distance to another point*/
     distanceFrom(pt) {

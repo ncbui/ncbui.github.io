@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import Point from '../../components/Game/Point';
 
-const WIDTH = 100;
-const HEIGHT = 100;
-const SCALE = 1;
+const WIDTH= 20
+const HEIGHT= 20
+const SCALE=5
 
 describe('Point class', () => {
     beforeEach(() => {
@@ -31,21 +31,24 @@ describe('Point class', () => {
 
     describe('newRandom()', () => {
         it('generates a point within canvas', () => {
-            const randomPoint = Point.newRandom('green');
+            const randomPoint = Point.newRandom('purple', WIDTH * SCALE, HEIGHT * SCALE);
             expect(randomPoint.x).toBeGreaterThanOrEqual(10);
-            expect(randomPoint.x).toBeLessThanOrEqual(WIDTH * SCALE-10);
-            expect(randomPoint.color).toBe('green');
+            expect(randomPoint.x).toBeLessThanOrEqual(Math.floor(WIDTH * SCALE / 10) * 10);
+            expect(randomPoint.y).toBeGreaterThanOrEqual(10);
+            expect(randomPoint.y).toBeLessThanOrEqual(Math.floor(HEIGHT * SCALE / 10) * 10);
+            expect(randomPoint.color).toBe('purple');
           });
+        })
         it('generates 100 points within canvas', () => {
             for (let i = 0; i < 50; i++){
-                const randomPoint = Point.newRandom();
+                const randomPoint = Point.newRandom('purple', WIDTH * SCALE, HEIGHT * SCALE);
                 expect(randomPoint.x).toBeGreaterThanOrEqual(10);
-                expect(randomPoint.x).toBeLessThanOrEqual(WIDTH * SCALE-10);
+                expect(randomPoint.x).toBeLessThanOrEqual(Math.floor(WIDTH * SCALE / 10) * 10);
                 expect(randomPoint.y).toBeGreaterThanOrEqual(10);
-                expect(randomPoint.y).toBeLessThanOrEqual(HEIGHT * SCALE-10);
+                expect(randomPoint.y).toBeLessThanOrEqual(Math.floor(HEIGHT * SCALE / 10) * 10);
+                expect(randomPoint.color).toBe('purple');
             }
         })
-    })
 
 
     it('draw() sets styles and calls canvas methods', () => {
