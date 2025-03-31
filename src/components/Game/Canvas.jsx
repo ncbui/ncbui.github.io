@@ -15,7 +15,7 @@ export default function Canvas() {
     const [food, setFood] = useState(new FoodSources())
 
     const drawFood = (context) =>{
-        if (food.sources.length <= 1) food.refillFood();
+        if (food.sources.length <= 1) food.refill();
         food.draw(context);
     }
     useEffect(() => {
@@ -60,10 +60,10 @@ export default function Canvas() {
                 <GameButton id='startButton' onClick={() => setShouldStart(!shouldStart)} > 
                     { shouldStart? 'Stop' : 'Start'}
                 </GameButton>
-                <GameButton id='resetFoodButton' onClick={() => food.resetFood()} > 
+                <GameButton id='resetButton' onClick={() => food.reset()} > 
                     Reset Food
                 </GameButton>
-                <GameButton id='refillFoodButton' onClick={() => food.refillFood()} > 
+                <GameButton id='refillButton' onClick={() => food.refill()} > 
                     Refill Food
                 </GameButton>
             </Box>

@@ -32,23 +32,23 @@ describe('FoodSources', () => {
 
   describe('refill()', () => {
     it('populates empty source list until length reaches default num', () => {
-        food.refillFood()
+        food.refill()
       expect(food.sources.length).toEqual(10);
       expect(food.num).toBe(10);
     });
     it('populates partial source list until length reaches default num', () => {
-        food.refillFood()
+        food.refill()
         food.sources = food.sources.slice(0,3)
         expect(food.sources.length).toEqual(3);
-        food.refillFood()
+        food.refill()
         expect(food.sources.length).toEqual(10);
     });
     it('does not alter full lists', () => {
         let setA;
         let setB;
-        food.refillFood()
+        food.refill()
         setA = food.sources
-        food.refillFood()
+        food.refill()
         setB = food.sources
         expect(setA).toEqual(setB)
     })
@@ -56,16 +56,16 @@ describe('FoodSources', () => {
 
   describe('reset()', () => {
     it('populates empty source list until length reaches default num', () => {
-        food.resetFood()
+        food.reset()
       expect(food.sources.length).toEqual(10);
       expect(food.num).toBe(10);
     });
     it('alters full lists', () => {
         let setA;
         let setB;
-        food.resetFood()
+        food.reset()
         setA = food.sources
-        food.resetFood()
+        food.reset()
         setB = food.sources
         expect(setA).not.toEqual(setB)
     })

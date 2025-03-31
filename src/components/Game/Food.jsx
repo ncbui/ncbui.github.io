@@ -10,13 +10,13 @@ export default class FoodSources {
         this.sources = [];
         this.num = 10;
     }
-    refillFood( ) {
+    refill( ) {
         while (this.sources.length < this.num ){
             this.sources.push(Point.newRandom('green'))
         }
         return this
     }
-    resetFood() {
+    reset() {
         while (this.sources.length < this.num ){
             this.sources.push('')
         }
