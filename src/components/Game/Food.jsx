@@ -17,16 +17,13 @@ export default class FoodSources {
         return this
     }
     reset() {
-        while (this.sources.length < this.num ){
-            this.sources.push('')
-        }
-        this.sources = this.sources.map(f=>Point.newRandom('green'))
+        this.sources = this.sources.map(()=>Point.newRandom('green'))
         return this
     }
     draw(ctx){
-        this.sources.forEach((p) =>{
-            if (p==undefined) return;
-            p.draw(ctx, 'green')})
+        this.sources.forEach((point) => {
+            point==undefined ? () => {} : point.draw(ctx, 'green');
+        })
     }
   }
   

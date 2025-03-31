@@ -56,14 +56,21 @@ describe('FoodSources', () => {
   });
 
   describe('reset()', () => {
-    it('populates empty source list until length reaches default num', () => {
-        food.reset()
-      expect(food.sources.length).toEqual(10);
+    it('returns empty source list when source list empty', () => {
+      food.sources = []
+      food.reset()
+      expect(food.sources.length).toEqual(0);
+    });
+    it('returns source list when source list partially filled', () => {
+      food.sources = [Point.newRandom()]  
+      food.reset()
+      expect(food.sources.length).toEqual(1);
       expect(food.num).toBe(10);
     });
     it('alters full lists', () => {
         let setA;
         let setB;
+        food.refill()
         food.reset()
         setA = food.sources
         food.reset()
