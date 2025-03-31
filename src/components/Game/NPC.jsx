@@ -8,9 +8,10 @@ export default class NPC extends Caterpillar {
     this.direction = "right";
   }
   static defaultNPC() {
-    let defaultPoints = [{ x: 60, y: 200,}].map((p)=>new Point(p))
+    let defaultPoints = [{ x: 60, y: 200,color:'goldenrod'}].map((p)=>new Point(p))
     return defaultPoints
     }
+
   move(food, setFood){
     let newHead;
     let turns=0;

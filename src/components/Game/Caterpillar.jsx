@@ -9,11 +9,12 @@ export default class Caterpillar {
     constructor() {
         this.caterpillar = Caterpillar.defaultCaterpillar(); // list of Points() in caterpillar body
         this.direction = "down"; // direction of travel
+        this.color = 'goldenrod'
       }
 
     static defaultCaterpillar() {
         let defaultPoints = [
-            { x: 60, y: 60,},
+            { x: 60, y: 60, color: this.color },
         ].map((p)=>new Point(p))
         return defaultPoints
     }
@@ -24,7 +25,7 @@ export default class Caterpillar {
 
     draw(ctx){
         this.caterpillar.forEach((p) =>{
-            p.draw(ctx)})
+            p.draw(ctx, p.color)})
     }
 
     move(){
@@ -51,13 +52,13 @@ export default class Caterpillar {
     _calculateNewHead(currentHead = this.head()) {
     let newHead;
         if (this.direction == "right") {
-            newHead = new Point({x: currentHead.x + 10, y: currentHead.y + 0})
+            newHead = new Point({x: currentHead.x + 10, y: currentHead.y + 0, color: this.color})
         } else if (this.direction == "left") {
-            newHead = new Point({x: currentHead.x - 10, y: currentHead.y +0})
+            newHead = new Point({x: currentHead.x - 10, y: currentHead.y +0, color: this.color})
         } else if (this.direction == "down") {
-            newHead = new Point({x: currentHead.x + 0, y: currentHead.y +10})
+            newHead = new Point({x: currentHead.x + 0, y: currentHead.y +10, color: this.color})
         } else if (this.direction == "up") {
-            newHead = new Point({x: currentHead.x + 0, y: currentHead.y -10})
+            newHead = new Point({x: currentHead.x + 0, y: currentHead.y -10, color: this.color})
         } else { 
             newHead = this.head()}
     return newHead;
