@@ -12,7 +12,14 @@ export const gameOverText = (context) => {
     context.fillText(`caterpillar is in a bind`, ((WIDTH * SCALE) / 2), ((HEIGHT * SCALE) / 2 + (2 * SCALE)))
 }
 
-export const drawCanvas = ( context) => {
+export const drawCanvas = (context) => {
     context.save()
     context.clearRect(0, 0, WIDTH*SCALE, HEIGHT*SCALE)
+}
+
+export const randomRangeTenths = (min, max) => {
+    const adjustedMin = Math.ceil(min / 10) * 10
+    const adjustedMax = Math.floor(max / 10) * 10
+    const steps = (adjustedMax - adjustedMin) / 10 + 1
+    return adjustedMin + (Math.floor(Math.random() * steps) * 10)
 }

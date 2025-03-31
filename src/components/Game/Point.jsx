@@ -1,4 +1,4 @@
-import {WIDTH,HEIGHT,SCALE} from './constants'
+import {WIDTH,HEIGHT,SCALE, randomRangeTenths} from './constants'
 /** Point: a single element on the game board.
  *
  * This is used to draw a circle on the game board at x,y. It is used by both
@@ -34,8 +34,7 @@ export default class Point {
     }
     /** Return new point at a random x,y. */
     static newRandom(color=this.color) {
-        const randRange = (low, hi) => low + Math.floor(((Math.random()/10 * (hi - low))))*10;
-        return new Point({x: randRange(10, WIDTH*SCALE-10), y: randRange(10, HEIGHT*SCALE-10)},color);
+        return new Point({x: randomRangeTenths(0, WIDTH*SCALE), y: randomRangeTenths(0, HEIGHT*SCALE),color});
     }
     /** Return Manhattan distance to another point*/
     distanceFrom(pt) {
