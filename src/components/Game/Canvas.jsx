@@ -4,8 +4,7 @@ import { Card } from '@mui/joy';
 import { Box } from '@mui/material';
 import FoodSources from './Food';
 import NPC from './NPC';
-import {WIDTH,HEIGHT,SCALE,FPS, drawCanvas, gameOverText} from './constants';
-    
+import {WIDTH,HEIGHT,SCALE,FPS, drawCanvas, gameOverText, drawFood} from './constants';
 
 export default function Canvas() { 
     const canvasRef = useRef()
@@ -14,16 +13,12 @@ export default function Canvas() {
     const [caterpillar, setCaterpillar] = useState(new NPC())
     const [food, setFood] = useState(new FoodSources())
 
-    const drawFood = (context) =>{
-        if (food.sources.length <= 1) food.refill();
-        food.draw(context);
-    }
     useEffect(() => {
         const context = canvasRef.current.getContext('2d')
         
         if (shouldStart){
             drawCanvas(context, WIDTH*SCALE, HEIGHT*SCALE)
-            drawFood(context)
+            drawFood(context, food)
             if (caterpillar.gameOver()){
                 caterpillar.draw(context)
                 gameOverText(context)
@@ -38,11 +33,11 @@ export default function Canvas() {
         }
         return () => {
         }
-    }, [frameCounter, caterpillar, shouldStart, food])
+    }, [frameCounter, caterpillar, shouldStart, food, drawFood])
 
     useLayoutEffect(() => {
+        let timerId
         if (shouldStart) {
-            let timerId
             const animate = () => {
                 setFrameCounter(c => c + 1)
                 setTimeout(() => {

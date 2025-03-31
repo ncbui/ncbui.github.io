@@ -23,3 +23,8 @@ export const randomRangeTenths = (min, max) => {
     const steps = (adjustedMax - adjustedMin) / 10;
     return adjustedMin + (Math.ceil(Math.random() * steps) * 10)
 }
+
+export const drawFood = (context,food) =>{
+    if (food.sources.length <= 1) food.refill();
+    food.draw(context);
+}
