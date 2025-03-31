@@ -50,8 +50,8 @@ describe('Point class', () => {
             }
         })
 
-
-    it('draw() sets styles and calls canvas methods', () => {
+    describe('draw()', () => {
+    it(' sets styles and calls canvas methods', () => {
         const ctx = {
           fillStyle: '',
           strokestyle: '',
@@ -66,6 +66,7 @@ describe('Point class', () => {
         expect(ctx.fillRect).toHaveBeenCalledWith(20, 30, 10, 10);
         expect(ctx.strokeRect).toHaveBeenCalledWith(20, 30, 2, 1);
       });
+    })
 
     describe('isOutOfBound()', () => {
         it('returns false for in-bound points',() => {
@@ -86,9 +87,21 @@ describe('Point class', () => {
         })
     });
 
-    it('distanceFrom() calculates Manhattan distance', () => {
-        const pointA = new Point({ x: 0, y: 0 });
-        const pointB = new Point({ x: 3, y: 4 });
-        expect(pointA.distanceFrom(pointB)).toBe(7); // |3-0| + |4-0| = 7
-      });
+    describe('distanceFrom()', () => { 
+        it(' calculates Manhattan distance', () => {
+            const pointA = new Point({ x: 0, y: 0 });
+            const pointB = new Point({ x: 3, y: 4 });
+            expect(pointA.distanceFrom(pointB)).toBe(7); // |3-0| + |4-0| = 7
+        });
+        // edgecases
+    });
+    
+    describe('vectorTo()', () => {  
+        it('returns a vector', () => {
+            const pointA = new Point({ x: 0, y: 0 });
+            const pointB = new Point({ x: 10, y: 40 });
+            expect(pointA.vectorTo(pointB)).toStrictEqual({ 'x': -10, 'y': -40,}); // |3-0| + |4-0| = 7
+        })
+        // edgecases
+    });
 })
