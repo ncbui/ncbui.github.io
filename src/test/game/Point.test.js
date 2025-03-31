@@ -27,14 +27,6 @@ describe('Point class', () => {
             expect(()=> new Point({ x: 10, y: 'red', color: 'yellow'})).toThrow('y must be a number');
             expect(()=> new Point({ x: 10, y: undefined, color: 'yellow'})).toThrow('y must be a number');
         });
-        it('console.logs when color type is not string', () => {
-            new Point({ x: 10, y: 20, color: 10});
-            expect(console.log).toHaveBeenCalledWith("color set to default");
-            expect(console.log).toHaveBeenCalledTimes(1);
-            new Point({ x: 10, y: 20, color: undefined});
-            expect(console.log).toHaveBeenCalledWith("color set to default");
-            expect(console.log).toHaveBeenCalledTimes(1);
-        });
     })
 
     describe('newRandom()', () => {

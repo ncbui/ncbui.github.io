@@ -18,9 +18,6 @@ export default class Point {
           if (typeof y !== 'number' || isNaN(y)) {
             throw new Error('y must be a number');
           }
-          if (typeof color !== 'string') {
-            console.log('color set to default');
-          }
       this.x = x;
       this.y = y;
       this.color = color;
