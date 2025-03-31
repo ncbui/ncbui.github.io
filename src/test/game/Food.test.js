@@ -29,4 +29,28 @@ describe('FoodSources', () => {
       expect(food.num).toBe(10);
     });
   });
+
+  describe('refill()', () => {
+    it('populates empty source list until length reaches default num', () => {
+        food.refillFood()
+      expect(food.sources.length).toEqual(10);
+      expect(food.num).toBe(10);
+    });
+    it('populates partial source list until length reaches default num', () => {
+        food.refillFood()
+        food.sources = food.sources.slice(0,3)
+        expect(food.sources.length).toEqual(3);
+        food.refillFood()
+        expect(food.sources.length).toEqual(10);
+    });
+    it('does not alter full lists', () => {
+        let setA;
+        let setB;
+        food.refillFood()
+        setA = food.sources
+        food.refillFood()
+        setB = food.sources
+        expect(setA).toEqual(setB)
+    })
+  });
 });
