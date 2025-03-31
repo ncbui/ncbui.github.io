@@ -15,7 +15,7 @@ export default function Canvas() {
     const [food, setFood] = useState(new FoodSources())
 
     const drawFood = (context) =>{
-        if (food.sources.length <= 0) food.refillFood();
+        if (food.sources.length <= 1) food.refillFood();
         food.draw(context);
     }
     useEffect(() => {

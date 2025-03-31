@@ -27,3 +27,7 @@ Tests written with RTL and Vite
 | Completed |  Constants|
 | In progress | Point |
 
+Known bugs
+- Caterpillar gets stuck in decision freeze and circles until it works itself into a know
+    - Solution: reset food to break it out of the executive function freeze
+- seems to be chasing a ghost
