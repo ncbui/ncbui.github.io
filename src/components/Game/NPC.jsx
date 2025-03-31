@@ -26,7 +26,7 @@ export default class NPC extends Caterpillar {
     this.caterpillar.unshift(newHead);
     let willEat = this.willEat(food, newHead)
     if (willEat.length){
-        food.sources = food.sources.map(source => source.x === newHead.x && source.y === newHead.y ? Point.newRandom('green') : source)
+        food.sources = food.sources.filter(source => !(source.x === newHead.x && source.y === newHead.y))
         setFood(food)
     } else {
         this.caterpillar.pop() 
