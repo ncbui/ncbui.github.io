@@ -53,4 +53,21 @@ describe('FoodSources', () => {
         expect(setA).toEqual(setB)
     })
   });
+
+  describe('reset()', () => {
+    it('populates empty source list until length reaches default num', () => {
+        food.resetFood()
+      expect(food.sources.length).toEqual(10);
+      expect(food.num).toBe(10);
+    });
+    it('alters full lists', () => {
+        let setA;
+        let setB;
+        food.resetFood()
+        setA = food.sources
+        food.resetFood()
+        setB = food.sources
+        expect(setA).not.toEqual(setB)
+    })
+  });
 });
