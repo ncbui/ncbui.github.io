@@ -18,8 +18,8 @@ export const drawCanvas = (context) => {
 }
 
 export const randomRangeTenths = (min, max) => {
-    const adjustedMin = Math.ceil(min / 10) * 10
-    const adjustedMax = Math.floor(max / 10) * 10
-    const steps = (adjustedMax - adjustedMin) / 10 + 1
-    return adjustedMin + (Math.floor(Math.random() * steps) * 10)
+    const adjustedMin = Math.floor(min / 10) * 10 // round down to nearest 10th
+    const adjustedMax = Math.ceil(max / 10) * 10 // round up to nearest 10th
+    const steps = (adjustedMax - adjustedMin) / 10;
+    return adjustedMin + (Math.ceil(Math.random() * steps) * 10)
 }
