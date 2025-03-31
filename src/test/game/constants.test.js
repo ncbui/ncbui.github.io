@@ -66,26 +66,36 @@ describe('randomRangeTenths', () => {
 
 
 describe('drawCanvas', () => {
+  let mockContext;
+  beforeEach(() => {
+    mockContext = {
+      width: WIDTH*SCALE,
+      height: HEIGHT*SCALE,
+      save: vi.fn(),
+      clearRect: vi.fn()
+    };
+  });
+
   it('clears the canvas and saves context state', () => {
-    const mockContext = {
+     mockContext = {
       width: 800,
       height: 600,
       save: vi.fn(),
       clearRect: vi.fn()
     };
-    drawCanvas(mockContext);
+    drawCanvas(mockContext, mockContext.width, mockContext.height);
     expect(mockContext.save).toHaveBeenCalledTimes(1);
     expect(mockContext.clearRect).toHaveBeenCalledWith(0, 0, mockContext.width, mockContext.height);
   });
 
   it('works with different canvas sizes', () => {
-    const mockContext = {
+     mockContext = {
       width: 1024,
       height: 768,
       save: vi.fn(),
       clearRect: vi.fn()
     };
-    drawCanvas(mockContext);
+    drawCanvas(mockContext, mockContext.width, mockContext.height);
     expect(mockContext.clearRect).toHaveBeenCalledWith(0, 0, 1024, 768);
   });
 });

@@ -18,7 +18,7 @@ export default function Canvas() {
         const context = canvasRef.current.getContext('2d')
         
         if (shouldStart){
-            drawCanvas(context)
+            drawCanvas(context, WIDTH*SCALE, HEIGHT*SCALE)
             food.refillFood()
             food.draw(context)
             if (caterpillar.gameOver()){
