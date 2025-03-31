@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import {randomRangeTenths, gameOverText} from '../../components/Game/constants';
+import {randomRangeTenths, gameOverText, drawCanvas} from '../../components/Game/constants';
 
 const WIDTH= 20
 const HEIGHT= 20
@@ -64,3 +64,28 @@ describe('randomRangeTenths', () => {
     })
 });
 
+
+describe('drawCanvas', () => {
+  it('clears the canvas and saves context state', () => {
+    const mockContext = {
+      width: 800,
+      height: 600,
+      save: vi.fn(),
+      clearRect: vi.fn()
+    };
+    drawCanvas(mockContext);
+    expect(mockContext.save).toHaveBeenCalledTimes(1);
+    expect(mockContext.clearRect).toHaveBeenCalledWith(0, 0, mockContext.width, mockContext.height);
+  });
+
+  it('works with different canvas sizes', () => {
+    const mockContext = {
+      width: 1024,
+      height: 768,
+      save: vi.fn(),
+      clearRect: vi.fn()
+    };
+    drawCanvas(mockContext);
+    expect(mockContext.clearRect).toHaveBeenCalledWith(0, 0, 1024, 768);
+  });
+});
