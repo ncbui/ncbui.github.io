@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import {randomRangeTenths, gameOverText, drawCanvas} from '../../components/Game/constants';
+import {randomRangeTenths, gameOverText, drawCanvas, drawFood} from '../../components/Game/constants';
 
 const WIDTH= 20
 const HEIGHT= 20
@@ -99,3 +99,61 @@ describe('drawCanvas', () => {
     expect(mockContext.clearRect).toHaveBeenCalledWith(0, 0, 1024, 768);
   });
 });
+
+describe('drawFood', () => {
+  let mockContext;
+  let mockFood;
+
+  beforeEach(() => {
+    // Reset mocks before each test
+    mockContext = {
+      fillStyle: '',
+      fillRect: vi.fn(),
+      strokeRect: vi.fn()
+    };
+
+    mockFood = {
+      sources: [],
+      refill: vi.fn().mockImplementation(function() {
+        this.sources = [{ draw: vi.fn() }, { draw: vi.fn() }];
+        return this;
+      }),
+      draw: vi.fn()
+    };
+  });
+
+  it('refills food when sources are empty', () => {
+    mockFood.sources = [];
+    drawFood(mockContext, mockFood);
+    
+    expect(mockFood.refill).toHaveBeenCalled();
+    expect(mockFood.draw).toHaveBeenCalledWith(mockContext);
+  });
+
+  it('refills food when only 1 source remains', () => {
+    mockFood.sources = [{ draw: vi.fn() }];
+    drawFood(mockContext, mockFood);
+    
+    expect(mockFood.refill).toHaveBeenCalled();
+    expect(mockFood.draw).toHaveBeenCalledWith(mockContext);
+  });
+
+  it('does not refill when 2+ sources exist', () => {
+    mockFood.sources = [{ draw: vi.fn() }, { draw: vi.fn() }];
+    drawFood(mockContext, mockFood);
+    
+    expect(mockFood.refill).not.toHaveBeenCalled();
+    expect(mockFood.draw).toHaveBeenCalledWith(mockContext);
+  });
+
+  describe('edge cases', () => {
+    it('handles null food parameter', () => {
+    });
+
+    it('handles undefined context', () => {
+    });
+
+    it('handles food with missing methods', () => {
+    });
+  });
+})
