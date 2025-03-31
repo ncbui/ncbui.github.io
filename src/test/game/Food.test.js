@@ -7,7 +7,8 @@ vi.mock('./Point', () => ({
   default: vi.fn(),
   newRandom: vi.fn().mockImplementation((color) => ({
     x: 100, y: 100, color: 'green'
-  }))
+  })),
+  draw: vi.fn().mockImplementation(() => {}),
 }));
 
 describe('FoodSources', () => {
