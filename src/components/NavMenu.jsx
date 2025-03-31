@@ -17,24 +17,24 @@ export default function NavMenu() {
         </NavHeader>
         <NavContent>
           <NavSocials> 
-            <NavSocialsListItem button component={Link} to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer">
+            <NavSocialsListItem button='true' component={Link} to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer">
               <LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem >
-            <NavSocialsListItem button component={Link} to="/https://github.com/ncbui">
+            <NavSocialsListItem button='true' component={Link} to="/https://github.com/ncbui">
               <GitHub sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
-            <NavSocialsListItem button component={Link} to="/art">
+            <NavSocialsListItem button='true' component={Link} to="/art">
               <PhotoSizeSelectActual sx={{fontSize:'2.4rem', marginLeft:'.2rem', marginRight:0, '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
           </NavSocials>
           <NavLinkList>
-            <NavLinkListItem button component={Link} to="/about">
+            <NavLinkListItem button='true' component={Link} to="/about">
               about
             </NavLinkListItem >
-            <NavLinkListItem button component={Link} to="/work">
+            <NavLinkListItem button='true' component={Link} to="/work">
               experience
             </NavLinkListItem>
-            <NavLinkListItem button component={Link} to="/game">
+            <NavLinkListItem button='true' component={Link} to="/game">
               game
             </NavLinkListItem>
           </NavLinkList>
