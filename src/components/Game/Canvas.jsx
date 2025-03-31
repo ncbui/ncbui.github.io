@@ -14,13 +14,16 @@ export default function Canvas() {
     const [caterpillar, setCaterpillar] = useState(new NPC())
     const [food, setFood] = useState(new FoodSources())
 
+    const drawFood = (context) =>{
+        if (food.sources.length <= 0) food.refillFood();
+        food.draw(context);
+    }
     useEffect(() => {
         const context = canvasRef.current.getContext('2d')
         
         if (shouldStart){
             drawCanvas(context, WIDTH*SCALE, HEIGHT*SCALE)
-            food.refillFood()
-            food.draw(context)
+            drawFood(context)
             if (caterpillar.gameOver()){
                 caterpillar.draw(context)
                 gameOverText(context)
@@ -54,11 +57,14 @@ export default function Canvas() {
     return (
         <Card sx={{border: 0, background:'inherit',  margin: '0 1rem', p:0, display:'flex', flexDirection: 'column'}}>
             <Box sx={{border: 0, background:'inherit', display:'flex', flexDirection:'row', padding: 0, margin: 0, width:'fit-content'}}>
-                <GameButton id='startButton' onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}} > 
+                <GameButton id='startButton' onClick={() => setShouldStart(!shouldStart)} > 
                     { shouldStart? 'Stop' : 'Start'}
                 </GameButton>
-                <GameButton id='foodButton' onClick={() => food.resetFood()} sx={{width:'fit-content', m:'1rem'}} > 
+                <GameButton id='resetFoodButton' onClick={() => food.resetFood()} > 
                     Reset Food
+                </GameButton>
+                <GameButton id='refillFoodButton' onClick={() => food.refillFood()} > 
+                    Refill Food
                 </GameButton>
             </Box>
             <Box sx={{backgroundColor:theme.palette.background, borderRadius:'.3rem', border: '3px solid', borderColor: theme.palette.text, width:'fit-content'}}>

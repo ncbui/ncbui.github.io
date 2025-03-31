@@ -745,8 +745,10 @@ export const GameButton=styled(Button)(( ) => ({
   fontSize: '80%',
   textTransform: 'none',
   // margin: '0 .2rem 0 0',
+  m:'1rem',
   padding: '1px 6px',
   borderRadius: '.2rem',
+  width:'fit-content',
   '&:hover': {
     backgroundColor: theme.palette.light2,
     borderColor: theme.palette.light2,

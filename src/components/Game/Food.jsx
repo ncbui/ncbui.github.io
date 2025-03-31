@@ -8,7 +8,7 @@ import Point from "./Point";
 export default class FoodSources {
     constructor() {
         this.sources = [];
-        this.num = 8;
+        this.num = 10;
     }
     refillFood( ) {
         while (this.sources.length < this.num ){
@@ -17,11 +17,15 @@ export default class FoodSources {
         return this
     }
     resetFood() {
-        this.sources = this.sources.map(() => Point.newRandom('green'))
+        while (this.sources.length < this.num ){
+            this.sources.push('')
+        }
+        this.sources = this.sources.map(f=>Point.newRandom('green'))
         return this
     }
     draw(ctx){
         this.sources.forEach((p) =>{
+            if (p==undefined) return;
             p.draw(ctx, 'green')})
     }
   }
