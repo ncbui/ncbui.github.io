@@ -14,7 +14,16 @@ SnakeCanvas manages:
         - State update block browser from repainting screen. Can slow app. useEffect() is often prefered. 
     - Watches for changed to state.shouldStart
     - FPS managed by wrapping `setTimeout(() => {requestAnimationFrame(animate)}, 1000 / fps)`
-- Game play and updates managed by hook useEffect().
-    - synchronizes component with external system, 
-        - like Canvas HTML, setInterval() and clearInterval(), windows.addEventListener()
-    - Each cycle runs cleanup and setup code. Everytime dependencies change, Effect runs cleanup, then setup code. On final dismount, run cleaup code again.
+
+Game play and updates managed by hook useEffect():
+- synchronizes component with external system, 
+    - like Canvas HTML, setInterval() and clearInterval(), windows.addEventListener()
+- Each cycle runs cleanup and setup code. Everytime dependencies change, Effect runs cleanup, then setup code. On final dismount, run cleaup code again. 
+
+Tests written with RTL and Vite
+- Writing tests to make class more robust.
+| Progress | Tests |
+|----|----|
+| Completed |  Constants|
+| In progress | Point |
+
