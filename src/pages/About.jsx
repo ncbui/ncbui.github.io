@@ -1,5 +1,5 @@
 import { Typography} from '@mui/joy';
-import { List, ListItem, ListItemText, ListSubheader } from '@mui/material';
+import { List, ListItem, ListItemText } from '@mui/material';
 import { BodySheets } from '../template/theme';
 
 export default function About() {
