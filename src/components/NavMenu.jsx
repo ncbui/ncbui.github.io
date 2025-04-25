@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { List, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn, PhotoSizeSelectActual } from '@mui/icons-material';
 import { NavHeader, NavName, NavTitleText, NavSheets, NavSocials, NavContent, NavLinkList, NavLinkListItem, NavSocialsListItem } from '../template/theme';
+import { Typography } from '@mui/material';
 
 export default function NavMenu() {
   return (
@@ -13,7 +14,7 @@ export default function NavMenu() {
               <Link to="/"> Cam Bui </Link>
             </NavName>
           </ListSubheader>
-          <NavTitleText level="h5"> Platform DevOps Engineer </NavTitleText>
+          <NavTitleText level="h5"> Platform DevOps Engineer <Typography color="inherit">Bay Area, CA</Typography> </NavTitleText>
         </NavHeader>
         <NavContent>
           <NavSocials> 
