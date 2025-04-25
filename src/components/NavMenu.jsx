@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { List, ListSubheader } from '@mui/joy';
-import { GitHub, LinkedIn, PhotoSizeSelectActual } from '@mui/icons-material';
+import { GitHub, LinkedIn, EmailRounded } from '@mui/icons-material';
 import { NavHeader, NavName, NavTitleText, NavSheets, NavSocials, NavContent, NavLinkList, NavLinkListItem, NavSocialsListItem } from '../template/theme';
 import { Typography } from '@mui/material';
 
@@ -24,8 +24,8 @@ export default function NavMenu() {
             <NavSocialsListItem button component={Link} to="/https://github.com/ncbui">
               <GitHub sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
-            <NavSocialsListItem button component={Link} to="/art">
-              <PhotoSizeSelectActual sx={{fontSize:'2.4rem', marginLeft:'.2rem', marginRight:0, '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
+            <NavSocialsListItem button component={Link} to="mailto:cam.bui@proton.me" title="Email me at cam.bui@proton.me">
+              <EmailRounded sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
           </NavSocials>
           <NavLinkList>
