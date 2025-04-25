@@ -24,7 +24,7 @@ export default function NavMenu() {
             <NavSocialsListItem button component={Link} to="/https://github.com/ncbui">
               <GitHub sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
-            <NavSocialsListItem button component={Link} to="mailto:cam.bui@proton.me" title="Email me at cam.bui@proton.me">
+            <NavSocialsListItem button component={Link} to="mailto:bui.cam@proton.me" title="Email me at bui.cam@proton.me">
               <EmailRounded sx={{fontSize:'2.5rem', '@media (max-width: 760px)' : {fontSize:'2rem'}}}/>
             </NavSocialsListItem>
           </NavSocials>
