@@ -1,27 +1,30 @@
-import { Typography } from '@mui/joy';
+import { Typography} from '@mui/joy';
+import { List, ListItem, ListItemText } from '@mui/material';
 import { BodySheets } from '../template/theme';
 
 export default function About() {
   return (
     <BodySheets>
-      <Typography sx={{color:'inherit'}}>Experienced software engineer with expertise in GitOps and cloud native software development. Passionate about understanding developer friction to make room for communication and collaboration.  </Typography>
-      <Typography variant="title" color="inherit" noWrap>
-        &nbsp;
+      <Typography sx={{color:'inherit'}}> Hi, I'm Cam. I build cloud native software and pipelines.  </Typography>
+      <List dense={true}>
+          <ListItem>
+            <ListItemText primary="Recently, I was a software consultant at Thoughtworks." />
+          </ListItem>
+        </List>
+      <Typography color="inherit">
+        I also
       </Typography>
-      <Typography sx={{color:'inherit'}}>
-        Recently, I was a software consultant at Thoughtworks, working with cross-functional teams to add new data and platform capabilities to existing systems to enhance patient care. 
-        I implemented GitOps best practices to enable dev teams to reliably test, deploy, and maintain components of cloud-native data pipelines.
-        </Typography>
-      <Typography variant="title" color="inherit" noWrap>
-        &nbsp;
-      </Typography>
-      <Typography sx={{color:'inherit'}}>In the past, I have had opportunity to work as peer health educator in volunteer and internship roles, 
-        as IT support in primary schools and startups, as a research assistant in psychology lab, 
-        and with processing patient data for a biotech company.</Typography>
-      <Typography variant="title" color="inherit" noWrap>
-        &nbsp;
-      </Typography>
-      <Typography sx={{color:'inherit'}}>In my spare time, I enjoy painting, gardening, and taking pictures of toast.  </Typography>
+        <List dense={true}>
+          <ListItem>
+            <ListItemText primary="practice aerial arts, indoor bouldering, and taiji." />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="can be found building soil in gardens." />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="draw, paint, and sculpt." />
+          </ListItem>
+        </List>
     </BodySheets>
   );
 }
