@@ -510,7 +510,7 @@ export const LinkIcon = styled(TurnSlightRightOutlined)(( ) => ({
 }));
 
 export const HeaderCell = styled(TableCell)(( ) => ({
-  padding:'.5rem 0', 
+  padding:'.5rem 0',
   margin:0,  
   borderColor:theme.palette.bright,  
   fontWeight:'400',
